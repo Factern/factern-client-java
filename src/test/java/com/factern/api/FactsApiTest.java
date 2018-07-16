@@ -28,7 +28,7 @@ import com.factern.model.CreateFieldRequest;
 import com.factern.model.CreateFieldResponse;
 import com.factern.model.CreateFilterRequest;
 import com.factern.model.CreateGroupRequest;
-import com.factern.model.CreateInDomainRequest;
+import com.factern.model.CreateEntityRequest;
 import com.factern.model.CreateInformationRequest;
 import com.factern.model.CreateInformationResponse;
 import com.factern.model.CreateInterfaceRequest;
@@ -768,7 +768,7 @@ public class FactsApiTest {
     }
 
     private CreateEntityResponse createEntity(final String name) throws ApiException {
-        final CreateInDomainRequest request = new CreateInDomainRequest()
+        final CreateEntityRequest request = new CreateEntityRequest()
             .name(name);
 
         return api.createEntity(loginId, loginId, request);
