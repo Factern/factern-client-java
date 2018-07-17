@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **description** | **String** |  |  [optional]
 **name** | **String** |  |  [optional]
 **memberIds** | **List&lt;String&gt;** |  | 
-**memberFactType** | **String** |  | 
+**memberFactType** | **String** |  |  [optional]
 
 
 

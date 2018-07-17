@@ -14,6 +14,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import com.factern.model.PermissionPolicyDocument;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -26,10 +27,52 @@ import java.io.IOException;
 /**
  * PermissionNode
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-13T13:43:21.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-17T11:13:54.836-04:00")
 public class PermissionNode {
+  @SerializedName("policy")
+  private PermissionPolicyDocument policy = null;
+
+  @SerializedName("targetNodeId")
+  private String targetNodeId = null;
+
   @SerializedName("permissionInterfaceId")
   private String permissionInterfaceId = null;
+
+  public PermissionNode policy(PermissionPolicyDocument policy) {
+    this.policy = policy;
+    return this;
+  }
+
+   /**
+   * Get policy
+   * @return policy
+  **/
+  @ApiModelProperty(value = "")
+  public PermissionPolicyDocument getPolicy() {
+    return policy;
+  }
+
+  public void setPolicy(PermissionPolicyDocument policy) {
+    this.policy = policy;
+  }
+
+  public PermissionNode targetNodeId(String targetNodeId) {
+    this.targetNodeId = targetNodeId;
+    return this;
+  }
+
+   /**
+   * Get targetNodeId
+   * @return targetNodeId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTargetNodeId() {
+    return targetNodeId;
+  }
+
+  public void setTargetNodeId(String targetNodeId) {
+    this.targetNodeId = targetNodeId;
+  }
 
   public PermissionNode permissionInterfaceId(String permissionInterfaceId) {
     this.permissionInterfaceId = permissionInterfaceId;
@@ -59,12 +102,14 @@ public class PermissionNode {
       return false;
     }
     PermissionNode permissionNode = (PermissionNode) o;
-    return Objects.equals(this.permissionInterfaceId, permissionNode.permissionInterfaceId);
+    return Objects.equals(this.policy, permissionNode.policy) &&
+        Objects.equals(this.targetNodeId, permissionNode.targetNodeId) &&
+        Objects.equals(this.permissionInterfaceId, permissionNode.permissionInterfaceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(permissionInterfaceId);
+    return Objects.hash(policy, targetNodeId, permissionInterfaceId);
   }
 
 
@@ -73,6 +118,8 @@ public class PermissionNode {
     StringBuilder sb = new StringBuilder();
     sb.append("class PermissionNode {\n");
     
+    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+    sb.append("    targetNodeId: ").append(toIndentedString(targetNodeId)).append("\n");
     sb.append("    permissionInterfaceId: ").append(toIndentedString(permissionInterfaceId)).append("\n");
     sb.append("}");
     return sb.toString();

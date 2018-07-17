@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**app** | **String** |  | 
-**representing** | **String** |  | 
+**application** | **String** |  | 
 **login** | **String** |  | 
+**representing** | **String** |  | 
 
 
 

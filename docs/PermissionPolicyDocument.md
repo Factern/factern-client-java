@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **granteeId** | **String** |  |  [optional]
-**effect** | [**PermissionEffect**](PermissionEffect.md) |  | 
+**effect** | [**PermissionEffect**](PermissionEffect.md) |  |  [optional]
 **actions** | [**List&lt;PermissionAction&gt;**](PermissionAction.md) |  | 
 **scopeId** | **String** |  |  [optional]
 **requestInterfaceId** | **String** |  |  [optional]

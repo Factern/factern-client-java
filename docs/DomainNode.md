@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**domainId** | **String** |  | 
+**nodeId** | **String** |  | 
 **description** | **String** |  |  [optional]
 **name** | **String** |  | 
 

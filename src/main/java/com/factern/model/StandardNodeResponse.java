@@ -29,9 +29,12 @@ import java.math.BigDecimal;
 /**
  * StandardNodeResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-13T13:43:21.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-17T11:13:54.836-04:00")
 
 public class StandardNodeResponse {
+  @SerializedName("deleted")
+  private Boolean deleted = null;
+
   @SerializedName("timestamp")
   private BigDecimal timestamp = null;
 
@@ -52,6 +55,24 @@ public class StandardNodeResponse {
 
   @SerializedName("parentId")
   private String parentId = null;
+
+  public StandardNodeResponse deleted(Boolean deleted) {
+    this.deleted = deleted;
+    return this;
+  }
+
+   /**
+   * Get deleted
+   * @return deleted
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isDeleted() {
+    return deleted;
+  }
+
+  public void setDeleted(Boolean deleted) {
+    this.deleted = deleted;
+  }
 
   public StandardNodeResponse timestamp(BigDecimal timestamp) {
     this.timestamp = timestamp;
@@ -189,7 +210,8 @@ public class StandardNodeResponse {
       return false;
     }
     StandardNodeResponse standardNodeResponse = (StandardNodeResponse) o;
-    return Objects.equals(this.timestamp, standardNodeResponse.timestamp) &&
+    return Objects.equals(this.deleted, standardNodeResponse.deleted) &&
+        Objects.equals(this.timestamp, standardNodeResponse.timestamp) &&
         Objects.equals(this.nodeId, standardNodeResponse.nodeId) &&
         Objects.equals(this.agent, standardNodeResponse.agent) &&
         Objects.equals(this.summary, standardNodeResponse.summary) &&
@@ -200,7 +222,7 @@ public class StandardNodeResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(timestamp, nodeId, agent, summary, batchId, factType, parentId);
+    return Objects.hash(deleted, timestamp, nodeId, agent, summary, batchId, factType, parentId);
   }
 
 
@@ -209,6 +231,7 @@ public class StandardNodeResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class StandardNodeResponse {\n");
     
+    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    agent: ").append(toIndentedString(agent)).append("\n");

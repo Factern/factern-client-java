@@ -16,6 +16,7 @@ package com.factern.model;
 import java.util.Objects;
 import com.factern.model.Agent;
 import com.factern.model.BaseResponse;
+import com.factern.model.PermissionPolicyDocument;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -30,7 +31,7 @@ import java.math.BigDecimal;
 /**
  * CreatePermissionResponse
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-13T13:43:21.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-17T11:13:54.836-04:00")
 public class CreatePermissionResponse {
   @SerializedName("timestamp")
   private BigDecimal timestamp = null;
@@ -52,6 +53,12 @@ public class CreatePermissionResponse {
 
   @SerializedName("parentId")
   private String parentId = null;
+
+  @SerializedName("policy")
+  private PermissionPolicyDocument policy = null;
+
+  @SerializedName("targetNodeId")
+  private String targetNodeId = null;
 
   @SerializedName("permissionInterfaceId")
   private String permissionInterfaceId = null;
@@ -182,6 +189,42 @@ public class CreatePermissionResponse {
     this.parentId = parentId;
   }
 
+  public CreatePermissionResponse policy(PermissionPolicyDocument policy) {
+    this.policy = policy;
+    return this;
+  }
+
+   /**
+   * Get policy
+   * @return policy
+  **/
+  @ApiModelProperty(value = "")
+  public PermissionPolicyDocument getPolicy() {
+    return policy;
+  }
+
+  public void setPolicy(PermissionPolicyDocument policy) {
+    this.policy = policy;
+  }
+
+  public CreatePermissionResponse targetNodeId(String targetNodeId) {
+    this.targetNodeId = targetNodeId;
+    return this;
+  }
+
+   /**
+   * Get targetNodeId
+   * @return targetNodeId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTargetNodeId() {
+    return targetNodeId;
+  }
+
+  public void setTargetNodeId(String targetNodeId) {
+    this.targetNodeId = targetNodeId;
+  }
+
   public CreatePermissionResponse permissionInterfaceId(String permissionInterfaceId) {
     this.permissionInterfaceId = permissionInterfaceId;
     return this;
@@ -217,12 +260,14 @@ public class CreatePermissionResponse {
         Objects.equals(this.batchId, createPermissionResponse.batchId) &&
         Objects.equals(this.factType, createPermissionResponse.factType) &&
         Objects.equals(this.parentId, createPermissionResponse.parentId) &&
+        Objects.equals(this.policy, createPermissionResponse.policy) &&
+        Objects.equals(this.targetNodeId, createPermissionResponse.targetNodeId) &&
         Objects.equals(this.permissionInterfaceId, createPermissionResponse.permissionInterfaceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(timestamp, nodeId, agent, summary, batchId, factType, parentId, permissionInterfaceId);
+    return Objects.hash(timestamp, nodeId, agent, summary, batchId, factType, parentId, policy, targetNodeId, permissionInterfaceId);
   }
 
 
@@ -238,6 +283,8 @@ public class CreatePermissionResponse {
     sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
     sb.append("    factType: ").append(toIndentedString(factType)).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
+    sb.append("    targetNodeId: ").append(toIndentedString(targetNodeId)).append("\n");
     sb.append("    permissionInterfaceId: ").append(toIndentedString(permissionInterfaceId)).append("\n");
     sb.append("}");
     return sb.toString();

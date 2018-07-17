@@ -11,7 +11,9 @@ Name | Type | Description | Notes
 **batchId** | **String** |  |  [optional]
 **factType** | **String** |  |  [optional]
 **parentId** | **String** |  |  [optional]
-**permissionInterfaceId** | **String** |  | 
+**policy** | [**PermissionPolicyDocument**](PermissionPolicyDocument.md) |  |  [optional]
+**targetNodeId** | **String** |  |  [optional]
+**permissionInterfaceId** | **String** |  |  [optional]
 
 
 

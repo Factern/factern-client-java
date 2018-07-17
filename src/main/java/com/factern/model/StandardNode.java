@@ -28,9 +28,12 @@ import java.math.BigDecimal;
 /**
  * StandardNode
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-13T13:43:21.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-17T11:13:54.836-04:00")
 
 public class StandardNode {
+  @SerializedName("deleted")
+  private Boolean deleted = null;
+
   @SerializedName("timestamp")
   private BigDecimal timestamp = null;
 
@@ -48,6 +51,24 @@ public class StandardNode {
 
   @SerializedName("parentId")
   private String parentId = null;
+
+  public StandardNode deleted(Boolean deleted) {
+    this.deleted = deleted;
+    return this;
+  }
+
+   /**
+   * Get deleted
+   * @return deleted
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isDeleted() {
+    return deleted;
+  }
+
+  public void setDeleted(Boolean deleted) {
+    this.deleted = deleted;
+  }
 
   public StandardNode timestamp(BigDecimal timestamp) {
     this.timestamp = timestamp;
@@ -167,7 +188,8 @@ public class StandardNode {
       return false;
     }
     StandardNode standardNode = (StandardNode) o;
-    return Objects.equals(this.timestamp, standardNode.timestamp) &&
+    return Objects.equals(this.deleted, standardNode.deleted) &&
+        Objects.equals(this.timestamp, standardNode.timestamp) &&
         Objects.equals(this.nodeId, standardNode.nodeId) &&
         Objects.equals(this.agent, standardNode.agent) &&
         Objects.equals(this.batchId, standardNode.batchId) &&
@@ -177,7 +199,7 @@ public class StandardNode {
 
   @Override
   public int hashCode() {
-    return Objects.hash(timestamp, nodeId, agent, batchId, factType, parentId);
+    return Objects.hash(deleted, timestamp, nodeId, agent, batchId, factType, parentId);
   }
 
 
@@ -186,6 +208,7 @@ public class StandardNode {
     StringBuilder sb = new StringBuilder();
     sb.append("class StandardNode {\n");
     
+    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    agent: ").append(toIndentedString(agent)).append("\n");

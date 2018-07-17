@@ -21,7 +21,7 @@ import java.math.BigDecimal;
 /**
  * Price
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-13T13:43:21.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-17T11:13:54.836-04:00")
 public class Price extends StandardNode {
 
   @Override

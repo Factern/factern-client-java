@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * TokenPayment
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-13T13:43:21.819-04:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-17T11:13:54.836-04:00")
 public class TokenPayment {
   @SerializedName("publickey")
   private String publickey = null;
