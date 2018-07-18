@@ -1,6 +1,6 @@
 language: java
+before_install: mvn versions:set -DnewVersion=1.0.$TRAVIS_BUILD_NUMBER
 install: mvn install -DskipTests=true --settings settings.xml
-script: mvn versions:set -DnewVersion=1.0.${env.TRAVIS_BUILD_NUMBER}
 
 cache:
   directories:
