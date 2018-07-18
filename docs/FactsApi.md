@@ -30,6 +30,7 @@ Method | HTTP request | Description
 [**obliterate**](FactsApi.md#obliterate) | **POST** /obliterate | Obliterating Information Nodes
 [**permission**](FactsApi.md#permission) | **POST** /permission | Create Permission
 [**read**](FactsApi.md#read) | **POST** /read | Reading
+[**readInformation**](FactsApi.md#readInformation) | **POST** /readinformation | Read Information
 [**replaceInformation**](FactsApi.md#replaceInformation) | **POST** /replaceinformation | Replace
 [**requestPermission**](FactsApi.md#requestPermission) | **POST** /requestpermission | Request Permission
 [**resetLogin**](FactsApi.md#resetLogin) | **POST** /resetlogin | Changing Login Password
@@ -341,7 +342,7 @@ OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 FactsApi apiInstance = new FactsApi();
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
-CreateInDomainRequest body = new CreateInDomainRequest(); // CreateInDomainRequest | 
+CreateEntityRequest body = new CreateEntityRequest(); // CreateEntityRequest | 
 try {
     CreateEntityResponse result = apiInstance.createEntity(login, representing, body);
     System.out.println(result);
@@ -357,7 +358,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
- **body** | [**CreateInDomainRequest**](CreateInDomainRequest.md)|  | [optional]
+ **body** | [**CreateEntityRequest**](CreateEntityRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1034,7 +1035,7 @@ Name | Type | Description  | Notes
 
 <a name="delete"></a>
 # **delete**
-> ReadResponse delete(login, representing, body)
+> DeleteResponse delete(login, representing, body)
 
 Deleting
 
@@ -1058,7 +1059,7 @@ String login = "login_example"; // String |
 String representing = "representing_example"; // String | 
 DeleteRequest body = new DeleteRequest(); // DeleteRequest | 
 try {
-    ReadResponse result = apiInstance.delete(login, representing, body);
+    DeleteResponse result = apiInstance.delete(login, representing, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#delete");
@@ -1076,7 +1077,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ReadResponse**](ReadResponse.md)
+[**DeleteResponse**](DeleteResponse.md)
 
 ### Authorization
 
@@ -1199,7 +1200,7 @@ Name | Type | Description  | Notes
 
 <a name="history"></a>
 # **history**
-> InformationListResponse history(login, representing, body)
+> NodeListing history(login, representing, body)
 
 History
 
@@ -1223,7 +1224,7 @@ String login = "login_example"; // String |
 String representing = "representing_example"; // String | 
 NodeIdRequest body = new NodeIdRequest(); // NodeIdRequest | 
 try {
-    InformationListResponse result = apiInstance.history(login, representing, body);
+    NodeListing result = apiInstance.history(login, representing, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#history");
@@ -1241,7 +1242,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**InformationListResponse**](InformationListResponse.md)
+[**NodeListing**](NodeListing.md)
 
 ### Authorization
 
@@ -1472,9 +1473,64 @@ Name | Type | Description  | Notes
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
+<a name="readInformation"></a>
+# **readInformation**
+> ReadInformationResponse readInformation(login, representing, body)
+
+Read Information
+
+### Example
+```java
+// Import classes:
+//import com.factern.ApiClient;
+//import com.factern.ApiException;
+//import com.factern.Configuration;
+//import com.factern.auth.*;
+//import com.factern.api.FactsApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure OAuth2 access token for authorization: OAuth2
+OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
+OAuth2.setAccessToken("YOUR ACCESS TOKEN");
+
+FactsApi apiInstance = new FactsApi();
+String login = "login_example"; // String | 
+String representing = "representing_example"; // String | 
+ReadInformationRequest body = new ReadInformationRequest(); // ReadInformationRequest | 
+try {
+    ReadInformationResponse result = apiInstance.readInformation(login, representing, body);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling FactsApi#readInformation");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **login** | **String**|  | [optional]
+ **representing** | **String**|  | [optional]
+ **body** | [**ReadInformationRequest**](ReadInformationRequest.md)|  | [optional]
+
+### Return type
+
+[**ReadInformationResponse**](ReadInformationResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
 <a name="replaceInformation"></a>
 # **replaceInformation**
-> DescribeResponse replaceInformation(login, representing, body)
+> Information replaceInformation(login, representing, body)
 
 Replace
 
@@ -1498,7 +1554,7 @@ String login = "login_example"; // String |
 String representing = "representing_example"; // String | 
 ReplaceFieldRequest body = new ReplaceFieldRequest(); // ReplaceFieldRequest | 
 try {
-    DescribeResponse result = apiInstance.replaceInformation(login, representing, body);
+    Information result = apiInstance.replaceInformation(login, representing, body);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#replaceInformation");
@@ -1516,7 +1572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DescribeResponse**](DescribeResponse.md)
+[**Information**](Information.md)
 
 ### Authorization
 

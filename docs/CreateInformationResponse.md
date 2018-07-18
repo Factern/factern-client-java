@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **factType** | **String** |  |  [optional]
 **parentId** | **String** |  |  [optional]
 **fieldId** | **String** |  | 
-**storageId** | **String** |  | 
+**storageId** | **String** |  |  [optional]
 
 
 

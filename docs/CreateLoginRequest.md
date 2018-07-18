@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **includeSummary** | **Boolean** |  |  [optional]
-**password** | **String** |  | 
+**password** | **String** |  |  [optional]
 **domainId** | **String** |  |  [optional]
 **email** | **String** |  | 
 **workflow** | **String** |  | 

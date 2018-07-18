@@ -4,7 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**permissionInterfaceId** | **String** |  | 
+**policy** | [**PermissionPolicyDocument**](PermissionPolicyDocument.md) |  |  [optional]
+**targetNodeId** | **String** |  |  [optional]
+**permissionInterfaceId** | **String** |  |  [optional]
 
 
 

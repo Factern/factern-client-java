@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **parentId** | **String** |  |  [optional]
 **fieldId** | **String** |  | 
 **data** | **String** |  | 
-**storageId** | **String** |  | 
+**storageId** | **String** |  |  [optional]
 
 
 

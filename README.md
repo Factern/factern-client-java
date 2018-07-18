@@ -123,6 +123,7 @@ Class | Method | HTTP request | Description
 *FactsApi* | [**obliterate**](docs/FactsApi.md#obliterate) | **POST** /obliterate | Obliterating Information Nodes
 *FactsApi* | [**permission**](docs/FactsApi.md#permission) | **POST** /permission | Create Permission
 *FactsApi* | [**read**](docs/FactsApi.md#read) | **POST** /read | Reading
+*FactsApi* | [**readInformation**](docs/FactsApi.md#readInformation) | **POST** /readinformation | Read Information
 *FactsApi* | [**replaceInformation**](docs/FactsApi.md#replaceInformation) | **POST** /replaceinformation | Replace
 *FactsApi* | [**requestPermission**](docs/FactsApi.md#requestPermission) | **POST** /requestpermission | Request Permission
 *FactsApi* | [**resetLogin**](docs/FactsApi.md#resetLogin) | **POST** /resetlogin | Changing Login Password
@@ -146,10 +147,14 @@ Class | Method | HTTP request | Description
  - [BaseResponse](docs/BaseResponse.md)
  - [BidNode](docs/BidNode.md)
  - [Cost](docs/Cost.md)
+ - [DeleteResponse](docs/DeleteResponse.md)
+ - [DeletedItem](docs/DeletedItem.md)
+ - [DeletedStatusItem](docs/DeletedStatusItem.md)
  - [DescribeResponse](docs/DescribeResponse.md)
  - [DomainNode](docs/DomainNode.md)
  - [EntityListResponse](docs/EntityListResponse.md)
  - [EntityNode](docs/EntityNode.md)
+ - [ExternalDataUsage](docs/ExternalDataUsage.md)
  - [FactCount](docs/FactCount.md)
  - [FieldNode](docs/FieldNode.md)
  - [FieldStoreValues](docs/FieldStoreValues.md)
@@ -176,11 +181,13 @@ Class | Method | HTTP request | Description
  - [PermissionPolicyDocument](docs/PermissionPolicyDocument.md)
  - [PriceDetails](docs/PriceDetails.md)
  - [PriceNode](docs/PriceNode.md)
+ - [ReadInformationResponse](docs/ReadInformationResponse.md)
  - [ReadItem](docs/ReadItem.md)
  - [ReadResponse](docs/ReadResponse.md)
  - [ReadStatusItem](docs/ReadStatusItem.md)
  - [ScopeNode](docs/ScopeNode.md)
  - [SearchAliasResponse](docs/SearchAliasResponse.md)
+ - [Searches](docs/Searches.md)
  - [SettleAccountResponse](docs/SettleAccountResponse.md)
  - [StandardNode](docs/StandardNode.md)
  - [StandardNodeResponse](docs/StandardNodeResponse.md)
@@ -245,6 +252,7 @@ Class | Method | HTTP request | Description
  - [NodeIdRequest](docs/NodeIdRequest.md)
  - [Permission](docs/Permission.md)
  - [Price](docs/Price.md)
+ - [ReadInformationRequest](docs/ReadInformationRequest.md)
  - [ReadRequest](docs/ReadRequest.md)
  - [ReplaceFieldRequest](docs/ReplaceFieldRequest.md)
  - [ResetLoginCredentialsRequest](docs/ResetLoginCredentialsRequest.md)
@@ -266,10 +274,10 @@ Class | Method | HTTP request | Description
  - [UpdateStatusRequest](docs/UpdateStatusRequest.md)
  - [CreateApplicationRequest](docs/CreateApplicationRequest.md)
  - [CreateDomainRequest](docs/CreateDomainRequest.md)
+ - [CreateEntityRequest](docs/CreateEntityRequest.md)
  - [CreateFieldRequest](docs/CreateFieldRequest.md)
  - [CreateFilterRequest](docs/CreateFilterRequest.md)
  - [CreateGroupRequest](docs/CreateGroupRequest.md)
- - [CreateInDomainRequest](docs/CreateInDomainRequest.md)
  - [CreateInterfaceRequest](docs/CreateInterfaceRequest.md)
  - [CreateLabelListRequest](docs/CreateLabelListRequest.md)
  - [CreateScopeRequest](docs/CreateScopeRequest.md)
@@ -298,5 +306,5 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Author
 
-
+mailto:support@factern.com
 

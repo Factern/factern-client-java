@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **factType** | **String** |  |  [optional]
 **parentId** | **String** |  |  [optional]
 **description** | **String** |  |  [optional]
-**name** | **String** |  | 
+**name** | **String** |  |  [optional]
 
 
 
