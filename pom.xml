@@ -5,7 +5,7 @@
     <artifactId>factern-java-client</artifactId>
     <packaging>jar</packaging>
     <name>factern-java-client</name>
-    <version>1.0.${env.TRAVIS_BUILD_NUMBER}</version>
+    <version>SNAPSHOT</version>
     <url>https://github.com/Factern/factern-client-java</url>
     <description>Factern Java Client</description>
     <scm>
