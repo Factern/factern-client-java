@@ -10,7 +10,7 @@ import com.factern.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-19T14:47:47.507-04:00")
+
 public class OAuth implements Authentication {
   private String accessToken;
 

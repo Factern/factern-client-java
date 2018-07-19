@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 /**
  * FactCount
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-19T14:47:47.507-04:00")
+
 public class FactCount {
   @SerializedName("read")
   private BigDecimal read = null;

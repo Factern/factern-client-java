@@ -18,7 +18,7 @@ import java.io.IOException;
 /**
  * TransformElement
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-19T14:47:47.507-04:00")
+
 public class TransformElement {
   /**
    * Gets or Sets operation

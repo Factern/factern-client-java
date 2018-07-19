@@ -19,7 +19,7 @@ import java.math.BigDecimal;
 /**
  * ListCriteria
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-07-19T14:47:47.507-04:00")
+
 public class ListCriteria {
   @SerializedName("includeDeleted")
   private Boolean includeDeleted = null;
