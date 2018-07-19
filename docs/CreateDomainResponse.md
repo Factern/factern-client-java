@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**deleted** | **Boolean** |  |  [optional]
 **timestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
 **nodeId** | **String** |  | 
 **agent** | [**Agent**](Agent.md) |  |  [optional]
