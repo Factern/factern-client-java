@@ -1,4 +1,11 @@
 # factern-java-client
+[![Build Status](https://travis-ci.org/Factern/factern-client-java.svg?branch=master)](https://travis-ci.org/Factern/factern-client-java)
+
+## Java Client for Factern API v2
+
+- API version: 2.0.0
+
+  For more information, please visit [https://next.factern.com/company/contact](https://next.factern.com/company/contact)
 
 ## Requirements
 
@@ -28,7 +35,7 @@ Add this dependency to your project's POM:
 <dependency>
     <groupId>com.factern</groupId>
     <artifactId>factern-java-client</artifactId>
-    <version>1.0.21</version>
+    <version>1.0.39</version>
     <scope>compile</scope>
 </dependency>
 ```
@@ -38,7 +45,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.factern:factern-java-client:1.0.21"
+compile "com.factern:factern-java-client:1.0.39"
 ```
 
 ### Others
@@ -49,7 +56,7 @@ At first generate the JAR by executing:
 
 Then manually install the following JARs:
 
-* target/factern-java-client-1.0.21.jar
+* target/factern-java-client-1.0.39.jar
 * target/lib/*.jar
 
 ## Getting Started
@@ -76,11 +83,11 @@ public class FactsApiExample {
         OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
         FactsApi apiInstance = new FactsApi();
+        CreateMemberRequest body = new CreateMemberRequest(); // CreateMemberRequest | 
         String login = "login_example"; // String | 
         String representing = "representing_example"; // String | 
-        CreateMemberRequest body = new CreateMemberRequest(); // CreateMemberRequest | 
         try {
-            CreateMemberResponse result = apiInstance.addMember(login, representing, body);
+            CreateMemberResponse result = apiInstance.addMember(body, login, representing);
             System.out.println(result);
         } catch (ApiException e) {
             System.err.println("Exception when calling FactsApi#addMember");
@@ -306,5 +313,6 @@ It's recommended to create an instance of `ApiClient` per thread in a multithrea
 
 ## Author
 
+Factern Ltd.
 mailto:support@factern.com
 
