@@ -1,9 +1,16 @@
 
+
 # StatementStatement
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance heirarchy
+
+
+* [StatementStatement](StatementStatement.md)

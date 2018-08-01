@@ -1,10 +1,17 @@
 
+
 # WatchEventNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**source** | [**StandardNode**](StandardNode.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+source | [StandardNode](StandardNode.md) | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [WatchEventNode](WatchEventNode.md)

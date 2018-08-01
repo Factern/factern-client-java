@@ -1,13 +1,21 @@
 
+
 # AddStatementRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**targetNodeId** | **String** |  | 
-**actionQualifierId** | **String** |  |  [optional]
-**actionId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+targetNodeId | String | required
+actionQualifierId | String | optional
+actionId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [AddStatementRequest](AddStatementRequest.md)
+    * [BaseRequest](BaseRequest.md)

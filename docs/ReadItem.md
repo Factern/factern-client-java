@@ -1,13 +1,20 @@
 
+
 # ReadItem
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fieldId** | **String** |  | 
-**data** | **String** |  |  [optional]
-**children** | [**List&lt;ReadStatusItem&gt;**](ReadStatusItem.md) |  |  [optional]
-**nodeId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+fieldId | String | required
+data | String | optional
+children | [List&lt;ReadStatusItem&gt;](ReadStatusItem.md) | optional
+nodeId | String | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [ReadItem](ReadItem.md)

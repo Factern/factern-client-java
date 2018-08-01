@@ -1,11 +1,19 @@
 
+
 # SearchAliasRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**name** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+name | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [SearchAliasRequest](SearchAliasRequest.md)
+    * [BaseRequest](BaseRequest.md)

@@ -1,11 +1,26 @@
 
+
 # Entity
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+description | String | optional
+name | String | optional
+deleted | Boolean | optional
+timestamp | [BigDecimal](BigDecimal.md) | required
+nodeId | String | required
+agent | [Agent](Agent.md) | required
+batchId | String | required
+factType | String | required
+parentId | String | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [Entity](Entity.md)
+    * [StandardNode](StandardNode.md)

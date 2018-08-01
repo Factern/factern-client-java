@@ -1,10 +1,17 @@
 
+
 # MirrorNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**enabled** | **Boolean** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+enabled | Boolean | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [MirrorNode](MirrorNode.md)

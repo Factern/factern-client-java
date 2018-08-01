@@ -45,7 +45,7 @@ Method | HTTP request | Description
 
 <a name="addMember"></a>
 # **addMember**
-> CreateMemberResponse addMember(body, login, representing)
+> CreateMemberResponse addMember(login, representing, createMemberRequest)
 
 Create Member
 
@@ -65,11 +65,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateMemberRequest body = new CreateMemberRequest(); // CreateMemberRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateMemberRequest createMemberRequest = new CreateMemberRequest(); // CreateMemberRequest | 
 try {
-    CreateMemberResponse result = apiInstance.addMember(body, login, representing);
+    CreateMemberResponse result = apiInstance.addMember(login, representing, createMemberRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#addMember");
@@ -81,9 +81,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateMemberRequest**](CreateMemberRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createMemberRequest** | [**CreateMemberRequest**](CreateMemberRequest.md)|  | [optional]
 
 ### Return type
 
@@ -95,12 +95,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="bid"></a>
 # **bid**
-> StandardNodeResponse bid(body, login, representing)
+> StandardNodeResponse bid(login, representing, createBidRequest)
 
 Create Bid
 
@@ -120,11 +120,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateBidRequest body = new CreateBidRequest(); // CreateBidRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateBidRequest createBidRequest = new CreateBidRequest(); // CreateBidRequest | 
 try {
-    StandardNodeResponse result = apiInstance.bid(body, login, representing);
+    StandardNodeResponse result = apiInstance.bid(login, representing, createBidRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#bid");
@@ -136,9 +136,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateBidRequest**](CreateBidRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createBidRequest** | [**CreateBidRequest**](CreateBidRequest.md)|  | [optional]
 
 ### Return type
 
@@ -150,12 +150,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createAlias"></a>
 # **createAlias**
-> CreateAliasResponse createAlias(body, login, representing)
+> CreateAliasResponse createAlias(login, representing, createAliasRequest)
 
 Create Alias
 
@@ -175,11 +175,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateAliasRequest body = new CreateAliasRequest(); // CreateAliasRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateAliasRequest createAliasRequest = new CreateAliasRequest(); // CreateAliasRequest | 
 try {
-    CreateAliasResponse result = apiInstance.createAlias(body, login, representing);
+    CreateAliasResponse result = apiInstance.createAlias(login, representing, createAliasRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createAlias");
@@ -191,9 +191,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateAliasRequest**](CreateAliasRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createAliasRequest** | [**CreateAliasRequest**](CreateAliasRequest.md)|  | [optional]
 
 ### Return type
 
@@ -205,12 +205,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createApplication"></a>
 # **createApplication**
-> CreateApplicationResponse createApplication(body, login, representing)
+> CreateApplicationResponse createApplication(login, representing, createApplicationRequest)
 
 Create Application
 
@@ -230,11 +230,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateApplicationRequest body = new CreateApplicationRequest(); // CreateApplicationRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateApplicationRequest createApplicationRequest = new CreateApplicationRequest(); // CreateApplicationRequest | 
 try {
-    CreateApplicationResponse result = apiInstance.createApplication(body, login, representing);
+    CreateApplicationResponse result = apiInstance.createApplication(login, representing, createApplicationRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createApplication");
@@ -246,9 +246,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateApplicationRequest**](CreateApplicationRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createApplicationRequest** | [**CreateApplicationRequest**](CreateApplicationRequest.md)|  | [optional]
 
 ### Return type
 
@@ -260,12 +260,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createDomain"></a>
 # **createDomain**
-> CreateDomainResponse createDomain(body, login, representing)
+> CreateDomainResponse createDomain(login, representing, createDomainRequest)
 
 Create Domain
 
@@ -285,11 +285,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateDomainRequest body = new CreateDomainRequest(); // CreateDomainRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateDomainRequest createDomainRequest = new CreateDomainRequest(); // CreateDomainRequest | 
 try {
-    CreateDomainResponse result = apiInstance.createDomain(body, login, representing);
+    CreateDomainResponse result = apiInstance.createDomain(login, representing, createDomainRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createDomain");
@@ -301,9 +301,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateDomainRequest**](CreateDomainRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createDomainRequest** | [**CreateDomainRequest**](CreateDomainRequest.md)|  | [optional]
 
 ### Return type
 
@@ -315,12 +315,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createEntity"></a>
 # **createEntity**
-> CreateEntityResponse createEntity(body, login, representing)
+> CreateEntityResponse createEntity(login, representing, createEntityRequest)
 
 Create Entity
 
@@ -340,11 +340,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateEntityRequest body = new CreateEntityRequest(); // CreateEntityRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateEntityRequest createEntityRequest = new CreateEntityRequest(); // CreateEntityRequest | 
 try {
-    CreateEntityResponse result = apiInstance.createEntity(body, login, representing);
+    CreateEntityResponse result = apiInstance.createEntity(login, representing, createEntityRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createEntity");
@@ -356,9 +356,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateEntityRequest**](CreateEntityRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createEntityRequest** | [**CreateEntityRequest**](CreateEntityRequest.md)|  | [optional]
 
 ### Return type
 
@@ -370,12 +370,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createField"></a>
 # **createField**
-> CreateFieldResponse createField(body, login, representing)
+> CreateFieldResponse createField(login, representing, createFieldRequest)
 
 Create Field
 
@@ -395,11 +395,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateFieldRequest body = new CreateFieldRequest(); // CreateFieldRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateFieldRequest createFieldRequest = new CreateFieldRequest(); // CreateFieldRequest | 
 try {
-    CreateFieldResponse result = apiInstance.createField(body, login, representing);
+    CreateFieldResponse result = apiInstance.createField(login, representing, createFieldRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createField");
@@ -411,9 +411,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateFieldRequest**](CreateFieldRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createFieldRequest** | [**CreateFieldRequest**](CreateFieldRequest.md)|  | [optional]
 
 ### Return type
 
@@ -425,12 +425,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createFilter"></a>
 # **createFilter**
-> CreateFilterResponse createFilter(body, login, representing)
+> CreateFilterResponse createFilter(login, representing, createFilterRequest)
 
 Create Filter
 
@@ -450,11 +450,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateFilterRequest body = new CreateFilterRequest(); // CreateFilterRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateFilterRequest createFilterRequest = new CreateFilterRequest(); // CreateFilterRequest | 
 try {
-    CreateFilterResponse result = apiInstance.createFilter(body, login, representing);
+    CreateFilterResponse result = apiInstance.createFilter(login, representing, createFilterRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createFilter");
@@ -466,9 +466,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateFilterRequest**](CreateFilterRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createFilterRequest** | [**CreateFilterRequest**](CreateFilterRequest.md)|  | [optional]
 
 ### Return type
 
@@ -480,12 +480,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createGroup"></a>
 # **createGroup**
-> CreateGroupResponse createGroup(body, login, representing)
+> CreateGroupResponse createGroup(login, representing, createGroupRequest)
 
 Create Group
 
@@ -505,11 +505,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateGroupRequest body = new CreateGroupRequest(); // CreateGroupRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateGroupRequest createGroupRequest = new CreateGroupRequest(); // CreateGroupRequest | 
 try {
-    CreateGroupResponse result = apiInstance.createGroup(body, login, representing);
+    CreateGroupResponse result = apiInstance.createGroup(login, representing, createGroupRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createGroup");
@@ -521,9 +521,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateGroupRequest**](CreateGroupRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createGroupRequest** | [**CreateGroupRequest**](CreateGroupRequest.md)|  | [optional]
 
 ### Return type
 
@@ -535,12 +535,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createInformation"></a>
 # **createInformation**
-> CreateInformationResponse createInformation(body, login, representing)
+> CreateInformationResponse createInformation(login, representing, createInformationRequest)
 
 Create Information
 
@@ -560,11 +560,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateInformationRequest body = new CreateInformationRequest(); // CreateInformationRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateInformationRequest createInformationRequest = new CreateInformationRequest(); // CreateInformationRequest | 
 try {
-    CreateInformationResponse result = apiInstance.createInformation(body, login, representing);
+    CreateInformationResponse result = apiInstance.createInformation(login, representing, createInformationRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createInformation");
@@ -576,9 +576,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateInformationRequest**](CreateInformationRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createInformationRequest** | [**CreateInformationRequest**](CreateInformationRequest.md)|  | [optional]
 
 ### Return type
 
@@ -590,12 +590,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createInterface"></a>
 # **createInterface**
-> CreateInterfaceResponse createInterface(body, login, representing)
+> CreateInterfaceResponse createInterface(login, representing, createInterfaceRequest)
 
 Create Interface
 
@@ -615,11 +615,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateInterfaceRequest body = new CreateInterfaceRequest(); // CreateInterfaceRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateInterfaceRequest createInterfaceRequest = new CreateInterfaceRequest(); // CreateInterfaceRequest | 
 try {
-    CreateInterfaceResponse result = apiInstance.createInterface(body, login, representing);
+    CreateInterfaceResponse result = apiInstance.createInterface(login, representing, createInterfaceRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createInterface");
@@ -631,9 +631,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateInterfaceRequest**](CreateInterfaceRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createInterfaceRequest** | [**CreateInterfaceRequest**](CreateInterfaceRequest.md)|  | [optional]
 
 ### Return type
 
@@ -645,12 +645,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createLabelList"></a>
 # **createLabelList**
-> CreateLabelListResponse createLabelList(body, login, representing)
+> CreateLabelListResponse createLabelList(login, representing, createLabelListRequest)
 
 Create Label List
 
@@ -670,11 +670,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateLabelListRequest body = new CreateLabelListRequest(); // CreateLabelListRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateLabelListRequest createLabelListRequest = new CreateLabelListRequest(); // CreateLabelListRequest | 
 try {
-    CreateLabelListResponse result = apiInstance.createLabelList(body, login, representing);
+    CreateLabelListResponse result = apiInstance.createLabelList(login, representing, createLabelListRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createLabelList");
@@ -686,9 +686,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateLabelListRequest**](CreateLabelListRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createLabelListRequest** | [**CreateLabelListRequest**](CreateLabelListRequest.md)|  | [optional]
 
 ### Return type
 
@@ -700,12 +700,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createLogin"></a>
 # **createLogin**
-> CreateLoginResponse createLogin(body, login, representing)
+> CreateLoginResponse createLogin(login, representing, createLoginRequest)
 
 Create Login
 
@@ -725,11 +725,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateLoginRequest body = new CreateLoginRequest(); // CreateLoginRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateLoginRequest createLoginRequest = new CreateLoginRequest(); // CreateLoginRequest | 
 try {
-    CreateLoginResponse result = apiInstance.createLogin(body, login, representing);
+    CreateLoginResponse result = apiInstance.createLogin(login, representing, createLoginRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createLogin");
@@ -741,9 +741,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateLoginRequest**](CreateLoginRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createLoginRequest** | [**CreateLoginRequest**](CreateLoginRequest.md)|  | [optional]
 
 ### Return type
 
@@ -755,12 +755,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createMirror"></a>
 # **createMirror**
-> CreateMirrorResponse createMirror(body, login, representing)
+> CreateMirrorResponse createMirror(login, representing, createMirrorRequest)
 
 Create Mirror
 
@@ -780,11 +780,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateMirrorRequest body = new CreateMirrorRequest(); // CreateMirrorRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateMirrorRequest createMirrorRequest = new CreateMirrorRequest(); // CreateMirrorRequest | 
 try {
-    CreateMirrorResponse result = apiInstance.createMirror(body, login, representing);
+    CreateMirrorResponse result = apiInstance.createMirror(login, representing, createMirrorRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createMirror");
@@ -796,9 +796,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateMirrorRequest**](CreateMirrorRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createMirrorRequest** | [**CreateMirrorRequest**](CreateMirrorRequest.md)|  | [optional]
 
 ### Return type
 
@@ -810,12 +810,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createPrice"></a>
 # **createPrice**
-> CreatePriceResponse createPrice(body, login, representing)
+> CreatePriceResponse createPrice(login, representing, createPriceRequest)
 
 Create Price
 
@@ -835,11 +835,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreatePriceRequest body = new CreatePriceRequest(); // CreatePriceRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreatePriceRequest createPriceRequest = new CreatePriceRequest(); // CreatePriceRequest | 
 try {
-    CreatePriceResponse result = apiInstance.createPrice(body, login, representing);
+    CreatePriceResponse result = apiInstance.createPrice(login, representing, createPriceRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createPrice");
@@ -851,9 +851,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreatePriceRequest**](CreatePriceRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createPriceRequest** | [**CreatePriceRequest**](CreatePriceRequest.md)|  | [optional]
 
 ### Return type
 
@@ -865,12 +865,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createScope"></a>
 # **createScope**
-> CreateScopeResponse createScope(body, login, representing)
+> CreateScopeResponse createScope(login, representing, createScopeRequest)
 
 Create Scope
 
@@ -890,11 +890,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateScopeRequest body = new CreateScopeRequest(); // CreateScopeRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateScopeRequest createScopeRequest = new CreateScopeRequest(); // CreateScopeRequest | 
 try {
-    CreateScopeResponse result = apiInstance.createScope(body, login, representing);
+    CreateScopeResponse result = apiInstance.createScope(login, representing, createScopeRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createScope");
@@ -906,9 +906,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateScopeRequest**](CreateScopeRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createScopeRequest** | [**CreateScopeRequest**](CreateScopeRequest.md)|  | [optional]
 
 ### Return type
 
@@ -920,12 +920,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createStatement"></a>
 # **createStatement**
-> AddStatementResponse createStatement(body, login, representing)
+> AddStatementResponse createStatement(login, representing, addStatementRequest)
 
 Create Statement
 
@@ -945,11 +945,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-AddStatementRequest body = new AddStatementRequest(); // AddStatementRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+AddStatementRequest addStatementRequest = new AddStatementRequest(); // AddStatementRequest | 
 try {
-    AddStatementResponse result = apiInstance.createStatement(body, login, representing);
+    AddStatementResponse result = apiInstance.createStatement(login, representing, addStatementRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createStatement");
@@ -961,9 +961,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddStatementRequest**](AddStatementRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **addStatementRequest** | [**AddStatementRequest**](AddStatementRequest.md)|  | [optional]
 
 ### Return type
 
@@ -975,12 +975,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="createTemplate"></a>
 # **createTemplate**
-> CreateTemplateResponse createTemplate(body, login, representing)
+> CreateTemplateResponse createTemplate(login, representing, createTemplateRequest)
 
 Create Template
 
@@ -1000,11 +1000,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateTemplateRequest body = new CreateTemplateRequest(); // CreateTemplateRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest(); // CreateTemplateRequest | 
 try {
-    CreateTemplateResponse result = apiInstance.createTemplate(body, login, representing);
+    CreateTemplateResponse result = apiInstance.createTemplate(login, representing, createTemplateRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#createTemplate");
@@ -1016,9 +1016,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateTemplateRequest**](CreateTemplateRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createTemplateRequest** | [**CreateTemplateRequest**](CreateTemplateRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1030,12 +1030,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="delete"></a>
 # **delete**
-> DeleteResponse delete(body, login, representing)
+> DeleteResponse delete(login, representing, deleteRequest)
 
 Deleting
 
@@ -1055,11 +1055,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-DeleteRequest body = new DeleteRequest(); // DeleteRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+DeleteRequest deleteRequest = new DeleteRequest(); // DeleteRequest | 
 try {
-    DeleteResponse result = apiInstance.delete(body, login, representing);
+    DeleteResponse result = apiInstance.delete(login, representing, deleteRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#delete");
@@ -1071,9 +1071,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DeleteRequest**](DeleteRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **deleteRequest** | [**DeleteRequest**](DeleteRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1085,12 +1085,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="deleteNode"></a>
 # **deleteNode**
-> StandardNodeResponse deleteNode(body, login, representing)
+> StandardNodeResponse deleteNode(login, representing, nodeIdRequest)
 
 Delete Node
 
@@ -1110,11 +1110,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-NodeIdRequest body = new NodeIdRequest(); // NodeIdRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+NodeIdRequest nodeIdRequest = new NodeIdRequest(); // NodeIdRequest | 
 try {
-    StandardNodeResponse result = apiInstance.deleteNode(body, login, representing);
+    StandardNodeResponse result = apiInstance.deleteNode(login, representing, nodeIdRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#deleteNode");
@@ -1126,9 +1126,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIdRequest**](NodeIdRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **nodeIdRequest** | [**NodeIdRequest**](NodeIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1140,12 +1140,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="describe"></a>
 # **describe**
-> DescribeResponse describe(body, login, representing)
+> DescribeResponse describe(login, representing, describeRequest)
 
 Describe
 
@@ -1165,11 +1165,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-DescribeRequest body = new DescribeRequest(); // DescribeRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+DescribeRequest describeRequest = new DescribeRequest(); // DescribeRequest | 
 try {
-    DescribeResponse result = apiInstance.describe(body, login, representing);
+    DescribeResponse result = apiInstance.describe(login, representing, describeRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#describe");
@@ -1181,9 +1181,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DescribeRequest**](DescribeRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **describeRequest** | [**DescribeRequest**](DescribeRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1195,12 +1195,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="history"></a>
 # **history**
-> NodeListing history(body, login, representing)
+> NodeListing history(login, representing, nodeIdRequest)
 
 History
 
@@ -1220,11 +1220,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-NodeIdRequest body = new NodeIdRequest(); // NodeIdRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+NodeIdRequest nodeIdRequest = new NodeIdRequest(); // NodeIdRequest | 
 try {
-    NodeListing result = apiInstance.history(body, login, representing);
+    NodeListing result = apiInstance.history(login, representing, nodeIdRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#history");
@@ -1236,9 +1236,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIdRequest**](NodeIdRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **nodeIdRequest** | [**NodeIdRequest**](NodeIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1250,12 +1250,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="label"></a>
 # **label**
-> AddLabelResponse label(body, login, representing)
+> AddLabelResponse label(login, representing, addLabelRequest)
 
 Label a Node
 
@@ -1275,11 +1275,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-AddLabelRequest body = new AddLabelRequest(); // AddLabelRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+AddLabelRequest addLabelRequest = new AddLabelRequest(); // AddLabelRequest | 
 try {
-    AddLabelResponse result = apiInstance.label(body, login, representing);
+    AddLabelResponse result = apiInstance.label(login, representing, addLabelRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#label");
@@ -1291,9 +1291,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AddLabelRequest**](AddLabelRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **addLabelRequest** | [**AddLabelRequest**](AddLabelRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1305,12 +1305,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="obliterate"></a>
 # **obliterate**
-> StandardNodeResponse obliterate(body, login, representing)
+> StandardNodeResponse obliterate(login, representing, nodeIdRequest)
 
 Obliterating Information Nodes
 
@@ -1330,11 +1330,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-NodeIdRequest body = new NodeIdRequest(); // NodeIdRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+NodeIdRequest nodeIdRequest = new NodeIdRequest(); // NodeIdRequest | 
 try {
-    StandardNodeResponse result = apiInstance.obliterate(body, login, representing);
+    StandardNodeResponse result = apiInstance.obliterate(login, representing, nodeIdRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#obliterate");
@@ -1346,9 +1346,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIdRequest**](NodeIdRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **nodeIdRequest** | [**NodeIdRequest**](NodeIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1360,12 +1360,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="permission"></a>
 # **permission**
-> CreatePermissionResponse permission(body, login, representing)
+> CreatePermissionResponse permission(login, representing, createPermissionRequest)
 
 Create Permission
 
@@ -1385,11 +1385,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreatePermissionRequest body = new CreatePermissionRequest(); // CreatePermissionRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreatePermissionRequest createPermissionRequest = new CreatePermissionRequest(); // CreatePermissionRequest | 
 try {
-    CreatePermissionResponse result = apiInstance.permission(body, login, representing);
+    CreatePermissionResponse result = apiInstance.permission(login, representing, createPermissionRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#permission");
@@ -1401,9 +1401,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreatePermissionRequest**](CreatePermissionRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createPermissionRequest** | [**CreatePermissionRequest**](CreatePermissionRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1415,12 +1415,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="read"></a>
 # **read**
-> ReadResponse read(body, login, representing)
+> ReadResponse read(login, representing, readRequest)
 
 Reading
 
@@ -1440,11 +1440,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-ReadRequest body = new ReadRequest(); // ReadRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+ReadRequest readRequest = new ReadRequest(); // ReadRequest | 
 try {
-    ReadResponse result = apiInstance.read(body, login, representing);
+    ReadResponse result = apiInstance.read(login, representing, readRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#read");
@@ -1456,9 +1456,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReadRequest**](ReadRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **readRequest** | [**ReadRequest**](ReadRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1470,12 +1470,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="readInformation"></a>
 # **readInformation**
-> ReadInformationResponse readInformation(body, login, representing)
+> ReadInformationResponse readInformation(login, representing, readInformationRequest)
 
 Read Information
 
@@ -1495,11 +1495,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-ReadInformationRequest body = new ReadInformationRequest(); // ReadInformationRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+ReadInformationRequest readInformationRequest = new ReadInformationRequest(); // ReadInformationRequest | 
 try {
-    ReadInformationResponse result = apiInstance.readInformation(body, login, representing);
+    ReadInformationResponse result = apiInstance.readInformation(login, representing, readInformationRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#readInformation");
@@ -1511,9 +1511,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReadInformationRequest**](ReadInformationRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **readInformationRequest** | [**ReadInformationRequest**](ReadInformationRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1525,12 +1525,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="replaceInformation"></a>
 # **replaceInformation**
-> Information replaceInformation(body, login, representing)
+> Information replaceInformation(login, representing, replaceFieldRequest)
 
 Replace
 
@@ -1550,11 +1550,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-ReplaceFieldRequest body = new ReplaceFieldRequest(); // ReplaceFieldRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+ReplaceFieldRequest replaceFieldRequest = new ReplaceFieldRequest(); // ReplaceFieldRequest | 
 try {
-    Information result = apiInstance.replaceInformation(body, login, representing);
+    Information result = apiInstance.replaceInformation(login, representing, replaceFieldRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#replaceInformation");
@@ -1566,9 +1566,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReplaceFieldRequest**](ReplaceFieldRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **replaceFieldRequest** | [**ReplaceFieldRequest**](ReplaceFieldRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1580,12 +1580,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="requestPermission"></a>
 # **requestPermission**
-> StandardNodeResponse requestPermission(body, login, representing)
+> StandardNodeResponse requestPermission(login, representing, nodeIdRequest)
 
 Request Permission
 
@@ -1605,11 +1605,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-NodeIdRequest body = new NodeIdRequest(); // NodeIdRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+NodeIdRequest nodeIdRequest = new NodeIdRequest(); // NodeIdRequest | 
 try {
-    StandardNodeResponse result = apiInstance.requestPermission(body, login, representing);
+    StandardNodeResponse result = apiInstance.requestPermission(login, representing, nodeIdRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#requestPermission");
@@ -1621,9 +1621,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NodeIdRequest**](NodeIdRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **nodeIdRequest** | [**NodeIdRequest**](NodeIdRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1635,12 +1635,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="resetLogin"></a>
 # **resetLogin**
-> ResetLoginResponse resetLogin(body, login, representing)
+> ResetLoginResponse resetLogin(login, representing, resetLoginCredentialsRequest)
 
 Changing Login Password
 
@@ -1660,11 +1660,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-ResetLoginCredentialsRequest body = new ResetLoginCredentialsRequest(); // ResetLoginCredentialsRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+ResetLoginCredentialsRequest resetLoginCredentialsRequest = new ResetLoginCredentialsRequest(); // ResetLoginCredentialsRequest | 
 try {
-    ResetLoginResponse result = apiInstance.resetLogin(body, login, representing);
+    ResetLoginResponse result = apiInstance.resetLogin(login, representing, resetLoginCredentialsRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#resetLogin");
@@ -1676,9 +1676,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ResetLoginCredentialsRequest**](ResetLoginCredentialsRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **resetLoginCredentialsRequest** | [**ResetLoginCredentialsRequest**](ResetLoginCredentialsRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1690,12 +1690,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="searchAlias"></a>
 # **searchAlias**
-> SearchAliasResponse searchAlias(body, login, representing)
+> SearchAliasResponse searchAlias(login, representing, searchAliasRequest)
 
 Search For Alias
 
@@ -1715,11 +1715,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-SearchAliasRequest body = new SearchAliasRequest(); // SearchAliasRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+SearchAliasRequest searchAliasRequest = new SearchAliasRequest(); // SearchAliasRequest | 
 try {
-    SearchAliasResponse result = apiInstance.searchAlias(body, login, representing);
+    SearchAliasResponse result = apiInstance.searchAlias(login, representing, searchAliasRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#searchAlias");
@@ -1731,9 +1731,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchAliasRequest**](SearchAliasRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **searchAliasRequest** | [**SearchAliasRequest**](SearchAliasRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1745,12 +1745,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="searchEntity"></a>
 # **searchEntity**
-> EntityListResponse searchEntity(body, login, representing)
+> EntityListResponse searchEntity(login, representing, searchEntityRequest)
 
 Search For Entity
 
@@ -1770,11 +1770,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-SearchEntityRequest body = new SearchEntityRequest(); // SearchEntityRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+SearchEntityRequest searchEntityRequest = new SearchEntityRequest(); // SearchEntityRequest | 
 try {
-    EntityListResponse result = apiInstance.searchEntity(body, login, representing);
+    EntityListResponse result = apiInstance.searchEntity(login, representing, searchEntityRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#searchEntity");
@@ -1786,9 +1786,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SearchEntityRequest**](SearchEntityRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **searchEntityRequest** | [**SearchEntityRequest**](SearchEntityRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1800,12 +1800,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="settleAccount"></a>
 # **settleAccount**
-> SettleAccountResponse settleAccount(body, login, representing)
+> SettleAccountResponse settleAccount(login, representing, settleAccountRequest)
 
 Settle Account
 
@@ -1825,11 +1825,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-SettleAccountRequest body = new SettleAccountRequest(); // SettleAccountRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+SettleAccountRequest settleAccountRequest = new SettleAccountRequest(); // SettleAccountRequest | 
 try {
-    SettleAccountResponse result = apiInstance.settleAccount(body, login, representing);
+    SettleAccountResponse result = apiInstance.settleAccount(login, representing, settleAccountRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#settleAccount");
@@ -1841,9 +1841,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SettleAccountRequest**](SettleAccountRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **settleAccountRequest** | [**SettleAccountRequest**](SettleAccountRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1855,12 +1855,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateApplication"></a>
 # **updateApplication**
-> UpdateApplicationResponse updateApplication(body, login, representing)
+> UpdateApplicationResponse updateApplication(login, representing, updateApplicationRequest)
 
 Resetting Application Secret
 
@@ -1880,11 +1880,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-UpdateApplicationRequest body = new UpdateApplicationRequest(); // UpdateApplicationRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+UpdateApplicationRequest updateApplicationRequest = new UpdateApplicationRequest(); // UpdateApplicationRequest | 
 try {
-    UpdateApplicationResponse result = apiInstance.updateApplication(body, login, representing);
+    UpdateApplicationResponse result = apiInstance.updateApplication(login, representing, updateApplicationRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#updateApplication");
@@ -1896,9 +1896,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateApplicationRequest**](UpdateApplicationRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **updateApplicationRequest** | [**UpdateApplicationRequest**](UpdateApplicationRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1910,12 +1910,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="updateStatus"></a>
 # **updateStatus**
-> StandardNodeResponse updateStatus(body, login, representing)
+> StandardNodeResponse updateStatus(login, representing, updateStatusRequest)
 
 Enabling/Disabling Nodes
 
@@ -1935,11 +1935,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-UpdateStatusRequest body = new UpdateStatusRequest(); // UpdateStatusRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+UpdateStatusRequest updateStatusRequest = new UpdateStatusRequest(); // UpdateStatusRequest | 
 try {
-    StandardNodeResponse result = apiInstance.updateStatus(body, login, representing);
+    StandardNodeResponse result = apiInstance.updateStatus(login, representing, updateStatusRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#updateStatus");
@@ -1951,9 +1951,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdateStatusRequest**](UpdateStatusRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **updateStatusRequest** | [**UpdateStatusRequest**](UpdateStatusRequest.md)|  | [optional]
 
 ### Return type
 
@@ -1965,12 +1965,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="watch"></a>
 # **watch**
-> CreateWatchResponse watch(body, login, representing)
+> CreateWatchResponse watch(login, representing, createWatchRequest)
 
 Create Watch Trigger
 
@@ -1990,11 +1990,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-CreateWatchRequest body = new CreateWatchRequest(); // CreateWatchRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+CreateWatchRequest createWatchRequest = new CreateWatchRequest(); // CreateWatchRequest | 
 try {
-    CreateWatchResponse result = apiInstance.watch(body, login, representing);
+    CreateWatchResponse result = apiInstance.watch(login, representing, createWatchRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#watch");
@@ -2006,9 +2006,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateWatchRequest**](CreateWatchRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **createWatchRequest** | [**CreateWatchRequest**](CreateWatchRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2020,12 +2020,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 <a name="write"></a>
 # **write**
-> WriteResponse write(body, login, representing)
+> WriteResponse write(login, representing, writeRequest)
 
 Writing by Template
 
@@ -2045,11 +2045,11 @@ OAuth OAuth2 = (OAuth) defaultClient.getAuthentication("OAuth2");
 OAuth2.setAccessToken("YOUR ACCESS TOKEN");
 
 FactsApi apiInstance = new FactsApi();
-WriteRequest body = new WriteRequest(); // WriteRequest | 
 String login = "login_example"; // String | 
 String representing = "representing_example"; // String | 
+WriteRequest writeRequest = new WriteRequest(); // WriteRequest | 
 try {
-    WriteResponse result = apiInstance.write(body, login, representing);
+    WriteResponse result = apiInstance.write(login, representing, writeRequest);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling FactsApi#write");
@@ -2061,9 +2061,9 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**WriteRequest**](WriteRequest.md)|  |
  **login** | **String**|  | [optional]
  **representing** | **String**|  | [optional]
+ **writeRequest** | [**WriteRequest**](WriteRequest.md)|  | [optional]
 
 ### Return type
 
@@ -2075,6 +2075,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 

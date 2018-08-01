@@ -1,10 +1,17 @@
 
+
 # BaseRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [BaseRequest](BaseRequest.md)

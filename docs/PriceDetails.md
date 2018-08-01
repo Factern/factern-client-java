@@ -1,10 +1,17 @@
 
+
 # PriceDetails
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+value | [BigDecimal](BigDecimal.md) | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [PriceDetails](PriceDetails.md)
