@@ -101,16 +101,16 @@ public class FactsApiTest {
         final CreateGroupRequest createGroupRequest = new CreateGroupRequest()
             .addMemberIdsItem(entityId1)
             .addMemberIdsItem(entityId2)
-            .memberFactType("Entity")
-            .name("grp" + new Random().nextInt(Integer.MAX_VALUE));
-        final String groupId = api.createGroup(createGroupRequest, loginId, loginId).getNodeId();
+            .memberFactType("Entity");
+        createGroupRequest.name("grp" + new Random().nextInt(Integer.MAX_VALUE));
+        final String groupId = api.createGroup(loginId, loginId, createGroupRequest).getNodeId();
 
         final String entityId3 = createEntity().getNodeId();
 
-        final CreateMemberRequest createMemberRequest = new CreateMemberRequest()
-            .parentId(groupId)
-            .memberId(entityId3);
-        assertNotNull(api.addMember(createMemberRequest, loginId, loginId));
+        final CreateMemberRequest createMemberRequest = new CreateMemberRequest();
+        createMemberRequest.parentId(groupId);
+        createMemberRequest.memberId(entityId3);
+        assertNotNull(api.addMember(loginId, loginId, createMemberRequest));
     }
 
     /**
@@ -127,11 +127,11 @@ public class FactsApiTest {
                 .addActionsItem(PermissionAction.READ))
             .priceDetails(new PriceDetails().value(new BigDecimal(100)));
 
-        final CreatePriceResponse createPriceResponse = api.createPrice(createPriceRequest, loginId, loginId);
+        final CreatePriceResponse createPriceResponse = api.createPrice(loginId, loginId, createPriceRequest);
 
         final CreateBidRequest createBidRequest = new CreateBidRequest()
             .priceId(createPriceResponse.getNodeId());
-        assertNotNull(api.bid(createBidRequest, loginId, loginId));
+        assertNotNull(api.bid(loginId, loginId, createBidRequest));
     }
 
     /**
@@ -140,10 +140,10 @@ public class FactsApiTest {
     @Test
     public void createAliasTest() throws ApiException {
         final String entityId = createEntity().getNodeId();
-        assertNotNull(api.createAlias(new CreateAliasRequest()
+        assertNotNull(api.createAlias(loginId, loginId, new CreateAliasRequest()
             .local(false)
             .name("alias" + new Random().nextInt(Integer.MAX_VALUE))
-            .targetNodeId(entityId), loginId, loginId));
+            .targetNodeId(entityId)));
     }
 
     /**
@@ -151,10 +151,10 @@ public class FactsApiTest {
      */
     @Test
     public void createApplicationTest() throws ApiException {
-        final CreateApplicationRequest createApplicationRequest = new CreateApplicationRequest()
-            .name("app" + new Random().nextInt(Integer.MAX_VALUE));
+        final CreateApplicationRequest createApplicationRequest = new CreateApplicationRequest();
+        createApplicationRequest.name("app" + new Random().nextInt(Integer.MAX_VALUE));
 
-        assertNotNull(api.createApplication(createApplicationRequest, loginId, loginId));
+        assertNotNull(api.createApplication(loginId, loginId, createApplicationRequest));
     }
 
     /**
@@ -162,13 +162,13 @@ public class FactsApiTest {
      */
     @Test
     public void createDomainTest() throws ApiException {
-        final CreateDomainRequest createDomainRequest = new CreateDomainRequest()
-            .addFact(new ApiEndpoint().url("https://example.com/add"))
-            .getFact(new ApiEndpoint().url("https://example.com/get"))
-            .queryFacts(new ApiEndpoint().url("https://example.com/query"))
-            .name("domain" + new Random().nextInt(Integer.MAX_VALUE));
+        final CreateDomainRequest createDomainRequest = new CreateDomainRequest();
+        createDomainRequest.addFact(new ApiEndpoint().url("https://example.com/add"));
+        createDomainRequest.getFact(new ApiEndpoint().url("https://example.com/get"));
+        createDomainRequest.queryFacts(new ApiEndpoint().url("https://example.com/query"));
+        createDomainRequest.name("domain" + new Random().nextInt(Integer.MAX_VALUE));
 
-        assertNotNull(api.createDomain(createDomainRequest, loginId, loginId));
+        assertNotNull(api.createDomain(loginId, loginId, createDomainRequest));
     }
 
     /**
@@ -193,13 +193,14 @@ public class FactsApiTest {
     @Test
     public void createFilterTest() throws ApiException {
         final String entityId = createEntity().getNodeId();
-        final CreateFilterRequest createFilterRequest = new CreateFilterRequest()
-            .name("filter" + new Random().nextInt(Integer.MAX_VALUE))
-            .addStatementsItem(new FilterStatement()
+        final CreateFilterRequest createFilterRequest = new CreateFilterRequest();
+        createFilterRequest.addStatementsItem(new FilterStatement()
                 .field(FilterStatement.FieldEnum.ACTIONQUALIFIER)
                 .addArgumentsItem(entityId));
+        createFilterRequest.name("filter" + new Random().nextInt(Integer.MAX_VALUE));
 
-        assertNotNull(api.createFilter(createFilterRequest, loginId, loginId));
+
+        assertNotNull(api.createFilter(loginId, loginId, createFilterRequest));
     }
 
     /**
@@ -210,12 +211,12 @@ public class FactsApiTest {
         final String entityId1 = createEntity().getNodeId();
         final String entityId2 = createEntity().getNodeId();
 
-        final CreateGroupRequest request = new CreateGroupRequest()
-            .addMemberIdsItem(entityId1)
-            .addMemberIdsItem(entityId2)
-            .memberFactType("Entity")
-            .name("grp" + new Random().nextInt(Integer.MAX_VALUE));
-        assertNotNull(api.createGroup(request, loginId, loginId));
+        final CreateGroupRequest request = new CreateGroupRequest();
+        request.addMemberIdsItem(entityId1);
+        request.addMemberIdsItem(entityId2);
+        request.memberFactType("Entity");
+        request.name("grp" + new Random().nextInt(Integer.MAX_VALUE));
+        assertNotNull(api.createGroup(loginId, loginId, request));
     }
 
     /**
@@ -228,12 +229,12 @@ public class FactsApiTest {
         final String fieldId = createField().getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(entityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(entityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        assertNotNull(api.createInformation(createInfoRequest, loginId, loginId));
+        assertNotNull(api.createInformation(loginId, loginId, createInfoRequest));
     }
 
     /**
@@ -241,13 +242,13 @@ public class FactsApiTest {
      */
     @Test
     public void createInterfaceTest() throws ApiException {
-        final CreateInterfaceRequest createInterfaceRequest = new CreateInterfaceRequest()
-            .addData(new ApiEndpoint().url("https://example.com/add"))
-            .getData(new ApiEndpoint().url("https://example.com/get"))
-            .deleteData(new ApiEndpoint().url("https://example.com/delete"))
-            .name("interface" + new Random().nextInt(Integer.MAX_VALUE));
+        final CreateInterfaceRequest createInterfaceRequest = new CreateInterfaceRequest();
+        createInterfaceRequest.addData(new ApiEndpoint().url("https://example.com/add"));
+        createInterfaceRequest.getData(new ApiEndpoint().url("https://example.com/get"));
+        createInterfaceRequest.deleteData(new ApiEndpoint().url("https://example.com/delete"));
+        createInterfaceRequest.name("interface" + new Random().nextInt(Integer.MAX_VALUE));
 
-        assertNotNull(api.createInterface(createInterfaceRequest, loginId, loginId));
+        assertNotNull(api.createInterface(loginId, loginId, createInterfaceRequest));
     }
 
     /**
@@ -255,12 +256,12 @@ public class FactsApiTest {
      */
     @Test
     public void createLabelListTest() throws ApiException {
-        final CreateLabelListRequest createLabelListRequest = new CreateLabelListRequest()
-            .name("labellist" + new Random().nextInt(Integer.MAX_VALUE))
-            .addMembersItem("abc")
-            .addMembersItem("def");
+        final CreateLabelListRequest createLabelListRequest = new CreateLabelListRequest();
+        createLabelListRequest.name("labellist" + new Random().nextInt(Integer.MAX_VALUE));
+        createLabelListRequest.addMembersItem("abc");
+        createLabelListRequest.addMembersItem("def");
 
-        assertNotNull(api.createLabelList(createLabelListRequest, loginId, loginId));
+        assertNotNull(api.createLabelList(loginId, loginId, createLabelListRequest));
     }
 
     /**
@@ -272,7 +273,7 @@ public class FactsApiTest {
         final CreateLoginRequest createLoginRequest = new CreateLoginRequest()
             .email("swhite+" + new Random().nextInt(Integer.MAX_VALUE) + "@finovertech.com");
 
-        assertNotNull(api.createLogin(createLoginRequest, loginId, loginId));
+        assertNotNull(api.createLogin(loginId, loginId, createLoginRequest));
     }
 
     /**
@@ -285,24 +286,24 @@ public class FactsApiTest {
         final String fieldId = createField("field" + new Random().nextInt(Integer.MAX_VALUE), true).getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(srcEntityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(srcEntityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest()
-            .name("template" + new Random().nextInt(Integer.MAX_VALUE))
-            .addMemberIdsItem(fieldId);
-        final String templateId = api.createTemplate(createTemplateRequest, loginId, loginId).getNodeId();
+        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest();
+        createTemplateRequest.name("template" + new Random().nextInt(Integer.MAX_VALUE));
+        createTemplateRequest.addMemberIdsItem(fieldId);
+        final String templateId = api.createTemplate(loginId, loginId, createTemplateRequest).getNodeId();
 
-        api.createInformation(createInfoRequest, loginId, loginId);
+        api.createInformation(loginId, loginId, createInfoRequest);
 
         final CreateMirrorRequest createMirrorRequest = new CreateMirrorRequest()
             .sourceNodeId(srcEntityId)
             .destinationNodeId(targetEntityId)
             .templateId(templateId);
 
-        assertNotNull(api.createMirror(createMirrorRequest, loginId, loginId));
+        assertNotNull(api.createMirror(loginId, loginId, createMirrorRequest));
     }
 
     /**
@@ -319,7 +320,7 @@ public class FactsApiTest {
                 .addActionsItem(PermissionAction.READ))
             .priceDetails(new PriceDetails().value(new BigDecimal(100)));
 
-        assertNotNull(api.createPrice(createPriceRequest, loginId, loginId));
+        assertNotNull(api.createPrice(loginId, loginId, createPriceRequest));
     }
 
     /**
@@ -329,16 +330,16 @@ public class FactsApiTest {
     public void createScopeTest() throws ApiException {
         final String fieldId1 = createField().getNodeId();
         final String fieldId2 = createField().getNodeId();
-        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest()
-            .name("template" + new Random().nextInt(Integer.MAX_VALUE))
-            .addMemberIdsItem(fieldId1)
-            .addMemberIdsItem(fieldId2);
-        final String templateId = api.createTemplate(createTemplateRequest, loginId, loginId).getNodeId();
+        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest();
+        createTemplateRequest.name("template" + new Random().nextInt(Integer.MAX_VALUE));
+        createTemplateRequest.addMemberIdsItem(fieldId1);
+        createTemplateRequest.addMemberIdsItem(fieldId2);
+        final String templateId = api.createTemplate(loginId, loginId, createTemplateRequest).getNodeId();
 
-        final CreateScopeRequest createScopeRequest = new CreateScopeRequest()
-            .name("scope" + new Random().nextInt(Integer.MAX_VALUE))
-            .addTemplateIdsItem(templateId);
-        assertNotNull(api.createScope(createScopeRequest, loginId, loginId));
+        final CreateScopeRequest createScopeRequest = new CreateScopeRequest();
+        createScopeRequest.name("scope" + new Random().nextInt(Integer.MAX_VALUE));
+        createScopeRequest.addTemplateIdsItem(templateId);
+        assertNotNull(api.createScope(loginId, loginId, createScopeRequest));
     }
 
     /**
@@ -346,29 +347,29 @@ public class FactsApiTest {
      */
     @Test
     public void createStatementTest() throws ApiException {
-        final CreateApplicationRequest createApplicationRequest = new CreateApplicationRequest()
-            .name("app" + new Random().nextInt(Integer.MAX_VALUE));
+        final CreateApplicationRequest createApplicationRequest = new CreateApplicationRequest();
+        createApplicationRequest.name("app" + new Random().nextInt(Integer.MAX_VALUE));
 
-        final String appId = api.createApplication(createApplicationRequest, loginId, loginId).getNodeId();
+        final String appId = api.createApplication(loginId, loginId, createApplicationRequest).getNodeId();
 
         final String fieldId1 = createField().getNodeId();
         final String fieldId2 = createField().getNodeId();
-        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest()
-            .name("template" + new Random().nextInt(Integer.MAX_VALUE))
-            .addMemberIdsItem(fieldId1)
-            .addMemberIdsItem(fieldId2);
-        final String templateId = api.createTemplate(createTemplateRequest, loginId, loginId).getNodeId();
+        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest();
+        createTemplateRequest.name("template" + new Random().nextInt(Integer.MAX_VALUE));
+        createTemplateRequest.addMemberIdsItem(fieldId1);
+        createTemplateRequest.addMemberIdsItem(fieldId2);
+        final String templateId = api.createTemplate(loginId, loginId, createTemplateRequest).getNodeId();
 
-        final CreateScopeRequest createScopeRequest = new CreateScopeRequest()
-            .name("scope" + new Random().nextInt(Integer.MAX_VALUE))
-            .addTemplateIdsItem(templateId);
-        final String scopeId = api.createScope(createScopeRequest, loginId, loginId).getNodeId();
+        final CreateScopeRequest createScopeRequest = new CreateScopeRequest();
+        createScopeRequest.name("scope" + new Random().nextInt(Integer.MAX_VALUE));
+        createScopeRequest.addTemplateIdsItem(templateId);
+        final String scopeId = api.createScope(loginId, loginId, createScopeRequest).getNodeId();
 
         final AddStatementRequest addStatementRequest = new AddStatementRequest()
             .targetNodeId(appId)
             .actionId("frn:predicate:factern:requiresScope")
             .actionQualifierId(scopeId);
-        assertNotNull(api.createStatement(addStatementRequest, loginId, loginId));
+        assertNotNull(api.createStatement(loginId, loginId, addStatementRequest));
     }
 
     /**
@@ -378,11 +379,11 @@ public class FactsApiTest {
     public void createTemplateTest() throws ApiException {
         final String fieldId1 = createField().getNodeId();
         final String fieldId2 = createField().getNodeId();
-        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest()
-            .name("template" + new Random().nextInt(Integer.MAX_VALUE))
-            .addMemberIdsItem(fieldId1)
-            .addMemberIdsItem(fieldId2);
-        assertNotNull(api.createTemplate(createTemplateRequest, loginId, loginId));
+        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest();
+        createTemplateRequest.name("template" + new Random().nextInt(Integer.MAX_VALUE));
+        createTemplateRequest.addMemberIdsItem(fieldId1);
+        createTemplateRequest.addMemberIdsItem(fieldId2);
+        assertNotNull(api.createTemplate(loginId, loginId, createTemplateRequest));
     }
 
     /**
@@ -392,7 +393,7 @@ public class FactsApiTest {
     public void deleteNodeTest() throws ApiException {
         final String entityId = createEntity().getNodeId();
 
-        assertNotNull(api.deleteNode(new NodeIdRequest().nodeId(entityId), loginId, loginId));
+        assertNotNull(api.deleteNode(loginId, loginId, new NodeIdRequest().nodeId(entityId)));
     }
 
     /**
@@ -404,14 +405,14 @@ public class FactsApiTest {
         final String fieldId = createField().getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(entityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(entityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        final CreateInformationResponse createInfoResponse = api.createInformation(createInfoRequest, loginId, loginId);
+        final CreateInformationResponse createInfoResponse = api.createInformation(loginId, loginId, createInfoRequest);
 
-        assertNotNull(api.delete(new DeleteRequest().nodeId(entityId).addTemplateItem(fieldId), loginId, loginId));
+        assertNotNull(api.delete(loginId, loginId, new DeleteRequest().nodeId(entityId).addTemplateItem(fieldId)));
     }
 
     /**
@@ -421,7 +422,7 @@ public class FactsApiTest {
     public void describeTest() throws ApiException {
         final String entityId = createEntity().getNodeId();
 
-        final DescribeResponse resp = api.describe(new DescribeRequest().nodeId(entityId), loginId, loginId);
+        final DescribeResponse resp = api.describe(loginId, loginId, new DescribeRequest().nodeId(entityId));
         final NodeListing nl = resp.getChildren();
         assertNotNull(nl);
         final List<StandardNode> l = nl.getNodes();
@@ -442,7 +443,7 @@ public class FactsApiTest {
     public void historyTest() throws ApiException {
         final String entityId = createEntity().getNodeId();
 
-        assertNotNull(api.history(new NodeIdRequest().nodeId(entityId), loginId, loginId));
+        assertNotNull(api.history(loginId, loginId, new NodeIdRequest().nodeId(entityId)));
     }
 
     /**
@@ -450,12 +451,12 @@ public class FactsApiTest {
      */
     @Test
     public void labelTest() throws ApiException {
-        final CreateLabelListRequest createLabelListRequest = new CreateLabelListRequest()
-            .name("labellist" + new Random().nextInt(Integer.MAX_VALUE))
-            .addMembersItem("abc")
-            .addMembersItem("def");
+        final CreateLabelListRequest createLabelListRequest = new CreateLabelListRequest();
+        createLabelListRequest.name("labellist" + new Random().nextInt(Integer.MAX_VALUE));
+        createLabelListRequest.addMembersItem("abc");
+        createLabelListRequest.addMembersItem("def");
 
-        final LabelListMember labelNode = api.createLabelList(createLabelListRequest, loginId, loginId).getMembers()
+        final LabelListMember labelNode = api.createLabelList(loginId, loginId, createLabelListRequest).getMembers()
             .get(0);
 
         final String entityId = createEntity().getNodeId();
@@ -464,7 +465,7 @@ public class FactsApiTest {
             .targetNodeId(entityId)
             .labelId(labelNode.getNodeId());
 
-        assertNotNull(api.label(addLabelRequest, loginId, loginId));
+        assertNotNull(api.label(loginId, loginId, addLabelRequest));
     }
 
     /**
@@ -476,14 +477,14 @@ public class FactsApiTest {
         final String fieldId = createField().getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(entityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(entityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        final CreateInformationResponse createInfoResponse = api.createInformation(createInfoRequest, loginId, loginId);
+        final CreateInformationResponse createInfoResponse = api.createInformation(loginId, loginId, createInfoRequest);
 
-        assertNotNull(api.obliterate(new NodeIdRequest().nodeId(createInfoResponse.getNodeId()), loginId, loginId));
+        assertNotNull(api.obliterate(loginId, loginId, new NodeIdRequest().nodeId(createInfoResponse.getNodeId())));
     }
 
     /**
@@ -498,7 +499,7 @@ public class FactsApiTest {
             .policy(new PermissionPolicyDocument()
                 .effect(PermissionEffect.ALLOW)
                 .addActionsItem(PermissionAction.READ));
-        assertNotNull(api.permission(createPermissionRequest, loginId, loginId));
+        assertNotNull(api.permission(loginId, loginId, createPermissionRequest));
     }
 
     /**
@@ -510,14 +511,14 @@ public class FactsApiTest {
         final String fieldId = createField().getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(entityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(entityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        final CreateInformationResponse createInfoResponse = api.createInformation(createInfoRequest, loginId, loginId);
+        final CreateInformationResponse createInfoResponse = api.createInformation(loginId, loginId, createInfoRequest);
 
-        assertNotNull(api.read(new ReadRequest().nodeId(entityId).addTemplateItem(fieldId), loginId, loginId));
+        assertNotNull(api.read(loginId, loginId, new ReadRequest().nodeId(entityId).addTemplateItem(fieldId)));
     }
 
     /**
@@ -529,16 +530,16 @@ public class FactsApiTest {
         final String fieldId = createField().getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(entityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(entityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        final CreateInformationResponse createInfoResponse = api.createInformation(createInfoRequest, loginId, loginId);
+        final CreateInformationResponse createInfoResponse = api.createInformation(loginId, loginId, createInfoRequest);
 
-        assertNotNull(api.replaceInformation(new ReplaceFieldRequest()
+        assertNotNull(api.replaceInformation(loginId, loginId, new ReplaceFieldRequest()
             .nodeId(createInfoResponse.getNodeId())
-            .data("data" + new Random().nextInt(Integer.MAX_VALUE)), loginId, loginId));
+            .data("data" + new Random().nextInt(Integer.MAX_VALUE))));
     }
 
     /**
@@ -549,11 +550,11 @@ public class FactsApiTest {
     public void requestPermissionTest() throws ApiException {
         final String entityId = createEntity().getNodeId();
 
-        final CreateInterfaceRequest createInterfaceRequest = new CreateInterfaceRequest()
-            .addData(new ApiEndpoint().url("https://example.com/add"))
-            .name("interface" + new Random().nextInt(Integer.MAX_VALUE));
+        final CreateInterfaceRequest createInterfaceRequest = new CreateInterfaceRequest();
+        createInterfaceRequest.addData(new ApiEndpoint().url("https://example.com/add"));
+        createInterfaceRequest.name("interface" + new Random().nextInt(Integer.MAX_VALUE));
 
-        final String interfaceId = api.createInterface(createInterfaceRequest, loginId, loginId).getNodeId();
+        final String interfaceId = api.createInterface(loginId, loginId, createInterfaceRequest).getNodeId();
 
         final CreatePermissionRequest createPermissionRequest = new CreatePermissionRequest()
             .targetNodeId(entityId)
@@ -561,11 +562,11 @@ public class FactsApiTest {
                 .requestInterfaceId(interfaceId)
                 .effect(PermissionEffect.ALLOW)
                 .addActionsItem(PermissionAction.READ));
-        assertNotNull(api.permission(createPermissionRequest, loginId, loginId));
+        assertNotNull(api.permission(loginId, loginId, createPermissionRequest));
 
         final NodeIdRequest nodeIdRequest = new NodeIdRequest()
             .nodeId(entityId);
-        assertNotNull(api.requestPermission(nodeIdRequest, loginId, loginId));
+        assertNotNull(api.requestPermission(loginId, loginId, nodeIdRequest));
     }
 
     /**
@@ -573,14 +574,14 @@ public class FactsApiTest {
      */
     @Test
     public void updateApplicationTest() throws ApiException {
-        final CreateApplicationRequest createApplicationRequest = new CreateApplicationRequest()
-            .name("app" + new Random().nextInt(Integer.MAX_VALUE));
+        final CreateApplicationRequest createApplicationRequest = new CreateApplicationRequest();
+        createApplicationRequest.name("app" + new Random().nextInt(Integer.MAX_VALUE));
 
-        final String appId = api.createApplication(createApplicationRequest, loginId, loginId).getNodeId();
+        final String appId = api.createApplication(loginId, loginId, createApplicationRequest).getNodeId();
 
         final UpdateApplicationRequest updateApplicationRequest = new UpdateApplicationRequest()
             .nodeId(appId);
-        assertNotNull(api.updateApplication(updateApplicationRequest, loginId, loginId));
+        assertNotNull(api.updateApplication(loginId, loginId, updateApplicationRequest));
     }
 
     /**
@@ -594,7 +595,7 @@ public class FactsApiTest {
             .password(pwd)
             .email("swhite+" + new Random().nextInt(Integer.MAX_VALUE) + "@finovertech.com");
 
-        final String createLoginId = api.createLogin(createLoginRequest, loginId, loginId)
+        final String createLoginId = api.createLogin(loginId, loginId, createLoginRequest)
             .getNodeId();
 
         final String newPwd = "pwd" + new Random().nextInt(Integer.MAX_VALUE);
@@ -602,7 +603,7 @@ public class FactsApiTest {
             .nodeId(createLoginId)
             .oldPassword(pwd)
             .newPassword(newPwd);
-        assertNotNull(api.resetLogin(resetLoginCredentialsRequest, loginId, loginId));
+        assertNotNull(api.resetLogin(loginId, loginId, resetLoginCredentialsRequest));
     }
 
     /**
@@ -611,12 +612,12 @@ public class FactsApiTest {
     @Test
     public void searchAliasTest() throws ApiException {
         final String entityId = createEntity().getNodeId();
-        assertNotNull(api.createAlias(new CreateAliasRequest()
+        assertNotNull(api.createAlias(loginId, loginId, new CreateAliasRequest()
             .local(false)
             .name("alias" + new Random().nextInt(Integer.MAX_VALUE))
-            .targetNodeId(entityId), loginId, loginId));
-        assertNotNull(api.searchAlias(new SearchAliasRequest()
-            .name("alias" + new Random().nextInt(Integer.MAX_VALUE)), loginId, loginId));
+            .targetNodeId(entityId)));
+        assertNotNull(api.searchAlias(loginId, loginId, new SearchAliasRequest()
+            .name("alias" + new Random().nextInt(Integer.MAX_VALUE))));
     }
 
     /**
@@ -628,17 +629,17 @@ public class FactsApiTest {
         final String fieldId = createField().getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(entityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(entityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        assertNotNull(api.createInformation(createInfoRequest, loginId, loginId));
+        assertNotNull(api.createInformation(loginId, loginId, createInfoRequest));
 
-        assertNotNull(api.searchEntity(new SearchEntityRequest()
+        assertNotNull(api.searchEntity(loginId, loginId, new SearchEntityRequest()
             .operator(SearchEntityRequest.OperatorEnum.EQUALS)
             .term(data)
-            .fieldId(fieldId), loginId, loginId));
+            .fieldId(fieldId)));
 
 
         // search entity with elasticsearch
@@ -654,9 +655,9 @@ public class FactsApiTest {
         final JsonObject query = new JsonObject();
         query.add("bool", bool);
 
-        assertNotNull(api.searchEntity(new SearchEntityRequest()
+        assertNotNull(api.searchEntity(loginId, loginId, new SearchEntityRequest()
             .operator(SearchEntityRequest.OperatorEnum.ELASTICSEARCH)
-            .query(query), loginId, loginId));
+            .query(query)));
 
     }
 
@@ -668,7 +669,7 @@ public class FactsApiTest {
     public void settleAccountTest() throws ApiException {
         final SettleAccountRequest settleAccountRequest = new SettleAccountRequest()
             .tokenPayment(new TokenPayment().value("123"));
-        assertNotNull(api.settleAccount(settleAccountRequest, loginId, loginId));
+        assertNotNull(api.settleAccount(loginId, loginId, settleAccountRequest));
     }
 
     /**
@@ -681,29 +682,29 @@ public class FactsApiTest {
         final String fieldId = createField("field" + new Random().nextInt(Integer.MAX_VALUE), true).getNodeId();
         final String data = "data" + new Random().nextInt(Integer.MAX_VALUE);
 
-        final CreateInformationRequest createInfoRequest = new CreateInformationRequest()
-            .parentId(srcEntityId)
-            .fieldId(fieldId)
-            .data(data);
+        final CreateInformationRequest createInfoRequest = new CreateInformationRequest();
+        createInfoRequest.parentId(srcEntityId);
+        createInfoRequest.fieldId(fieldId);
+        createInfoRequest.data(data);
 
-        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest()
-            .name("template" + new Random().nextInt(Integer.MAX_VALUE))
-            .addMemberIdsItem(fieldId);
-        final String templateId = api.createTemplate(createTemplateRequest, loginId, loginId).getNodeId();
+        final CreateTemplateRequest createTemplateRequest = new CreateTemplateRequest();
+        createTemplateRequest.name("template" + new Random().nextInt(Integer.MAX_VALUE));
+        createTemplateRequest.addMemberIdsItem(fieldId);
+        final String templateId = api.createTemplate(loginId, loginId, createTemplateRequest).getNodeId();
 
-        api.createInformation(createInfoRequest, loginId, loginId);
+        api.createInformation(loginId, loginId, createInfoRequest);
 
         final CreateMirrorRequest createMirrorRequest = new CreateMirrorRequest()
             .sourceNodeId(srcEntityId)
             .destinationNodeId(targetEntityId)
             .templateId(templateId);
 
-        final String mirrorId = api.createMirror(createMirrorRequest, loginId, loginId).getNodeId();
+        final String mirrorId = api.createMirror(loginId, loginId, createMirrorRequest).getNodeId();
 
-        final UpdateStatusRequest updateStatusRequest = new UpdateStatusRequest()
-            .status(UpdateStatusRequest.StatusEnum.DISABLED)
-            .nodeId(mirrorId);
-        assertNotNull(api.updateStatus(updateStatusRequest, loginId, loginId));
+        final UpdateStatusRequest updateStatusRequest = new UpdateStatusRequest();
+        updateStatusRequest.status(UpdateStatusRequest.StatusEnum.DISABLED);
+        updateStatusRequest.nodeId(mirrorId);
+        assertNotNull(api.updateStatus(loginId, loginId, updateStatusRequest));
     }
 
     /**
@@ -716,7 +717,7 @@ public class FactsApiTest {
         final CreateWatchRequest createWatchRequest = new CreateWatchRequest()
             .targetNodeId(entityId);
 
-        assertNotNull(api.watch(createWatchRequest, loginId, loginId));
+        assertNotNull(api.watch(loginId, loginId, createWatchRequest));
     }
 
     /**
@@ -733,7 +734,7 @@ public class FactsApiTest {
             .addTemplateItem(fieldId)
             .addValuesItem(data);
 
-        assertNotNull(api.write(writeRequest, loginId, loginId));
+        assertNotNull(api.write(loginId, loginId, writeRequest));
     }
 
     private CreateFieldResponse createField() throws ApiException {
@@ -741,18 +742,18 @@ public class FactsApiTest {
     }
 
     private CreateFieldResponse createField(final String name) throws ApiException {
-        final CreateFieldRequest request = new CreateFieldRequest()
-            .name(name);
+        final CreateFieldRequest request = new CreateFieldRequest();
+        request.name(name);
 
         return createField(name, false);
     }
 
     private CreateFieldResponse createField(final String name, final boolean uniqueByParent) throws ApiException {
-        final CreateFieldRequest request = new CreateFieldRequest()
-            .uniqueByParent(uniqueByParent)
-            .name(name);
+        final CreateFieldRequest request = new CreateFieldRequest();
+        request.uniqueByParent(uniqueByParent);
+        request.name(name);
 
-        return api.createField(request, loginId, loginId);
+        return api.createField(loginId, loginId, request);
     }
 
     private CreateEntityResponse createEntity() throws ApiException {
@@ -760,9 +761,9 @@ public class FactsApiTest {
     }
 
     private CreateEntityResponse createEntity(final String name) throws ApiException {
-        final CreateEntityRequest request = new CreateEntityRequest()
-            .name(name);
+        final CreateEntityRequest request = new CreateEntityRequest();
+        request.name(name);
 
-        return api.createEntity(request, loginId, loginId);
+        return api.createEntity(loginId, loginId, request);
     }
 }
