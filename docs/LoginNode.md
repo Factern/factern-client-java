@@ -1,9 +1,16 @@
 
+
 # LoginNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance heirarchy
+
+
+* [LoginNode](LoginNode.md)

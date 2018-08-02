@@ -1,12 +1,20 @@
 
+
 # AddLabelRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**targetNodeId** | **String** |  | 
-**labelId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+targetNodeId | String | required
+labelId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [AddLabelRequest](AddLabelRequest.md)
+    * [BaseRequest](BaseRequest.md)

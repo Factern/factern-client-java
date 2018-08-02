@@ -1,12 +1,19 @@
 
+
 # LabelListNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**members** | [**List&lt;LabelListMember&gt;**](LabelListMember.md) |  | 
-**name** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+description | String | optional
+members | [List&lt;LabelListMember&gt;](LabelListMember.md) | required
+name | String | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [LabelListNode](LabelListNode.md)

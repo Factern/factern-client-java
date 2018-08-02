@@ -1,9 +1,16 @@
 
+
 # LabelStatement
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance heirarchy
+
+
+* [LabelStatement](LabelStatement.md)

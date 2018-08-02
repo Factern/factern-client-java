@@ -1,9 +1,16 @@
 
+
 # BidNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance heirarchy
+
+
+* [BidNode](BidNode.md)

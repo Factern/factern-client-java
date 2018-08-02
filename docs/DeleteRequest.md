@@ -1,13 +1,21 @@
 
+
 # DeleteRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**nodeId** | **String** |  | 
-**template** | **List&lt;Object&gt;** |  |  [optional]
-**templateId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+nodeId | String | required
+template | List&lt;Object&gt; | optional
+templateId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [DeleteRequest](DeleteRequest.md)
+    * [BaseRequest](BaseRequest.md)

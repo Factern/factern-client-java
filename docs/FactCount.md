@@ -1,11 +1,18 @@
 
+
 # FactCount
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**read** | [**BigDecimal**](BigDecimal.md) |  | 
-**written** | [**BigDecimal**](BigDecimal.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+read | [BigDecimal](BigDecimal.md) | required
+written | [BigDecimal](BigDecimal.md) | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [FactCount](FactCount.md)
