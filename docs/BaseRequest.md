@@ -11,7 +11,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [BaseRequest](BaseRequest.md)

@@ -12,7 +12,7 @@ gas | [GasCost](GasCost.md) | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [Cost](Cost.md)

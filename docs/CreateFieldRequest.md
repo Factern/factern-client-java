@@ -17,7 +17,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateFieldRequest](CreateFieldRequest.md)

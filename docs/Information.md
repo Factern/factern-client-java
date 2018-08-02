@@ -19,7 +19,7 @@ parentId | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [Information](Information.md)

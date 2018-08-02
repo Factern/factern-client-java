@@ -19,7 +19,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [WriteRequest](WriteRequest.md)

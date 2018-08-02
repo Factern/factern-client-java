@@ -35,7 +35,7 @@ FAILED_TO_SEND_EMAIL | &quot;FAILED_TO_SEND_EMAIL&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateLoginResponse](CreateLoginResponse.md)

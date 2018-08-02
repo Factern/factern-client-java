@@ -17,7 +17,7 @@ parentId | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [StandardNode](StandardNode.md)

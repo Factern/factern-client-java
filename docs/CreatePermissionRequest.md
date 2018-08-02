@@ -13,7 +13,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreatePermissionRequest](CreatePermissionRequest.md)

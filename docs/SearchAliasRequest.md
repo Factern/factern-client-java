@@ -12,7 +12,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [SearchAliasRequest](SearchAliasRequest.md)

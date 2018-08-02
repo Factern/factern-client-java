@@ -13,7 +13,7 @@ representing | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [Agent](Agent.md)

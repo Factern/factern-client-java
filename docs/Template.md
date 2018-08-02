@@ -19,7 +19,7 @@ parentId | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [Template](Template.md)

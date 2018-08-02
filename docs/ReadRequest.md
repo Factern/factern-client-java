@@ -17,7 +17,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ReadRequest](ReadRequest.md)

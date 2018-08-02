@@ -13,7 +13,7 @@ nodeId | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [WriteItem](WriteItem.md)

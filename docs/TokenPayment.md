@@ -13,7 +13,7 @@ signature | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [TokenPayment](TokenPayment.md)

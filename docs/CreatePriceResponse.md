@@ -17,7 +17,7 @@ parentId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreatePriceResponse](CreatePriceResponse.md)

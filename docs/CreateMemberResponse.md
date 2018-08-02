@@ -17,7 +17,7 @@ parentId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateMemberResponse](CreateMemberResponse.md)

@@ -11,7 +11,7 @@ labelListId | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [LabelListMemberNode](LabelListMemberNode.md)

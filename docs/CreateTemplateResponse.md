@@ -19,7 +19,7 @@ parentId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateTemplateResponse](CreateTemplateResponse.md)

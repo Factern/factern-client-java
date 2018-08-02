@@ -16,7 +16,7 @@ applicationId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [PermissionPolicyDocument](PermissionPolicyDocument.md)

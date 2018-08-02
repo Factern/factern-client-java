@@ -11,7 +11,7 @@ value | [BigDecimal](BigDecimal.md) | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [PriceDetails](PriceDetails.md)

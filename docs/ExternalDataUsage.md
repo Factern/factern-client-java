@@ -12,7 +12,7 @@ bytesWritten | [BigDecimal](BigDecimal.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ExternalDataUsage](ExternalDataUsage.md)

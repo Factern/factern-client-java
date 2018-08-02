@@ -12,7 +12,7 @@ price | [BigDecimal](BigDecimal.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [GasCost](GasCost.md)

@@ -13,7 +13,7 @@ totalResults | [BigDecimal](BigDecimal.md) | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [NodeListing](NodeListing.md)

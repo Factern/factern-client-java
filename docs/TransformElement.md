@@ -31,7 +31,7 @@ CARDINALITY | &quot;cardinality&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [TransformElement](TransformElement.md)

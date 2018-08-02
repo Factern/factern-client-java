@@ -36,7 +36,7 @@ ELASTICSEARCH | &quot;elasticsearch&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [SearchEntityRequest](SearchEntityRequest.md)

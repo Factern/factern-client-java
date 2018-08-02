@@ -12,7 +12,7 @@ storageId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [InformationNode](InformationNode.md)

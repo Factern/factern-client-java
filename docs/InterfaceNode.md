@@ -12,7 +12,7 @@ name | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [InterfaceNode](InterfaceNode.md)

@@ -17,7 +17,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateInterfaceRequest](CreateInterfaceRequest.md)

@@ -12,7 +12,7 @@ readItem | [ReadItem](ReadItem.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ReadStatusItem](ReadStatusItem.md)

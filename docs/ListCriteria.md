@@ -48,7 +48,7 @@ SCOPE | &quot;Scope&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ListCriteria](ListCriteria.md)

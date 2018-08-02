@@ -11,7 +11,7 @@ balance | [BigDecimal](BigDecimal.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [Account](Account.md)

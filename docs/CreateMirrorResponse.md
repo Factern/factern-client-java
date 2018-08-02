@@ -18,7 +18,7 @@ parentId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateMirrorResponse](CreateMirrorResponse.md)

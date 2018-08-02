@@ -13,7 +13,7 @@ memberIds | List&lt;String&gt; | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ScopeNode](ScopeNode.md)

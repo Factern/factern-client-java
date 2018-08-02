@@ -11,7 +11,7 @@ settlementId | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [SettleAccountResponse](SettleAccountResponse.md)

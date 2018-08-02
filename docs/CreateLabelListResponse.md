@@ -20,7 +20,7 @@ parentId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateLabelListResponse](CreateLabelListResponse.md)

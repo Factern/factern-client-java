@@ -35,7 +35,7 @@ ONBEHALFOF | &quot;OnBehalfOf&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [FilterStatement](FilterStatement.md)

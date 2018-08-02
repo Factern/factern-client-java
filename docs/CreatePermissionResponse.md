@@ -20,7 +20,7 @@ parentId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreatePermissionResponse](CreatePermissionResponse.md)

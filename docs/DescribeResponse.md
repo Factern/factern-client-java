@@ -14,7 +14,7 @@ memberIds | List&lt;Object&gt; | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [DescribeResponse](DescribeResponse.md)

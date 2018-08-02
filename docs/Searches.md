@@ -14,7 +14,7 @@ reindexedNodes | [BigDecimal](BigDecimal.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [Searches](Searches.md)

@@ -10,7 +10,7 @@ Name | Type | Required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [LoginNode](LoginNode.md)

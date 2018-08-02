@@ -12,7 +12,7 @@ deletedItem | [DeletedItem](DeletedItem.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [DeletedStatusItem](DeletedStatusItem.md)

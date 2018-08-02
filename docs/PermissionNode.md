@@ -13,7 +13,7 @@ permissionInterfaceId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [PermissionNode](PermissionNode.md)

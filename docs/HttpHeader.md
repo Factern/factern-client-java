@@ -12,7 +12,7 @@ key | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [HttpHeader](HttpHeader.md)

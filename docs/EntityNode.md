@@ -12,7 +12,7 @@ name | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [EntityNode](EntityNode.md)

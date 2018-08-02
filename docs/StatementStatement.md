@@ -10,7 +10,7 @@ Name | Type | Required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [StatementStatement](StatementStatement.md)

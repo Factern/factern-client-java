@@ -13,7 +13,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateMemberRequest](CreateMemberRequest.md)

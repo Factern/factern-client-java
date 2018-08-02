@@ -12,7 +12,7 @@ summary | [Summary](Summary.md) | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ReadInformationResponse](ReadInformationResponse.md)

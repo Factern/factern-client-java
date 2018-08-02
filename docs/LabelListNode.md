@@ -13,7 +13,7 @@ name | String | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [LabelListNode](LabelListNode.md)

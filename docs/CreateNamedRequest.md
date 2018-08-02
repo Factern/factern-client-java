@@ -14,7 +14,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateNamedRequest](CreateNamedRequest.md)

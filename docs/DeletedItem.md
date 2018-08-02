@@ -15,7 +15,7 @@ deletedNodeId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [DeletedItem](DeletedItem.md)

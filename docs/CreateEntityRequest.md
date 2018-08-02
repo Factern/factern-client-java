@@ -15,7 +15,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateEntityRequest](CreateEntityRequest.md)

@@ -43,7 +43,7 @@ PUT | &quot;PUT&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ApiEndpoint](ApiEndpoint.md)

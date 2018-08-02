@@ -12,7 +12,7 @@ summary | [Summary](Summary.md) | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [SearchAliasResponse](SearchAliasResponse.md)

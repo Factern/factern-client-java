@@ -11,7 +11,7 @@ source | [StandardNode](StandardNode.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [WatchEventNode](WatchEventNode.md)

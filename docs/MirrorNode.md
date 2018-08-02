@@ -11,7 +11,7 @@ enabled | Boolean | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [MirrorNode](MirrorNode.md)

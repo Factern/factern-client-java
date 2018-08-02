@@ -29,7 +29,7 @@ DISABLED | &quot;disabled&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [UpdateStatusRequest](UpdateStatusRequest.md)

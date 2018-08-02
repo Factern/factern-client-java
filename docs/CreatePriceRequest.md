@@ -30,7 +30,7 @@ FIXED | &quot;Fixed&quot;
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreatePriceRequest](CreatePriceRequest.md)

@@ -13,7 +13,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [AddLabelRequest](AddLabelRequest.md)

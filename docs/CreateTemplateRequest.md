@@ -16,7 +16,7 @@ includeSummary | Boolean | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [CreateTemplateRequest](CreateTemplateRequest.md)

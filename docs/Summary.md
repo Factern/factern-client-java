@@ -15,7 +15,7 @@ searches | [Searches](Searches.md) | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [Summary](Summary.md)

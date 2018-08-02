@@ -14,7 +14,7 @@ nodeId | String | optional
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [ReadItem](ReadItem.md)

@@ -12,7 +12,7 @@ written | [BigDecimal](BigDecimal.md) | required
 
 
 
-## Inheritance heirarchy
+## Inheritance hierarchy
 
 
 * [FactCount](FactCount.md)
