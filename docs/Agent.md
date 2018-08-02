@@ -1,12 +1,19 @@
 
+
 # Agent
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**application** | **String** |  | 
-**login** | **String** |  | 
-**representing** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+application | String | required
+login | String | required
+representing | String | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [Agent](Agent.md)

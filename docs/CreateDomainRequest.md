@@ -1,16 +1,26 @@
 
+
 # CreateDomainRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**addFact** | [**ApiEndpoint**](ApiEndpoint.md) |  | 
-**getFact** | [**ApiEndpoint**](ApiEndpoint.md) |  | 
-**queryFacts** | [**ApiEndpoint**](ApiEndpoint.md) |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+addFact | [ApiEndpoint](ApiEndpoint.md) | required
+getFact | [ApiEndpoint](ApiEndpoint.md) | required
+queryFacts | [ApiEndpoint](ApiEndpoint.md) | optional
+description | String | optional
+name | String | optional
+parentId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [CreateDomainRequest](CreateDomainRequest.md)
+    * [CreateNamedRequest](CreateNamedRequest.md)
+        * [CreateChildRequest](CreateChildRequest.md)
+            * [BaseRequest](BaseRequest.md)

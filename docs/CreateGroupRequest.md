@@ -1,15 +1,25 @@
 
+
 # CreateGroupRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**memberIds** | **List&lt;String&gt;** |  | 
-**memberFactType** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+memberIds | List&lt;String&gt; | required
+memberFactType | String | optional
+description | String | optional
+name | String | optional
+parentId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [CreateGroupRequest](CreateGroupRequest.md)
+    * [CreateNamedRequest](CreateNamedRequest.md)
+        * [CreateChildRequest](CreateChildRequest.md)
+            * [BaseRequest](BaseRequest.md)

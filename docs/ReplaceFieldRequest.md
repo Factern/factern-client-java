@@ -1,13 +1,21 @@
 
+
 # ReplaceFieldRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**storageInterfaceId** | **String** |  |  [optional]
-**data** | **String** |  | 
-**nodeId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+storageInterfaceId | String | optional
+data | String | required
+nodeId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [ReplaceFieldRequest](ReplaceFieldRequest.md)
+    * [BaseRequest](BaseRequest.md)

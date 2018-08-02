@@ -1,15 +1,23 @@
 
+
 # FilterStatement
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**field** | [**FieldEnum**](#FieldEnum) |  |  [optional]
-**arguments** | **List&lt;String&gt;** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+field | [FieldEnum](#FieldEnum) | optional
+arguments | List&lt;String&gt; | required
+
+
+
+
+## Enums
 
 
 <a name="FieldEnum"></a>
-## Enum: FieldEnum
+### FieldEnum
+
 Name | Value
 ---- | -----
 TARGET | &quot;Target&quot;
@@ -24,3 +32,10 @@ ONBEHALFOF | &quot;OnBehalfOf&quot;
 
 
 
+
+
+
+## Inheritance heirarchy
+
+
+* [FilterStatement](FilterStatement.md)

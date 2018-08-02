@@ -1,13 +1,22 @@
 
+
 # CreateNamedRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+description | String | optional
+name | String | optional
+parentId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [CreateNamedRequest](CreateNamedRequest.md)
+    * [CreateChildRequest](CreateChildRequest.md)
+        * [BaseRequest](BaseRequest.md)

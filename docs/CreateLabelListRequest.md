@@ -1,14 +1,24 @@
 
+
 # CreateLabelListRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**members** | **List&lt;String&gt;** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+members | List&lt;String&gt; | required
+description | String | optional
+name | String | optional
+parentId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [CreateLabelListRequest](CreateLabelListRequest.md)
+    * [CreateNamedRequest](CreateNamedRequest.md)
+        * [CreateChildRequest](CreateChildRequest.md)
+            * [BaseRequest](BaseRequest.md)

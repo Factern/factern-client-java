@@ -1,17 +1,24 @@
 
+
 # StandardNodeResponse
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**deleted** | **Boolean** |  |  [optional]
-**timestamp** | [**BigDecimal**](BigDecimal.md) |  | 
-**nodeId** | **String** |  | 
-**agent** | [**Agent**](Agent.md) |  | 
-**summary** | [**Summary**](Summary.md) |  |  [optional]
-**batchId** | **String** |  | 
-**factType** | **String** |  | 
-**parentId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+deleted | Boolean | optional
+timestamp | [BigDecimal](BigDecimal.md) | required
+nodeId | String | required
+agent | [Agent](Agent.md) | required
+summary | [Summary](Summary.md) | optional
+batchId | String | required
+factType | String | required
+parentId | String | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [StandardNodeResponse](StandardNodeResponse.md)

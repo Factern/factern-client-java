@@ -1,11 +1,18 @@
 
+
 # HttpHeader
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | **String** |  | 
-**key** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+value | String | required
+key | String | required
 
 
 
+
+## Inheritance heirarchy
+
+
+* [HttpHeader](HttpHeader.md)

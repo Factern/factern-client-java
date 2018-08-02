@@ -1,11 +1,18 @@
 
+
 # Cost
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**total** | [**BigDecimal**](BigDecimal.md) |  | 
-**gas** | [**GasCost**](GasCost.md) |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+total | [BigDecimal](BigDecimal.md) | required
+gas | [GasCost](GasCost.md) | optional
 
 
 
+
+## Inheritance heirarchy
+
+
+* [Cost](Cost.md)
