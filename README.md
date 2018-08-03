@@ -32,7 +32,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>com.factern</groupId>
   <artifactId>factern-java-client</artifactId>
-  <version>1.0.52</version>
+  <version>1.0.58</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -42,7 +42,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "com.factern:factern-java-client:1.0.52"
+compile "com.factern:factern-java-client:1.0.58"
 ```
 
 ### Others
