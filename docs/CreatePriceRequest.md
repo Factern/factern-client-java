@@ -1,21 +1,37 @@
 
+
 # CreatePriceRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**policy** | [**PermissionPolicyDocument**](PermissionPolicyDocument.md) |  | 
-**targetNodeId** | **String** |  | 
-**priceDetails** | [**PriceDetails**](PriceDetails.md) |  | 
-**type** | [**TypeEnum**](#TypeEnum) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+policy | [PermissionPolicyDocument](PermissionPolicyDocument.md) | required
+targetNodeId | String | required
+priceDetails | [PriceDetails](PriceDetails.md) | required
+type | [TypeEnum](#TypeEnum) | required
+includeSummary | Boolean | optional
+
+
+
+
+## Enums
 
 
 <a name="TypeEnum"></a>
-## Enum: TypeEnum
+### TypeEnum
+
 Name | Value
 ---- | -----
 FIXED | &quot;Fixed&quot;
 
 
 
+
+
+
+## Inheritance hierarchy
+
+
+* [CreatePriceRequest](CreatePriceRequest.md)
+    * [BaseRequest](BaseRequest.md)

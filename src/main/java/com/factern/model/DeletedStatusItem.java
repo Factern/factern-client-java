@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.DeletedItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,10 +22,12 @@ import java.io.IOException;
  */
 
 public class DeletedStatusItem {
-  @SerializedName("status")
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
   private Integer status = null;
 
-  @SerializedName("deletedItem")
+  public static final String SERIALIZED_NAME_DELETED_ITEM = "deletedItem";
+  @SerializedName(SERIALIZED_NAME_DELETED_ITEM)
   private DeletedItem deletedItem = null;
 
   public DeletedStatusItem status(Integer status) {

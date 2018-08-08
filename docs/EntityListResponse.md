@@ -1,13 +1,20 @@
 
+
 # EntityListResponse
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**nodes** | [**List&lt;Entity&gt;**](Entity.md) |  | 
-**nextToken** | **String** |  |  [optional]
-**totalResults** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**summary** | [**Summary**](Summary.md) |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+nodes | [List&lt;Entity&gt;](Entity.md) | required
+nextToken | String | optional
+totalResults | [BigDecimal](BigDecimal.md) | optional
+summary | [Summary](Summary.md) | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [EntityListResponse](EntityListResponse.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.DeletedStatusItem;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
@@ -24,10 +25,12 @@ import java.util.List;
  */
 
 public class DeleteResponse {
-  @SerializedName("items")
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+  @SerializedName(SERIALIZED_NAME_ITEMS)
   private List<DeletedStatusItem> items = null;
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
   public DeleteResponse items(List<DeletedStatusItem> items) {

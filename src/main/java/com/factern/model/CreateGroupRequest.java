@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateNamedRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -22,96 +23,14 @@ import java.util.List;
  * CreateGroupRequest
  */
 
-public class CreateGroupRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  @SerializedName("name")
-  private String name = null;
-
-  @SerializedName("memberIds")
+public class CreateGroupRequest extends CreateNamedRequest {
+  public static final String SERIALIZED_NAME_MEMBER_IDS = "memberIds";
+  @SerializedName(SERIALIZED_NAME_MEMBER_IDS)
   private List<String> memberIds = new ArrayList<String>();
 
-  @SerializedName("memberFactType")
+  public static final String SERIALIZED_NAME_MEMBER_FACT_TYPE = "memberFactType";
+  @SerializedName(SERIALIZED_NAME_MEMBER_FACT_TYPE)
   private String memberFactType = null;
-
-  public CreateGroupRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateGroupRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
-
-  public CreateGroupRequest description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public CreateGroupRequest name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   public CreateGroupRequest memberIds(List<String> memberIds) {
     this.memberIds = memberIds;
@@ -164,17 +83,14 @@ public class CreateGroupRequest {
       return false;
     }
     CreateGroupRequest createGroupRequest = (CreateGroupRequest) o;
-    return Objects.equals(this.includeSummary, createGroupRequest.includeSummary) &&
-        Objects.equals(this.parentId, createGroupRequest.parentId) &&
-        Objects.equals(this.description, createGroupRequest.description) &&
-        Objects.equals(this.name, createGroupRequest.name) &&
-        Objects.equals(this.memberIds, createGroupRequest.memberIds) &&
-        Objects.equals(this.memberFactType, createGroupRequest.memberFactType);
+    return Objects.equals(this.memberIds, createGroupRequest.memberIds) &&
+        Objects.equals(this.memberFactType, createGroupRequest.memberFactType) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, description, name, memberIds, memberFactType);
+    return Objects.hash(memberIds, memberFactType, super.hashCode());
   }
 
 
@@ -182,11 +98,7 @@ public class CreateGroupRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateGroupRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    memberIds: ").append(toIndentedString(memberIds)).append("\n");
     sb.append("    memberFactType: ").append(toIndentedString(memberFactType)).append("\n");
     sb.append("}");

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,17 +22,17 @@ import java.math.BigDecimal;
  * SearchEntityRequest
  */
 
-public class SearchEntityRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("term")
+public class SearchEntityRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_TERM = "term";
+  @SerializedName(SERIALIZED_NAME_TERM)
   private String term = null;
 
-  @SerializedName("maxResults")
+  public static final String SERIALIZED_NAME_MAX_RESULTS = "maxResults";
+  @SerializedName(SERIALIZED_NAME_MAX_RESULTS)
   private BigDecimal maxResults = null;
 
-  @SerializedName("restrictTo")
+  public static final String SERIALIZED_NAME_RESTRICT_TO = "restrictTo";
+  @SerializedName(SERIALIZED_NAME_RESTRICT_TO)
   private String restrictTo = null;
 
   /**
@@ -85,35 +86,21 @@ public class SearchEntityRequest {
     }
   }
 
-  @SerializedName("operator")
+  public static final String SERIALIZED_NAME_OPERATOR = "operator";
+  @SerializedName(SERIALIZED_NAME_OPERATOR)
   private OperatorEnum operator = null;
 
-  @SerializedName("query")
+  public static final String SERIALIZED_NAME_QUERY = "query";
+  @SerializedName(SERIALIZED_NAME_QUERY)
   private Object query = null;
 
-  @SerializedName("nextToken")
+  public static final String SERIALIZED_NAME_NEXT_TOKEN = "nextToken";
+  @SerializedName(SERIALIZED_NAME_NEXT_TOKEN)
   private String nextToken = null;
 
-  @SerializedName("fieldId")
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
-
-  public SearchEntityRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public SearchEntityRequest term(String term) {
     this.term = term;
@@ -251,19 +238,19 @@ public class SearchEntityRequest {
       return false;
     }
     SearchEntityRequest searchEntityRequest = (SearchEntityRequest) o;
-    return Objects.equals(this.includeSummary, searchEntityRequest.includeSummary) &&
-        Objects.equals(this.term, searchEntityRequest.term) &&
+    return Objects.equals(this.term, searchEntityRequest.term) &&
         Objects.equals(this.maxResults, searchEntityRequest.maxResults) &&
         Objects.equals(this.restrictTo, searchEntityRequest.restrictTo) &&
         Objects.equals(this.operator, searchEntityRequest.operator) &&
         Objects.equals(this.query, searchEntityRequest.query) &&
         Objects.equals(this.nextToken, searchEntityRequest.nextToken) &&
-        Objects.equals(this.fieldId, searchEntityRequest.fieldId);
+        Objects.equals(this.fieldId, searchEntityRequest.fieldId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, term, maxResults, restrictTo, operator, query, nextToken, fieldId);
+    return Objects.hash(term, maxResults, restrictTo, operator, query, nextToken, fieldId, super.hashCode());
   }
 
 
@@ -271,8 +258,7 @@ public class SearchEntityRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SearchEntityRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    term: ").append(toIndentedString(term)).append("\n");
     sb.append("    maxResults: ").append(toIndentedString(maxResults)).append("\n");
     sb.append("    restrictTo: ").append(toIndentedString(restrictTo)).append("\n");

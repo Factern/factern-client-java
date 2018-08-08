@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.StandardNode;
 import java.math.BigDecimal;

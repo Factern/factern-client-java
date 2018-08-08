@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,7 +22,8 @@ import java.io.IOException;
  */
 
 public class WatchEventNode {
-  @SerializedName("source")
+  public static final String SERIALIZED_NAME_SOURCE = "source";
+  @SerializedName(SERIALIZED_NAME_SOURCE)
   private StandardNode source = null;
 
   public WatchEventNode source(StandardNode source) {

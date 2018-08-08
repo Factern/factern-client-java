@@ -1,16 +1,24 @@
 
+
 # ReadRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**defaultStorageId** | **String** |  |  [optional]
-**transform** | [**List&lt;TransformElement&gt;**](TransformElement.md) |  |  [optional]
-**nodeId** | **String** |  | 
-**callback** | **String** |  |  [optional]
-**template** | **List&lt;Object&gt;** |  |  [optional]
-**templateId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+defaultStorageId | String | optional
+transform | [List&lt;TransformElement&gt;](TransformElement.md) | optional
+nodeId | String | required
+callback | String | optional
+template | List&lt;Object&gt; | optional
+templateId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [ReadRequest](ReadRequest.md)
+    * [BaseRequest](BaseRequest.md)

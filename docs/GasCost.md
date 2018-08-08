@@ -1,11 +1,18 @@
 
+
 # GasCost
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**consumed** | [**BigDecimal**](BigDecimal.md) |  | 
-**price** | [**BigDecimal**](BigDecimal.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+consumed | [BigDecimal](BigDecimal.md) | required
+price | [BigDecimal](BigDecimal.md) | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [GasCost](GasCost.md)

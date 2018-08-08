@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,30 +21,10 @@ import java.io.IOException;
  * SearchAliasRequest
  */
 
-public class SearchAliasRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("name")
+public class SearchAliasRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name = null;
-
-  public SearchAliasRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public SearchAliasRequest name(String name) {
     this.name = name;
@@ -73,13 +54,13 @@ public class SearchAliasRequest {
       return false;
     }
     SearchAliasRequest searchAliasRequest = (SearchAliasRequest) o;
-    return Objects.equals(this.includeSummary, searchAliasRequest.includeSummary) &&
-        Objects.equals(this.name, searchAliasRequest.name);
+    return Objects.equals(this.name, searchAliasRequest.name) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, name);
+    return Objects.hash(name, super.hashCode());
   }
 
 
@@ -87,8 +68,7 @@ public class SearchAliasRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SearchAliasRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.factern.model.ListCriteria;
 import com.google.gson.TypeAdapter;
@@ -21,36 +22,18 @@ import java.io.IOException;
  * DescribeRequest
  */
 
-public class DescribeRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("listChildren")
+public class DescribeRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_LIST_CHILDREN = "listChildren";
+  @SerializedName(SERIALIZED_NAME_LIST_CHILDREN)
   private ListCriteria listChildren = null;
 
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
-  @SerializedName("generateTemplate")
+  public static final String SERIALIZED_NAME_GENERATE_TEMPLATE = "generateTemplate";
+  @SerializedName(SERIALIZED_NAME_GENERATE_TEMPLATE)
   private Boolean generateTemplate = null;
-
-  public DescribeRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public DescribeRequest listChildren(ListCriteria listChildren) {
     this.listChildren = listChildren;
@@ -98,7 +81,7 @@ public class DescribeRequest {
    * @return generateTemplate
   **/
   @ApiModelProperty(value = "")
-  public Boolean isGenerateTemplate() {
+  public Boolean getGenerateTemplate() {
     return generateTemplate;
   }
 
@@ -116,15 +99,15 @@ public class DescribeRequest {
       return false;
     }
     DescribeRequest describeRequest = (DescribeRequest) o;
-    return Objects.equals(this.includeSummary, describeRequest.includeSummary) &&
-        Objects.equals(this.listChildren, describeRequest.listChildren) &&
+    return Objects.equals(this.listChildren, describeRequest.listChildren) &&
         Objects.equals(this.nodeId, describeRequest.nodeId) &&
-        Objects.equals(this.generateTemplate, describeRequest.generateTemplate);
+        Objects.equals(this.generateTemplate, describeRequest.generateTemplate) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, listChildren, nodeId, generateTemplate);
+    return Objects.hash(listChildren, nodeId, generateTemplate, super.hashCode());
   }
 
 
@@ -132,8 +115,7 @@ public class DescribeRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DescribeRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    listChildren: ").append(toIndentedString(listChildren)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    generateTemplate: ").append(toIndentedString(generateTemplate)).append("\n");

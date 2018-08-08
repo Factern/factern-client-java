@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
@@ -23,10 +24,12 @@ import java.math.BigDecimal;
  */
 
 public class Information extends StandardNode {
-  @SerializedName("fieldId")
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
 
-  @SerializedName("storageId")
+  public static final String SERIALIZED_NAME_STORAGE_ID = "storageId";
+  @SerializedName(SERIALIZED_NAME_STORAGE_ID)
   private String storageId = null;
 
   public Information fieldId(String fieldId) {

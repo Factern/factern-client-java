@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,13 +21,16 @@ import java.io.IOException;
  */
 
 public class TokenPayment {
-  @SerializedName("publickey")
+  public static final String SERIALIZED_NAME_PUBLICKEY = "publickey";
+  @SerializedName(SERIALIZED_NAME_PUBLICKEY)
   private String publickey = null;
 
-  @SerializedName("value")
+  public static final String SERIALIZED_NAME_VALUE = "value";
+  @SerializedName(SERIALIZED_NAME_VALUE)
   private String value = null;
 
-  @SerializedName("signature")
+  public static final String SERIALIZED_NAME_SIGNATURE = "signature";
+  @SerializedName(SERIALIZED_NAME_SIGNATURE)
   private String signature = null;
 
   public TokenPayment publickey(String publickey) {

@@ -1,11 +1,18 @@
 
+
 # ReadResponse
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**items** | [**List&lt;ReadStatusItem&gt;**](ReadStatusItem.md) |  |  [optional]
-**summary** | [**Summary**](Summary.md) |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+items | [List&lt;ReadStatusItem&gt;](ReadStatusItem.md) | optional
+summary | [Summary](Summary.md) | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [ReadResponse](ReadResponse.md)

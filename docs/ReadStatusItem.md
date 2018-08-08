@@ -1,11 +1,18 @@
 
+
 # ReadStatusItem
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**status** | **Integer** |  | 
-**readItem** | [**ReadItem**](ReadItem.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+status | Integer | required
+readItem | [ReadItem](ReadItem.md) | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [ReadStatusItem](ReadStatusItem.md)

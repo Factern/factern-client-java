@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -24,13 +25,16 @@ import java.util.List;
  */
 
 public class NodeListing {
-  @SerializedName("nodes")
+  public static final String SERIALIZED_NAME_NODES = "nodes";
+  @SerializedName(SERIALIZED_NAME_NODES)
   private List<StandardNode> nodes = null;
 
-  @SerializedName("nextToken")
+  public static final String SERIALIZED_NAME_NEXT_TOKEN = "nextToken";
+  @SerializedName(SERIALIZED_NAME_NEXT_TOKEN)
   private String nextToken = null;
 
-  @SerializedName("totalResults")
+  public static final String SERIALIZED_NAME_TOTAL_RESULTS = "totalResults";
+  @SerializedName(SERIALIZED_NAME_TOTAL_RESULTS)
   private BigDecimal totalResults = null;
 
   public NodeListing nodes(List<StandardNode> nodes) {

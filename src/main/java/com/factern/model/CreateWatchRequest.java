@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,36 +21,18 @@ import java.io.IOException;
  * CreateWatchRequest
  */
 
-public class CreateWatchRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("targetNodeId")
+public class CreateWatchRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_TARGET_NODE_ID = "targetNodeId";
+  @SerializedName(SERIALIZED_NAME_TARGET_NODE_ID)
   private String targetNodeId = null;
 
-  @SerializedName("filterId")
+  public static final String SERIALIZED_NAME_FILTER_ID = "filterId";
+  @SerializedName(SERIALIZED_NAME_FILTER_ID)
   private String filterId = null;
 
-  @SerializedName("watchInterfaceId")
+  public static final String SERIALIZED_NAME_WATCH_INTERFACE_ID = "watchInterfaceId";
+  @SerializedName(SERIALIZED_NAME_WATCH_INTERFACE_ID)
   private String watchInterfaceId = null;
-
-  public CreateWatchRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public CreateWatchRequest targetNodeId(String targetNodeId) {
     this.targetNodeId = targetNodeId;
@@ -115,15 +98,15 @@ public class CreateWatchRequest {
       return false;
     }
     CreateWatchRequest createWatchRequest = (CreateWatchRequest) o;
-    return Objects.equals(this.includeSummary, createWatchRequest.includeSummary) &&
-        Objects.equals(this.targetNodeId, createWatchRequest.targetNodeId) &&
+    return Objects.equals(this.targetNodeId, createWatchRequest.targetNodeId) &&
         Objects.equals(this.filterId, createWatchRequest.filterId) &&
-        Objects.equals(this.watchInterfaceId, createWatchRequest.watchInterfaceId);
+        Objects.equals(this.watchInterfaceId, createWatchRequest.watchInterfaceId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, targetNodeId, filterId, watchInterfaceId);
+    return Objects.hash(targetNodeId, filterId, watchInterfaceId, super.hashCode());
   }
 
 
@@ -131,8 +114,7 @@ public class CreateWatchRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateWatchRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    targetNodeId: ").append(toIndentedString(targetNodeId)).append("\n");
     sb.append("    filterId: ").append(toIndentedString(filterId)).append("\n");
     sb.append("    watchInterfaceId: ").append(toIndentedString(watchInterfaceId)).append("\n");

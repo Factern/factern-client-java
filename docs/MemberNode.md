@@ -1,9 +1,16 @@
 
+
 # MemberNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance hierarchy
+
+
+* [MemberNode](MemberNode.md)

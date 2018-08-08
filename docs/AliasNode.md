@@ -1,12 +1,19 @@
 
+
 # AliasNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**local** | **Boolean** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+local | Boolean | optional
+description | String | optional
+name | String | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [AliasNode](AliasNode.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
@@ -23,7 +24,8 @@ import java.math.BigDecimal;
  */
 
 public class Mirror extends StandardNode {
-  @SerializedName("enabled")
+  public static final String SERIALIZED_NAME_ENABLED = "enabled";
+  @SerializedName(SERIALIZED_NAME_ENABLED)
   private Boolean enabled = null;
 
   public Mirror enabled(Boolean enabled) {
@@ -36,7 +38,7 @@ public class Mirror extends StandardNode {
    * @return enabled
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boolean isEnabled() {
+  public Boolean getEnabled() {
     return enabled;
   }
 

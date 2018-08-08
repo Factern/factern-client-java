@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,42 +21,26 @@ import java.io.IOException;
  * CreateLoginRequest
  */
 
-public class CreateLoginRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("password")
+public class CreateLoginRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_PASSWORD = "password";
+  @SerializedName(SERIALIZED_NAME_PASSWORD)
   private String password = null;
 
-  @SerializedName("domainId")
+  public static final String SERIALIZED_NAME_DOMAIN_ID = "domainId";
+  @SerializedName(SERIALIZED_NAME_DOMAIN_ID)
   private String domainId = null;
 
-  @SerializedName("email")
+  public static final String SERIALIZED_NAME_EMAIL = "email";
+  @SerializedName(SERIALIZED_NAME_EMAIL)
   private String email = null;
 
-  @SerializedName("workflow")
+  public static final String SERIALIZED_NAME_WORKFLOW = "workflow";
+  @SerializedName(SERIALIZED_NAME_WORKFLOW)
   private String workflow = null;
 
-  @SerializedName("redirectUri")
+  public static final String SERIALIZED_NAME_REDIRECT_URI = "redirectUri";
+  @SerializedName(SERIALIZED_NAME_REDIRECT_URI)
   private String redirectUri = null;
-
-  public CreateLoginRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public CreateLoginRequest password(String password) {
     this.password = password;
@@ -157,17 +142,17 @@ public class CreateLoginRequest {
       return false;
     }
     CreateLoginRequest createLoginRequest = (CreateLoginRequest) o;
-    return Objects.equals(this.includeSummary, createLoginRequest.includeSummary) &&
-        Objects.equals(this.password, createLoginRequest.password) &&
+    return Objects.equals(this.password, createLoginRequest.password) &&
         Objects.equals(this.domainId, createLoginRequest.domainId) &&
         Objects.equals(this.email, createLoginRequest.email) &&
         Objects.equals(this.workflow, createLoginRequest.workflow) &&
-        Objects.equals(this.redirectUri, createLoginRequest.redirectUri);
+        Objects.equals(this.redirectUri, createLoginRequest.redirectUri) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, password, domainId, email, workflow, redirectUri);
+    return Objects.hash(password, domainId, email, workflow, redirectUri, super.hashCode());
   }
 
 
@@ -175,8 +160,7 @@ public class CreateLoginRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateLoginRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    password: ").append(toIndentedString(password)).append("\n");
     sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
     sb.append("    email: ").append(toIndentedString(email)).append("\n");

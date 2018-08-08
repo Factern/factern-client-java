@@ -1,11 +1,18 @@
 
+
 # GroupNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**name** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+description | String | optional
+name | String | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [GroupNode](GroupNode.md)

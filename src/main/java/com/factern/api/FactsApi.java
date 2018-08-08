@@ -114,16 +114,16 @@ public class FactsApi {
 
     /**
      * Build call for addMember
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMemberRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call addMemberCall(CreateMemberRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call addMemberCall(String login, String representing, CreateMemberRequest createMemberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createMemberRequest;
 
         // create path and map variables
         String localVarPath = "/createmember";
@@ -146,7 +146,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -168,15 +168,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call addMemberValidateBeforeCall(CreateMemberRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling addMember(Async)");
-        }
+    private com.squareup.okhttp.Call addMemberValidateBeforeCall(String login, String representing, CreateMemberRequest createMemberRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = addMemberCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addMemberCall(login, representing, createMemberRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -184,28 +179,28 @@ public class FactsApi {
     /**
      * Create Member
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMemberRequest  (optional)
      * @return CreateMemberResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateMemberResponse addMember(CreateMemberRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateMemberResponse> resp = addMemberWithHttpInfo(body, login, representing);
+    public CreateMemberResponse addMember(String login, String representing, CreateMemberRequest createMemberRequest) throws ApiException {
+        ApiResponse<CreateMemberResponse> resp = addMemberWithHttpInfo(login, representing, createMemberRequest);
         return resp.getData();
     }
 
     /**
      * Create Member
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMemberRequest  (optional)
      * @return ApiResponse&lt;CreateMemberResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateMemberResponse> addMemberWithHttpInfo(CreateMemberRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = addMemberValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateMemberResponse> addMemberWithHttpInfo(String login, String representing, CreateMemberRequest createMemberRequest) throws ApiException {
+        com.squareup.okhttp.Call call = addMemberValidateBeforeCall(login, representing, createMemberRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateMemberResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -213,14 +208,14 @@ public class FactsApi {
     /**
      * Create Member (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMemberRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call addMemberAsync(CreateMemberRequest body, String login, String representing, final ApiCallback<CreateMemberResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call addMemberAsync(String login, String representing, CreateMemberRequest createMemberRequest, final ApiCallback<CreateMemberResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -241,23 +236,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = addMemberValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = addMemberValidateBeforeCall(login, representing, createMemberRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateMemberResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for bid
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createBidRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call bidCall(CreateBidRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call bidCall(String login, String representing, CreateBidRequest createBidRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createBidRequest;
 
         // create path and map variables
         String localVarPath = "/createbid";
@@ -280,7 +275,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -302,15 +297,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call bidValidateBeforeCall(CreateBidRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling bid(Async)");
-        }
+    private com.squareup.okhttp.Call bidValidateBeforeCall(String login, String representing, CreateBidRequest createBidRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = bidCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = bidCall(login, representing, createBidRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -318,28 +308,28 @@ public class FactsApi {
     /**
      * Create Bid
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createBidRequest  (optional)
      * @return StandardNodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StandardNodeResponse bid(CreateBidRequest body, String login, String representing) throws ApiException {
-        ApiResponse<StandardNodeResponse> resp = bidWithHttpInfo(body, login, representing);
+    public StandardNodeResponse bid(String login, String representing, CreateBidRequest createBidRequest) throws ApiException {
+        ApiResponse<StandardNodeResponse> resp = bidWithHttpInfo(login, representing, createBidRequest);
         return resp.getData();
     }
 
     /**
      * Create Bid
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createBidRequest  (optional)
      * @return ApiResponse&lt;StandardNodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StandardNodeResponse> bidWithHttpInfo(CreateBidRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = bidValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<StandardNodeResponse> bidWithHttpInfo(String login, String representing, CreateBidRequest createBidRequest) throws ApiException {
+        com.squareup.okhttp.Call call = bidValidateBeforeCall(login, representing, createBidRequest, null, null);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -347,14 +337,14 @@ public class FactsApi {
     /**
      * Create Bid (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createBidRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call bidAsync(CreateBidRequest body, String login, String representing, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call bidAsync(String login, String representing, CreateBidRequest createBidRequest, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -375,23 +365,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = bidValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = bidValidateBeforeCall(login, representing, createBidRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createAlias
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createAliasRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createAliasCall(CreateAliasRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createAliasCall(String login, String representing, CreateAliasRequest createAliasRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createAliasRequest;
 
         // create path and map variables
         String localVarPath = "/createalias";
@@ -414,7 +404,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -436,15 +426,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createAliasValidateBeforeCall(CreateAliasRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createAlias(Async)");
-        }
+    private com.squareup.okhttp.Call createAliasValidateBeforeCall(String login, String representing, CreateAliasRequest createAliasRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createAliasCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createAliasCall(login, representing, createAliasRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -452,28 +437,28 @@ public class FactsApi {
     /**
      * Create Alias
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createAliasRequest  (optional)
      * @return CreateAliasResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateAliasResponse createAlias(CreateAliasRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateAliasResponse> resp = createAliasWithHttpInfo(body, login, representing);
+    public CreateAliasResponse createAlias(String login, String representing, CreateAliasRequest createAliasRequest) throws ApiException {
+        ApiResponse<CreateAliasResponse> resp = createAliasWithHttpInfo(login, representing, createAliasRequest);
         return resp.getData();
     }
 
     /**
      * Create Alias
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createAliasRequest  (optional)
      * @return ApiResponse&lt;CreateAliasResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateAliasResponse> createAliasWithHttpInfo(CreateAliasRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createAliasValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateAliasResponse> createAliasWithHttpInfo(String login, String representing, CreateAliasRequest createAliasRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createAliasValidateBeforeCall(login, representing, createAliasRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateAliasResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -481,14 +466,14 @@ public class FactsApi {
     /**
      * Create Alias (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createAliasRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createAliasAsync(CreateAliasRequest body, String login, String representing, final ApiCallback<CreateAliasResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createAliasAsync(String login, String representing, CreateAliasRequest createAliasRequest, final ApiCallback<CreateAliasResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -509,23 +494,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createAliasValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createAliasValidateBeforeCall(login, representing, createAliasRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateAliasResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createApplication
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createApplicationRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createApplicationCall(CreateApplicationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createApplicationCall(String login, String representing, CreateApplicationRequest createApplicationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createApplicationRequest;
 
         // create path and map variables
         String localVarPath = "/createapplication";
@@ -548,7 +533,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -570,15 +555,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createApplicationValidateBeforeCall(CreateApplicationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createApplication(Async)");
-        }
+    private com.squareup.okhttp.Call createApplicationValidateBeforeCall(String login, String representing, CreateApplicationRequest createApplicationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createApplicationCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createApplicationCall(login, representing, createApplicationRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -586,28 +566,28 @@ public class FactsApi {
     /**
      * Create Application
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createApplicationRequest  (optional)
      * @return CreateApplicationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateApplicationResponse createApplication(CreateApplicationRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateApplicationResponse> resp = createApplicationWithHttpInfo(body, login, representing);
+    public CreateApplicationResponse createApplication(String login, String representing, CreateApplicationRequest createApplicationRequest) throws ApiException {
+        ApiResponse<CreateApplicationResponse> resp = createApplicationWithHttpInfo(login, representing, createApplicationRequest);
         return resp.getData();
     }
 
     /**
      * Create Application
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createApplicationRequest  (optional)
      * @return ApiResponse&lt;CreateApplicationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateApplicationResponse> createApplicationWithHttpInfo(CreateApplicationRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createApplicationValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateApplicationResponse> createApplicationWithHttpInfo(String login, String representing, CreateApplicationRequest createApplicationRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createApplicationValidateBeforeCall(login, representing, createApplicationRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateApplicationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -615,14 +595,14 @@ public class FactsApi {
     /**
      * Create Application (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createApplicationRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createApplicationAsync(CreateApplicationRequest body, String login, String representing, final ApiCallback<CreateApplicationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createApplicationAsync(String login, String representing, CreateApplicationRequest createApplicationRequest, final ApiCallback<CreateApplicationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -643,23 +623,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createApplicationValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createApplicationValidateBeforeCall(login, representing, createApplicationRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateApplicationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createDomain
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createDomainRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createDomainCall(CreateDomainRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createDomainCall(String login, String representing, CreateDomainRequest createDomainRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createDomainRequest;
 
         // create path and map variables
         String localVarPath = "/createdomain";
@@ -682,7 +662,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -704,15 +684,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createDomainValidateBeforeCall(CreateDomainRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createDomain(Async)");
-        }
+    private com.squareup.okhttp.Call createDomainValidateBeforeCall(String login, String representing, CreateDomainRequest createDomainRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createDomainCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createDomainCall(login, representing, createDomainRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -720,28 +695,28 @@ public class FactsApi {
     /**
      * Create Domain
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createDomainRequest  (optional)
      * @return CreateDomainResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateDomainResponse createDomain(CreateDomainRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateDomainResponse> resp = createDomainWithHttpInfo(body, login, representing);
+    public CreateDomainResponse createDomain(String login, String representing, CreateDomainRequest createDomainRequest) throws ApiException {
+        ApiResponse<CreateDomainResponse> resp = createDomainWithHttpInfo(login, representing, createDomainRequest);
         return resp.getData();
     }
 
     /**
      * Create Domain
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createDomainRequest  (optional)
      * @return ApiResponse&lt;CreateDomainResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateDomainResponse> createDomainWithHttpInfo(CreateDomainRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createDomainValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateDomainResponse> createDomainWithHttpInfo(String login, String representing, CreateDomainRequest createDomainRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createDomainValidateBeforeCall(login, representing, createDomainRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateDomainResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -749,14 +724,14 @@ public class FactsApi {
     /**
      * Create Domain (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createDomainRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createDomainAsync(CreateDomainRequest body, String login, String representing, final ApiCallback<CreateDomainResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createDomainAsync(String login, String representing, CreateDomainRequest createDomainRequest, final ApiCallback<CreateDomainResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -777,23 +752,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createDomainValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createDomainValidateBeforeCall(login, representing, createDomainRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateDomainResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createEntity
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createEntityRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createEntityCall(CreateEntityRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createEntityCall(String login, String representing, CreateEntityRequest createEntityRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createEntityRequest;
 
         // create path and map variables
         String localVarPath = "/createentity";
@@ -816,7 +791,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -838,15 +813,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createEntityValidateBeforeCall(CreateEntityRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createEntity(Async)");
-        }
+    private com.squareup.okhttp.Call createEntityValidateBeforeCall(String login, String representing, CreateEntityRequest createEntityRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createEntityCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createEntityCall(login, representing, createEntityRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -854,28 +824,28 @@ public class FactsApi {
     /**
      * Create Entity
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createEntityRequest  (optional)
      * @return CreateEntityResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateEntityResponse createEntity(CreateEntityRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateEntityResponse> resp = createEntityWithHttpInfo(body, login, representing);
+    public CreateEntityResponse createEntity(String login, String representing, CreateEntityRequest createEntityRequest) throws ApiException {
+        ApiResponse<CreateEntityResponse> resp = createEntityWithHttpInfo(login, representing, createEntityRequest);
         return resp.getData();
     }
 
     /**
      * Create Entity
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createEntityRequest  (optional)
      * @return ApiResponse&lt;CreateEntityResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateEntityResponse> createEntityWithHttpInfo(CreateEntityRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createEntityValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateEntityResponse> createEntityWithHttpInfo(String login, String representing, CreateEntityRequest createEntityRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createEntityValidateBeforeCall(login, representing, createEntityRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateEntityResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -883,14 +853,14 @@ public class FactsApi {
     /**
      * Create Entity (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createEntityRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createEntityAsync(CreateEntityRequest body, String login, String representing, final ApiCallback<CreateEntityResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createEntityAsync(String login, String representing, CreateEntityRequest createEntityRequest, final ApiCallback<CreateEntityResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -911,23 +881,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createEntityValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createEntityValidateBeforeCall(login, representing, createEntityRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateEntityResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createField
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFieldRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createFieldCall(CreateFieldRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createFieldCall(String login, String representing, CreateFieldRequest createFieldRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createFieldRequest;
 
         // create path and map variables
         String localVarPath = "/createfield";
@@ -950,7 +920,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -972,15 +942,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createFieldValidateBeforeCall(CreateFieldRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createField(Async)");
-        }
+    private com.squareup.okhttp.Call createFieldValidateBeforeCall(String login, String representing, CreateFieldRequest createFieldRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createFieldCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createFieldCall(login, representing, createFieldRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -988,28 +953,28 @@ public class FactsApi {
     /**
      * Create Field
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFieldRequest  (optional)
      * @return CreateFieldResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateFieldResponse createField(CreateFieldRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateFieldResponse> resp = createFieldWithHttpInfo(body, login, representing);
+    public CreateFieldResponse createField(String login, String representing, CreateFieldRequest createFieldRequest) throws ApiException {
+        ApiResponse<CreateFieldResponse> resp = createFieldWithHttpInfo(login, representing, createFieldRequest);
         return resp.getData();
     }
 
     /**
      * Create Field
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFieldRequest  (optional)
      * @return ApiResponse&lt;CreateFieldResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateFieldResponse> createFieldWithHttpInfo(CreateFieldRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createFieldValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateFieldResponse> createFieldWithHttpInfo(String login, String representing, CreateFieldRequest createFieldRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createFieldValidateBeforeCall(login, representing, createFieldRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateFieldResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1017,14 +982,14 @@ public class FactsApi {
     /**
      * Create Field (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFieldRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createFieldAsync(CreateFieldRequest body, String login, String representing, final ApiCallback<CreateFieldResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createFieldAsync(String login, String representing, CreateFieldRequest createFieldRequest, final ApiCallback<CreateFieldResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1045,23 +1010,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createFieldValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createFieldValidateBeforeCall(login, representing, createFieldRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateFieldResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createFilter
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFilterRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createFilterCall(CreateFilterRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createFilterCall(String login, String representing, CreateFilterRequest createFilterRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createFilterRequest;
 
         // create path and map variables
         String localVarPath = "/createfilter";
@@ -1084,7 +1049,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1106,15 +1071,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createFilterValidateBeforeCall(CreateFilterRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createFilter(Async)");
-        }
+    private com.squareup.okhttp.Call createFilterValidateBeforeCall(String login, String representing, CreateFilterRequest createFilterRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createFilterCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createFilterCall(login, representing, createFilterRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1122,28 +1082,28 @@ public class FactsApi {
     /**
      * Create Filter
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFilterRequest  (optional)
      * @return CreateFilterResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateFilterResponse createFilter(CreateFilterRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateFilterResponse> resp = createFilterWithHttpInfo(body, login, representing);
+    public CreateFilterResponse createFilter(String login, String representing, CreateFilterRequest createFilterRequest) throws ApiException {
+        ApiResponse<CreateFilterResponse> resp = createFilterWithHttpInfo(login, representing, createFilterRequest);
         return resp.getData();
     }
 
     /**
      * Create Filter
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFilterRequest  (optional)
      * @return ApiResponse&lt;CreateFilterResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateFilterResponse> createFilterWithHttpInfo(CreateFilterRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createFilterValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateFilterResponse> createFilterWithHttpInfo(String login, String representing, CreateFilterRequest createFilterRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createFilterValidateBeforeCall(login, representing, createFilterRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateFilterResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1151,14 +1111,14 @@ public class FactsApi {
     /**
      * Create Filter (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createFilterRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createFilterAsync(CreateFilterRequest body, String login, String representing, final ApiCallback<CreateFilterResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createFilterAsync(String login, String representing, CreateFilterRequest createFilterRequest, final ApiCallback<CreateFilterResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1179,23 +1139,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createFilterValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createFilterValidateBeforeCall(login, representing, createFilterRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateFilterResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createGroup
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createGroupRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createGroupCall(CreateGroupRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createGroupCall(String login, String representing, CreateGroupRequest createGroupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createGroupRequest;
 
         // create path and map variables
         String localVarPath = "/creategroup";
@@ -1218,7 +1178,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1240,15 +1200,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createGroupValidateBeforeCall(CreateGroupRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createGroup(Async)");
-        }
+    private com.squareup.okhttp.Call createGroupValidateBeforeCall(String login, String representing, CreateGroupRequest createGroupRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createGroupCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createGroupCall(login, representing, createGroupRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1256,28 +1211,28 @@ public class FactsApi {
     /**
      * Create Group
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createGroupRequest  (optional)
      * @return CreateGroupResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateGroupResponse createGroup(CreateGroupRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateGroupResponse> resp = createGroupWithHttpInfo(body, login, representing);
+    public CreateGroupResponse createGroup(String login, String representing, CreateGroupRequest createGroupRequest) throws ApiException {
+        ApiResponse<CreateGroupResponse> resp = createGroupWithHttpInfo(login, representing, createGroupRequest);
         return resp.getData();
     }
 
     /**
      * Create Group
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createGroupRequest  (optional)
      * @return ApiResponse&lt;CreateGroupResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateGroupResponse> createGroupWithHttpInfo(CreateGroupRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createGroupValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateGroupResponse> createGroupWithHttpInfo(String login, String representing, CreateGroupRequest createGroupRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createGroupValidateBeforeCall(login, representing, createGroupRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateGroupResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1285,14 +1240,14 @@ public class FactsApi {
     /**
      * Create Group (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createGroupRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createGroupAsync(CreateGroupRequest body, String login, String representing, final ApiCallback<CreateGroupResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createGroupAsync(String login, String representing, CreateGroupRequest createGroupRequest, final ApiCallback<CreateGroupResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1313,23 +1268,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createGroupValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createGroupValidateBeforeCall(login, representing, createGroupRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateGroupResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createInformation
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInformationRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createInformationCall(CreateInformationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createInformationCall(String login, String representing, CreateInformationRequest createInformationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createInformationRequest;
 
         // create path and map variables
         String localVarPath = "/createinformation";
@@ -1352,7 +1307,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1374,15 +1329,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createInformationValidateBeforeCall(CreateInformationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createInformation(Async)");
-        }
+    private com.squareup.okhttp.Call createInformationValidateBeforeCall(String login, String representing, CreateInformationRequest createInformationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createInformationCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createInformationCall(login, representing, createInformationRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1390,28 +1340,28 @@ public class FactsApi {
     /**
      * Create Information
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInformationRequest  (optional)
      * @return CreateInformationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateInformationResponse createInformation(CreateInformationRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateInformationResponse> resp = createInformationWithHttpInfo(body, login, representing);
+    public CreateInformationResponse createInformation(String login, String representing, CreateInformationRequest createInformationRequest) throws ApiException {
+        ApiResponse<CreateInformationResponse> resp = createInformationWithHttpInfo(login, representing, createInformationRequest);
         return resp.getData();
     }
 
     /**
      * Create Information
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInformationRequest  (optional)
      * @return ApiResponse&lt;CreateInformationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateInformationResponse> createInformationWithHttpInfo(CreateInformationRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createInformationValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateInformationResponse> createInformationWithHttpInfo(String login, String representing, CreateInformationRequest createInformationRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createInformationValidateBeforeCall(login, representing, createInformationRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateInformationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1419,14 +1369,14 @@ public class FactsApi {
     /**
      * Create Information (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInformationRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createInformationAsync(CreateInformationRequest body, String login, String representing, final ApiCallback<CreateInformationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createInformationAsync(String login, String representing, CreateInformationRequest createInformationRequest, final ApiCallback<CreateInformationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1447,23 +1397,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createInformationValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createInformationValidateBeforeCall(login, representing, createInformationRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateInformationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createInterface
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInterfaceRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createInterfaceCall(CreateInterfaceRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createInterfaceCall(String login, String representing, CreateInterfaceRequest createInterfaceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createInterfaceRequest;
 
         // create path and map variables
         String localVarPath = "/createinterface";
@@ -1486,7 +1436,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1508,15 +1458,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createInterfaceValidateBeforeCall(CreateInterfaceRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createInterface(Async)");
-        }
+    private com.squareup.okhttp.Call createInterfaceValidateBeforeCall(String login, String representing, CreateInterfaceRequest createInterfaceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createInterfaceCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createInterfaceCall(login, representing, createInterfaceRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1524,28 +1469,28 @@ public class FactsApi {
     /**
      * Create Interface
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInterfaceRequest  (optional)
      * @return CreateInterfaceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateInterfaceResponse createInterface(CreateInterfaceRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateInterfaceResponse> resp = createInterfaceWithHttpInfo(body, login, representing);
+    public CreateInterfaceResponse createInterface(String login, String representing, CreateInterfaceRequest createInterfaceRequest) throws ApiException {
+        ApiResponse<CreateInterfaceResponse> resp = createInterfaceWithHttpInfo(login, representing, createInterfaceRequest);
         return resp.getData();
     }
 
     /**
      * Create Interface
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInterfaceRequest  (optional)
      * @return ApiResponse&lt;CreateInterfaceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateInterfaceResponse> createInterfaceWithHttpInfo(CreateInterfaceRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createInterfaceValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateInterfaceResponse> createInterfaceWithHttpInfo(String login, String representing, CreateInterfaceRequest createInterfaceRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createInterfaceValidateBeforeCall(login, representing, createInterfaceRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateInterfaceResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1553,14 +1498,14 @@ public class FactsApi {
     /**
      * Create Interface (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createInterfaceRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createInterfaceAsync(CreateInterfaceRequest body, String login, String representing, final ApiCallback<CreateInterfaceResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createInterfaceAsync(String login, String representing, CreateInterfaceRequest createInterfaceRequest, final ApiCallback<CreateInterfaceResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1581,23 +1526,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createInterfaceValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createInterfaceValidateBeforeCall(login, representing, createInterfaceRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateInterfaceResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createLabelList
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLabelListRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createLabelListCall(CreateLabelListRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createLabelListCall(String login, String representing, CreateLabelListRequest createLabelListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createLabelListRequest;
 
         // create path and map variables
         String localVarPath = "/createlabellist";
@@ -1620,7 +1565,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1642,15 +1587,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createLabelListValidateBeforeCall(CreateLabelListRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createLabelList(Async)");
-        }
+    private com.squareup.okhttp.Call createLabelListValidateBeforeCall(String login, String representing, CreateLabelListRequest createLabelListRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createLabelListCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createLabelListCall(login, representing, createLabelListRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1658,28 +1598,28 @@ public class FactsApi {
     /**
      * Create Label List
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLabelListRequest  (optional)
      * @return CreateLabelListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateLabelListResponse createLabelList(CreateLabelListRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateLabelListResponse> resp = createLabelListWithHttpInfo(body, login, representing);
+    public CreateLabelListResponse createLabelList(String login, String representing, CreateLabelListRequest createLabelListRequest) throws ApiException {
+        ApiResponse<CreateLabelListResponse> resp = createLabelListWithHttpInfo(login, representing, createLabelListRequest);
         return resp.getData();
     }
 
     /**
      * Create Label List
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLabelListRequest  (optional)
      * @return ApiResponse&lt;CreateLabelListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateLabelListResponse> createLabelListWithHttpInfo(CreateLabelListRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createLabelListValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateLabelListResponse> createLabelListWithHttpInfo(String login, String representing, CreateLabelListRequest createLabelListRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createLabelListValidateBeforeCall(login, representing, createLabelListRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateLabelListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1687,14 +1627,14 @@ public class FactsApi {
     /**
      * Create Label List (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLabelListRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createLabelListAsync(CreateLabelListRequest body, String login, String representing, final ApiCallback<CreateLabelListResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createLabelListAsync(String login, String representing, CreateLabelListRequest createLabelListRequest, final ApiCallback<CreateLabelListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1715,23 +1655,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createLabelListValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createLabelListValidateBeforeCall(login, representing, createLabelListRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateLabelListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createLogin
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLoginRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createLoginCall(CreateLoginRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createLoginCall(String login, String representing, CreateLoginRequest createLoginRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createLoginRequest;
 
         // create path and map variables
         String localVarPath = "/createlogin";
@@ -1754,7 +1694,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1776,15 +1716,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createLoginValidateBeforeCall(CreateLoginRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createLogin(Async)");
-        }
+    private com.squareup.okhttp.Call createLoginValidateBeforeCall(String login, String representing, CreateLoginRequest createLoginRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createLoginCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createLoginCall(login, representing, createLoginRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1792,28 +1727,28 @@ public class FactsApi {
     /**
      * Create Login
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLoginRequest  (optional)
      * @return CreateLoginResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateLoginResponse createLogin(CreateLoginRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateLoginResponse> resp = createLoginWithHttpInfo(body, login, representing);
+    public CreateLoginResponse createLogin(String login, String representing, CreateLoginRequest createLoginRequest) throws ApiException {
+        ApiResponse<CreateLoginResponse> resp = createLoginWithHttpInfo(login, representing, createLoginRequest);
         return resp.getData();
     }
 
     /**
      * Create Login
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLoginRequest  (optional)
      * @return ApiResponse&lt;CreateLoginResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateLoginResponse> createLoginWithHttpInfo(CreateLoginRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createLoginValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateLoginResponse> createLoginWithHttpInfo(String login, String representing, CreateLoginRequest createLoginRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createLoginValidateBeforeCall(login, representing, createLoginRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateLoginResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1821,14 +1756,14 @@ public class FactsApi {
     /**
      * Create Login (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createLoginRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createLoginAsync(CreateLoginRequest body, String login, String representing, final ApiCallback<CreateLoginResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createLoginAsync(String login, String representing, CreateLoginRequest createLoginRequest, final ApiCallback<CreateLoginResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1849,23 +1784,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createLoginValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createLoginValidateBeforeCall(login, representing, createLoginRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateLoginResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createMirror
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMirrorRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createMirrorCall(CreateMirrorRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createMirrorCall(String login, String representing, CreateMirrorRequest createMirrorRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createMirrorRequest;
 
         // create path and map variables
         String localVarPath = "/createmirror";
@@ -1888,7 +1823,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -1910,15 +1845,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createMirrorValidateBeforeCall(CreateMirrorRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createMirror(Async)");
-        }
+    private com.squareup.okhttp.Call createMirrorValidateBeforeCall(String login, String representing, CreateMirrorRequest createMirrorRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createMirrorCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createMirrorCall(login, representing, createMirrorRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -1926,28 +1856,28 @@ public class FactsApi {
     /**
      * Create Mirror
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMirrorRequest  (optional)
      * @return CreateMirrorResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateMirrorResponse createMirror(CreateMirrorRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateMirrorResponse> resp = createMirrorWithHttpInfo(body, login, representing);
+    public CreateMirrorResponse createMirror(String login, String representing, CreateMirrorRequest createMirrorRequest) throws ApiException {
+        ApiResponse<CreateMirrorResponse> resp = createMirrorWithHttpInfo(login, representing, createMirrorRequest);
         return resp.getData();
     }
 
     /**
      * Create Mirror
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMirrorRequest  (optional)
      * @return ApiResponse&lt;CreateMirrorResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateMirrorResponse> createMirrorWithHttpInfo(CreateMirrorRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createMirrorValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateMirrorResponse> createMirrorWithHttpInfo(String login, String representing, CreateMirrorRequest createMirrorRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createMirrorValidateBeforeCall(login, representing, createMirrorRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateMirrorResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -1955,14 +1885,14 @@ public class FactsApi {
     /**
      * Create Mirror (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createMirrorRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createMirrorAsync(CreateMirrorRequest body, String login, String representing, final ApiCallback<CreateMirrorResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createMirrorAsync(String login, String representing, CreateMirrorRequest createMirrorRequest, final ApiCallback<CreateMirrorResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -1983,23 +1913,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createMirrorValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createMirrorValidateBeforeCall(login, representing, createMirrorRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateMirrorResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createPrice
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPriceRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createPriceCall(CreatePriceRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createPriceCall(String login, String representing, CreatePriceRequest createPriceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createPriceRequest;
 
         // create path and map variables
         String localVarPath = "/createprice";
@@ -2022,7 +1952,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2044,15 +1974,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createPriceValidateBeforeCall(CreatePriceRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createPrice(Async)");
-        }
+    private com.squareup.okhttp.Call createPriceValidateBeforeCall(String login, String representing, CreatePriceRequest createPriceRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createPriceCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPriceCall(login, representing, createPriceRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2060,28 +1985,28 @@ public class FactsApi {
     /**
      * Create Price
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPriceRequest  (optional)
      * @return CreatePriceResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreatePriceResponse createPrice(CreatePriceRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreatePriceResponse> resp = createPriceWithHttpInfo(body, login, representing);
+    public CreatePriceResponse createPrice(String login, String representing, CreatePriceRequest createPriceRequest) throws ApiException {
+        ApiResponse<CreatePriceResponse> resp = createPriceWithHttpInfo(login, representing, createPriceRequest);
         return resp.getData();
     }
 
     /**
      * Create Price
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPriceRequest  (optional)
      * @return ApiResponse&lt;CreatePriceResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreatePriceResponse> createPriceWithHttpInfo(CreatePriceRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createPriceValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreatePriceResponse> createPriceWithHttpInfo(String login, String representing, CreatePriceRequest createPriceRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createPriceValidateBeforeCall(login, representing, createPriceRequest, null, null);
         Type localVarReturnType = new TypeToken<CreatePriceResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2089,14 +2014,14 @@ public class FactsApi {
     /**
      * Create Price (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPriceRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createPriceAsync(CreatePriceRequest body, String login, String representing, final ApiCallback<CreatePriceResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createPriceAsync(String login, String representing, CreatePriceRequest createPriceRequest, final ApiCallback<CreatePriceResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2117,23 +2042,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createPriceValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createPriceValidateBeforeCall(login, representing, createPriceRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreatePriceResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createScope
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createScopeRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createScopeCall(CreateScopeRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createScopeCall(String login, String representing, CreateScopeRequest createScopeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createScopeRequest;
 
         // create path and map variables
         String localVarPath = "/createscope";
@@ -2156,7 +2081,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2178,15 +2103,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createScopeValidateBeforeCall(CreateScopeRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createScope(Async)");
-        }
+    private com.squareup.okhttp.Call createScopeValidateBeforeCall(String login, String representing, CreateScopeRequest createScopeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createScopeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createScopeCall(login, representing, createScopeRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2194,28 +2114,28 @@ public class FactsApi {
     /**
      * Create Scope
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createScopeRequest  (optional)
      * @return CreateScopeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateScopeResponse createScope(CreateScopeRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateScopeResponse> resp = createScopeWithHttpInfo(body, login, representing);
+    public CreateScopeResponse createScope(String login, String representing, CreateScopeRequest createScopeRequest) throws ApiException {
+        ApiResponse<CreateScopeResponse> resp = createScopeWithHttpInfo(login, representing, createScopeRequest);
         return resp.getData();
     }
 
     /**
      * Create Scope
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createScopeRequest  (optional)
      * @return ApiResponse&lt;CreateScopeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateScopeResponse> createScopeWithHttpInfo(CreateScopeRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createScopeValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateScopeResponse> createScopeWithHttpInfo(String login, String representing, CreateScopeRequest createScopeRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createScopeValidateBeforeCall(login, representing, createScopeRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateScopeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2223,14 +2143,14 @@ public class FactsApi {
     /**
      * Create Scope (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createScopeRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createScopeAsync(CreateScopeRequest body, String login, String representing, final ApiCallback<CreateScopeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createScopeAsync(String login, String representing, CreateScopeRequest createScopeRequest, final ApiCallback<CreateScopeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2251,23 +2171,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createScopeValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createScopeValidateBeforeCall(login, representing, createScopeRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateScopeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createStatement
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addStatementRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createStatementCall(AddStatementRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createStatementCall(String login, String representing, AddStatementRequest addStatementRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = addStatementRequest;
 
         // create path and map variables
         String localVarPath = "/createstatement";
@@ -2290,7 +2210,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2312,15 +2232,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createStatementValidateBeforeCall(AddStatementRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createStatement(Async)");
-        }
+    private com.squareup.okhttp.Call createStatementValidateBeforeCall(String login, String representing, AddStatementRequest addStatementRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createStatementCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createStatementCall(login, representing, addStatementRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2328,28 +2243,28 @@ public class FactsApi {
     /**
      * Create Statement
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addStatementRequest  (optional)
      * @return AddStatementResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AddStatementResponse createStatement(AddStatementRequest body, String login, String representing) throws ApiException {
-        ApiResponse<AddStatementResponse> resp = createStatementWithHttpInfo(body, login, representing);
+    public AddStatementResponse createStatement(String login, String representing, AddStatementRequest addStatementRequest) throws ApiException {
+        ApiResponse<AddStatementResponse> resp = createStatementWithHttpInfo(login, representing, addStatementRequest);
         return resp.getData();
     }
 
     /**
      * Create Statement
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addStatementRequest  (optional)
      * @return ApiResponse&lt;AddStatementResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AddStatementResponse> createStatementWithHttpInfo(AddStatementRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createStatementValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<AddStatementResponse> createStatementWithHttpInfo(String login, String representing, AddStatementRequest addStatementRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createStatementValidateBeforeCall(login, representing, addStatementRequest, null, null);
         Type localVarReturnType = new TypeToken<AddStatementResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2357,14 +2272,14 @@ public class FactsApi {
     /**
      * Create Statement (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addStatementRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createStatementAsync(AddStatementRequest body, String login, String representing, final ApiCallback<AddStatementResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createStatementAsync(String login, String representing, AddStatementRequest addStatementRequest, final ApiCallback<AddStatementResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2385,23 +2300,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createStatementValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createStatementValidateBeforeCall(login, representing, addStatementRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AddStatementResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for createTemplate
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createTemplateRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call createTemplateCall(CreateTemplateRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call createTemplateCall(String login, String representing, CreateTemplateRequest createTemplateRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createTemplateRequest;
 
         // create path and map variables
         String localVarPath = "/createtemplate";
@@ -2424,7 +2339,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2446,15 +2361,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call createTemplateValidateBeforeCall(CreateTemplateRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling createTemplate(Async)");
-        }
+    private com.squareup.okhttp.Call createTemplateValidateBeforeCall(String login, String representing, CreateTemplateRequest createTemplateRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = createTemplateCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createTemplateCall(login, representing, createTemplateRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2462,28 +2372,28 @@ public class FactsApi {
     /**
      * Create Template
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createTemplateRequest  (optional)
      * @return CreateTemplateResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateTemplateResponse createTemplate(CreateTemplateRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateTemplateResponse> resp = createTemplateWithHttpInfo(body, login, representing);
+    public CreateTemplateResponse createTemplate(String login, String representing, CreateTemplateRequest createTemplateRequest) throws ApiException {
+        ApiResponse<CreateTemplateResponse> resp = createTemplateWithHttpInfo(login, representing, createTemplateRequest);
         return resp.getData();
     }
 
     /**
      * Create Template
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createTemplateRequest  (optional)
      * @return ApiResponse&lt;CreateTemplateResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateTemplateResponse> createTemplateWithHttpInfo(CreateTemplateRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateTemplateResponse> createTemplateWithHttpInfo(String login, String representing, CreateTemplateRequest createTemplateRequest) throws ApiException {
+        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(login, representing, createTemplateRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateTemplateResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2491,14 +2401,14 @@ public class FactsApi {
     /**
      * Create Template (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createTemplateRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call createTemplateAsync(CreateTemplateRequest body, String login, String representing, final ApiCallback<CreateTemplateResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call createTemplateAsync(String login, String representing, CreateTemplateRequest createTemplateRequest, final ApiCallback<CreateTemplateResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2519,23 +2429,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = createTemplateValidateBeforeCall(login, representing, createTemplateRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateTemplateResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for delete
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param deleteRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteCall(DeleteRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call deleteCall(String login, String representing, DeleteRequest deleteRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = deleteRequest;
 
         // create path and map variables
         String localVarPath = "/delete";
@@ -2558,7 +2468,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2580,15 +2490,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteValidateBeforeCall(DeleteRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling delete(Async)");
-        }
+    private com.squareup.okhttp.Call deleteValidateBeforeCall(String login, String representing, DeleteRequest deleteRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = deleteCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteCall(login, representing, deleteRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2596,28 +2501,28 @@ public class FactsApi {
     /**
      * Deleting
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param deleteRequest  (optional)
      * @return DeleteResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DeleteResponse delete(DeleteRequest body, String login, String representing) throws ApiException {
-        ApiResponse<DeleteResponse> resp = deleteWithHttpInfo(body, login, representing);
+    public DeleteResponse delete(String login, String representing, DeleteRequest deleteRequest) throws ApiException {
+        ApiResponse<DeleteResponse> resp = deleteWithHttpInfo(login, representing, deleteRequest);
         return resp.getData();
     }
 
     /**
      * Deleting
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param deleteRequest  (optional)
      * @return ApiResponse&lt;DeleteResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DeleteResponse> deleteWithHttpInfo(DeleteRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = deleteValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<DeleteResponse> deleteWithHttpInfo(String login, String representing, DeleteRequest deleteRequest) throws ApiException {
+        com.squareup.okhttp.Call call = deleteValidateBeforeCall(login, representing, deleteRequest, null, null);
         Type localVarReturnType = new TypeToken<DeleteResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2625,14 +2530,14 @@ public class FactsApi {
     /**
      * Deleting (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param deleteRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteAsync(DeleteRequest body, String login, String representing, final ApiCallback<DeleteResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteAsync(String login, String representing, DeleteRequest deleteRequest, final ApiCallback<DeleteResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2653,23 +2558,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteValidateBeforeCall(login, representing, deleteRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DeleteResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for deleteNode
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call deleteNodeCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call deleteNodeCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = nodeIdRequest;
 
         // create path and map variables
         String localVarPath = "/deletenode";
@@ -2692,7 +2597,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2714,15 +2619,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deleteNodeValidateBeforeCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling deleteNode(Async)");
-        }
+    private com.squareup.okhttp.Call deleteNodeValidateBeforeCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = deleteNodeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteNodeCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2730,28 +2630,28 @@ public class FactsApi {
     /**
      * Delete Node
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return StandardNodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StandardNodeResponse deleteNode(NodeIdRequest body, String login, String representing) throws ApiException {
-        ApiResponse<StandardNodeResponse> resp = deleteNodeWithHttpInfo(body, login, representing);
+    public StandardNodeResponse deleteNode(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        ApiResponse<StandardNodeResponse> resp = deleteNodeWithHttpInfo(login, representing, nodeIdRequest);
         return resp.getData();
     }
 
     /**
      * Delete Node
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return ApiResponse&lt;StandardNodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StandardNodeResponse> deleteNodeWithHttpInfo(NodeIdRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = deleteNodeValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<StandardNodeResponse> deleteNodeWithHttpInfo(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        com.squareup.okhttp.Call call = deleteNodeValidateBeforeCall(login, representing, nodeIdRequest, null, null);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2759,14 +2659,14 @@ public class FactsApi {
     /**
      * Delete Node (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deleteNodeAsync(NodeIdRequest body, String login, String representing, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call deleteNodeAsync(String login, String representing, NodeIdRequest nodeIdRequest, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2787,23 +2687,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deleteNodeValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deleteNodeValidateBeforeCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for describe
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param describeRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call describeCall(DescribeRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call describeCall(String login, String representing, DescribeRequest describeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = describeRequest;
 
         // create path and map variables
         String localVarPath = "/describe";
@@ -2826,7 +2726,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2848,15 +2748,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call describeValidateBeforeCall(DescribeRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling describe(Async)");
-        }
+    private com.squareup.okhttp.Call describeValidateBeforeCall(String login, String representing, DescribeRequest describeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = describeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = describeCall(login, representing, describeRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2864,28 +2759,28 @@ public class FactsApi {
     /**
      * Describe
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param describeRequest  (optional)
      * @return DescribeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public DescribeResponse describe(DescribeRequest body, String login, String representing) throws ApiException {
-        ApiResponse<DescribeResponse> resp = describeWithHttpInfo(body, login, representing);
+    public DescribeResponse describe(String login, String representing, DescribeRequest describeRequest) throws ApiException {
+        ApiResponse<DescribeResponse> resp = describeWithHttpInfo(login, representing, describeRequest);
         return resp.getData();
     }
 
     /**
      * Describe
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param describeRequest  (optional)
      * @return ApiResponse&lt;DescribeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<DescribeResponse> describeWithHttpInfo(DescribeRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = describeValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<DescribeResponse> describeWithHttpInfo(String login, String representing, DescribeRequest describeRequest) throws ApiException {
+        com.squareup.okhttp.Call call = describeValidateBeforeCall(login, representing, describeRequest, null, null);
         Type localVarReturnType = new TypeToken<DescribeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -2893,14 +2788,14 @@ public class FactsApi {
     /**
      * Describe (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param describeRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call describeAsync(DescribeRequest body, String login, String representing, final ApiCallback<DescribeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call describeAsync(String login, String representing, DescribeRequest describeRequest, final ApiCallback<DescribeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -2921,23 +2816,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = describeValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = describeValidateBeforeCall(login, representing, describeRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<DescribeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for history
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call historyCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call historyCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = nodeIdRequest;
 
         // create path and map variables
         String localVarPath = "/history";
@@ -2960,7 +2855,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -2982,15 +2877,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call historyValidateBeforeCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling history(Async)");
-        }
+    private com.squareup.okhttp.Call historyValidateBeforeCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = historyCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = historyCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -2998,28 +2888,28 @@ public class FactsApi {
     /**
      * History
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return NodeListing
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public NodeListing history(NodeIdRequest body, String login, String representing) throws ApiException {
-        ApiResponse<NodeListing> resp = historyWithHttpInfo(body, login, representing);
+    public NodeListing history(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        ApiResponse<NodeListing> resp = historyWithHttpInfo(login, representing, nodeIdRequest);
         return resp.getData();
     }
 
     /**
      * History
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return ApiResponse&lt;NodeListing&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<NodeListing> historyWithHttpInfo(NodeIdRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = historyValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<NodeListing> historyWithHttpInfo(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        com.squareup.okhttp.Call call = historyValidateBeforeCall(login, representing, nodeIdRequest, null, null);
         Type localVarReturnType = new TypeToken<NodeListing>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3027,14 +2917,14 @@ public class FactsApi {
     /**
      * History (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call historyAsync(NodeIdRequest body, String login, String representing, final ApiCallback<NodeListing> callback) throws ApiException {
+    public com.squareup.okhttp.Call historyAsync(String login, String representing, NodeIdRequest nodeIdRequest, final ApiCallback<NodeListing> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3055,23 +2945,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = historyValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = historyValidateBeforeCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<NodeListing>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for label
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addLabelRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call labelCall(AddLabelRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call labelCall(String login, String representing, AddLabelRequest addLabelRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = addLabelRequest;
 
         // create path and map variables
         String localVarPath = "/label";
@@ -3094,7 +2984,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -3116,15 +3006,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call labelValidateBeforeCall(AddLabelRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling label(Async)");
-        }
+    private com.squareup.okhttp.Call labelValidateBeforeCall(String login, String representing, AddLabelRequest addLabelRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = labelCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = labelCall(login, representing, addLabelRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3132,28 +3017,28 @@ public class FactsApi {
     /**
      * Label a Node
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addLabelRequest  (optional)
      * @return AddLabelResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public AddLabelResponse label(AddLabelRequest body, String login, String representing) throws ApiException {
-        ApiResponse<AddLabelResponse> resp = labelWithHttpInfo(body, login, representing);
+    public AddLabelResponse label(String login, String representing, AddLabelRequest addLabelRequest) throws ApiException {
+        ApiResponse<AddLabelResponse> resp = labelWithHttpInfo(login, representing, addLabelRequest);
         return resp.getData();
     }
 
     /**
      * Label a Node
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addLabelRequest  (optional)
      * @return ApiResponse&lt;AddLabelResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<AddLabelResponse> labelWithHttpInfo(AddLabelRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = labelValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<AddLabelResponse> labelWithHttpInfo(String login, String representing, AddLabelRequest addLabelRequest) throws ApiException {
+        com.squareup.okhttp.Call call = labelValidateBeforeCall(login, representing, addLabelRequest, null, null);
         Type localVarReturnType = new TypeToken<AddLabelResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3161,14 +3046,14 @@ public class FactsApi {
     /**
      * Label a Node (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param addLabelRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call labelAsync(AddLabelRequest body, String login, String representing, final ApiCallback<AddLabelResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call labelAsync(String login, String representing, AddLabelRequest addLabelRequest, final ApiCallback<AddLabelResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3189,23 +3074,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = labelValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = labelValidateBeforeCall(login, representing, addLabelRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<AddLabelResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for obliterate
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call obliterateCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call obliterateCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = nodeIdRequest;
 
         // create path and map variables
         String localVarPath = "/obliterate";
@@ -3228,7 +3113,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -3250,15 +3135,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call obliterateValidateBeforeCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling obliterate(Async)");
-        }
+    private com.squareup.okhttp.Call obliterateValidateBeforeCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = obliterateCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = obliterateCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3266,28 +3146,28 @@ public class FactsApi {
     /**
      * Obliterating Information Nodes
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return StandardNodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StandardNodeResponse obliterate(NodeIdRequest body, String login, String representing) throws ApiException {
-        ApiResponse<StandardNodeResponse> resp = obliterateWithHttpInfo(body, login, representing);
+    public StandardNodeResponse obliterate(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        ApiResponse<StandardNodeResponse> resp = obliterateWithHttpInfo(login, representing, nodeIdRequest);
         return resp.getData();
     }
 
     /**
      * Obliterating Information Nodes
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return ApiResponse&lt;StandardNodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StandardNodeResponse> obliterateWithHttpInfo(NodeIdRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = obliterateValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<StandardNodeResponse> obliterateWithHttpInfo(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        com.squareup.okhttp.Call call = obliterateValidateBeforeCall(login, representing, nodeIdRequest, null, null);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3295,14 +3175,14 @@ public class FactsApi {
     /**
      * Obliterating Information Nodes (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call obliterateAsync(NodeIdRequest body, String login, String representing, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call obliterateAsync(String login, String representing, NodeIdRequest nodeIdRequest, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3323,23 +3203,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = obliterateValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = obliterateValidateBeforeCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for permission
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPermissionRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call permissionCall(CreatePermissionRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call permissionCall(String login, String representing, CreatePermissionRequest createPermissionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createPermissionRequest;
 
         // create path and map variables
         String localVarPath = "/permission";
@@ -3362,7 +3242,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -3384,15 +3264,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call permissionValidateBeforeCall(CreatePermissionRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling permission(Async)");
-        }
+    private com.squareup.okhttp.Call permissionValidateBeforeCall(String login, String representing, CreatePermissionRequest createPermissionRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = permissionCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = permissionCall(login, representing, createPermissionRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3400,28 +3275,28 @@ public class FactsApi {
     /**
      * Create Permission
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPermissionRequest  (optional)
      * @return CreatePermissionResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreatePermissionResponse permission(CreatePermissionRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreatePermissionResponse> resp = permissionWithHttpInfo(body, login, representing);
+    public CreatePermissionResponse permission(String login, String representing, CreatePermissionRequest createPermissionRequest) throws ApiException {
+        ApiResponse<CreatePermissionResponse> resp = permissionWithHttpInfo(login, representing, createPermissionRequest);
         return resp.getData();
     }
 
     /**
      * Create Permission
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPermissionRequest  (optional)
      * @return ApiResponse&lt;CreatePermissionResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreatePermissionResponse> permissionWithHttpInfo(CreatePermissionRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = permissionValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreatePermissionResponse> permissionWithHttpInfo(String login, String representing, CreatePermissionRequest createPermissionRequest) throws ApiException {
+        com.squareup.okhttp.Call call = permissionValidateBeforeCall(login, representing, createPermissionRequest, null, null);
         Type localVarReturnType = new TypeToken<CreatePermissionResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3429,14 +3304,14 @@ public class FactsApi {
     /**
      * Create Permission (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createPermissionRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call permissionAsync(CreatePermissionRequest body, String login, String representing, final ApiCallback<CreatePermissionResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call permissionAsync(String login, String representing, CreatePermissionRequest createPermissionRequest, final ApiCallback<CreatePermissionResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3457,23 +3332,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = permissionValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = permissionValidateBeforeCall(login, representing, createPermissionRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreatePermissionResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for read
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call readCall(ReadRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call readCall(String login, String representing, ReadRequest readRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = readRequest;
 
         // create path and map variables
         String localVarPath = "/read";
@@ -3496,7 +3371,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -3518,15 +3393,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call readValidateBeforeCall(ReadRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling read(Async)");
-        }
+    private com.squareup.okhttp.Call readValidateBeforeCall(String login, String representing, ReadRequest readRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = readCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = readCall(login, representing, readRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3534,28 +3404,28 @@ public class FactsApi {
     /**
      * Reading
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readRequest  (optional)
      * @return ReadResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReadResponse read(ReadRequest body, String login, String representing) throws ApiException {
-        ApiResponse<ReadResponse> resp = readWithHttpInfo(body, login, representing);
+    public ReadResponse read(String login, String representing, ReadRequest readRequest) throws ApiException {
+        ApiResponse<ReadResponse> resp = readWithHttpInfo(login, representing, readRequest);
         return resp.getData();
     }
 
     /**
      * Reading
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readRequest  (optional)
      * @return ApiResponse&lt;ReadResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReadResponse> readWithHttpInfo(ReadRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = readValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<ReadResponse> readWithHttpInfo(String login, String representing, ReadRequest readRequest) throws ApiException {
+        com.squareup.okhttp.Call call = readValidateBeforeCall(login, representing, readRequest, null, null);
         Type localVarReturnType = new TypeToken<ReadResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3563,14 +3433,14 @@ public class FactsApi {
     /**
      * Reading (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call readAsync(ReadRequest body, String login, String representing, final ApiCallback<ReadResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call readAsync(String login, String representing, ReadRequest readRequest, final ApiCallback<ReadResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3591,23 +3461,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = readValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = readValidateBeforeCall(login, representing, readRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReadResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for readInformation
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readInformationRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call readInformationCall(ReadInformationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call readInformationCall(String login, String representing, ReadInformationRequest readInformationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = readInformationRequest;
 
         // create path and map variables
         String localVarPath = "/readinformation";
@@ -3630,7 +3500,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -3652,15 +3522,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call readInformationValidateBeforeCall(ReadInformationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling readInformation(Async)");
-        }
+    private com.squareup.okhttp.Call readInformationValidateBeforeCall(String login, String representing, ReadInformationRequest readInformationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = readInformationCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = readInformationCall(login, representing, readInformationRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3668,28 +3533,28 @@ public class FactsApi {
     /**
      * Read Information
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readInformationRequest  (optional)
      * @return ReadInformationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ReadInformationResponse readInformation(ReadInformationRequest body, String login, String representing) throws ApiException {
-        ApiResponse<ReadInformationResponse> resp = readInformationWithHttpInfo(body, login, representing);
+    public ReadInformationResponse readInformation(String login, String representing, ReadInformationRequest readInformationRequest) throws ApiException {
+        ApiResponse<ReadInformationResponse> resp = readInformationWithHttpInfo(login, representing, readInformationRequest);
         return resp.getData();
     }
 
     /**
      * Read Information
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readInformationRequest  (optional)
      * @return ApiResponse&lt;ReadInformationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ReadInformationResponse> readInformationWithHttpInfo(ReadInformationRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = readInformationValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<ReadInformationResponse> readInformationWithHttpInfo(String login, String representing, ReadInformationRequest readInformationRequest) throws ApiException {
+        com.squareup.okhttp.Call call = readInformationValidateBeforeCall(login, representing, readInformationRequest, null, null);
         Type localVarReturnType = new TypeToken<ReadInformationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3697,14 +3562,14 @@ public class FactsApi {
     /**
      * Read Information (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param readInformationRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call readInformationAsync(ReadInformationRequest body, String login, String representing, final ApiCallback<ReadInformationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call readInformationAsync(String login, String representing, ReadInformationRequest readInformationRequest, final ApiCallback<ReadInformationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3725,23 +3590,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = readInformationValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = readInformationValidateBeforeCall(login, representing, readInformationRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ReadInformationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for replaceInformation
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param replaceFieldRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call replaceInformationCall(ReplaceFieldRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call replaceInformationCall(String login, String representing, ReplaceFieldRequest replaceFieldRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = replaceFieldRequest;
 
         // create path and map variables
         String localVarPath = "/replaceinformation";
@@ -3764,7 +3629,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -3786,15 +3651,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call replaceInformationValidateBeforeCall(ReplaceFieldRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling replaceInformation(Async)");
-        }
+    private com.squareup.okhttp.Call replaceInformationValidateBeforeCall(String login, String representing, ReplaceFieldRequest replaceFieldRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = replaceInformationCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = replaceInformationCall(login, representing, replaceFieldRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3802,28 +3662,28 @@ public class FactsApi {
     /**
      * Replace
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param replaceFieldRequest  (optional)
      * @return Information
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Information replaceInformation(ReplaceFieldRequest body, String login, String representing) throws ApiException {
-        ApiResponse<Information> resp = replaceInformationWithHttpInfo(body, login, representing);
+    public Information replaceInformation(String login, String representing, ReplaceFieldRequest replaceFieldRequest) throws ApiException {
+        ApiResponse<Information> resp = replaceInformationWithHttpInfo(login, representing, replaceFieldRequest);
         return resp.getData();
     }
 
     /**
      * Replace
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param replaceFieldRequest  (optional)
      * @return ApiResponse&lt;Information&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Information> replaceInformationWithHttpInfo(ReplaceFieldRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = replaceInformationValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<Information> replaceInformationWithHttpInfo(String login, String representing, ReplaceFieldRequest replaceFieldRequest) throws ApiException {
+        com.squareup.okhttp.Call call = replaceInformationValidateBeforeCall(login, representing, replaceFieldRequest, null, null);
         Type localVarReturnType = new TypeToken<Information>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3831,14 +3691,14 @@ public class FactsApi {
     /**
      * Replace (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param replaceFieldRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call replaceInformationAsync(ReplaceFieldRequest body, String login, String representing, final ApiCallback<Information> callback) throws ApiException {
+    public com.squareup.okhttp.Call replaceInformationAsync(String login, String representing, ReplaceFieldRequest replaceFieldRequest, final ApiCallback<Information> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3859,23 +3719,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = replaceInformationValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = replaceInformationValidateBeforeCall(login, representing, replaceFieldRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Information>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for requestPermission
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call requestPermissionCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call requestPermissionCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = nodeIdRequest;
 
         // create path and map variables
         String localVarPath = "/requestpermission";
@@ -3898,7 +3758,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -3920,15 +3780,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call requestPermissionValidateBeforeCall(NodeIdRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling requestPermission(Async)");
-        }
+    private com.squareup.okhttp.Call requestPermissionValidateBeforeCall(String login, String representing, NodeIdRequest nodeIdRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = requestPermissionCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = requestPermissionCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -3936,28 +3791,28 @@ public class FactsApi {
     /**
      * Request Permission
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return StandardNodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StandardNodeResponse requestPermission(NodeIdRequest body, String login, String representing) throws ApiException {
-        ApiResponse<StandardNodeResponse> resp = requestPermissionWithHttpInfo(body, login, representing);
+    public StandardNodeResponse requestPermission(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        ApiResponse<StandardNodeResponse> resp = requestPermissionWithHttpInfo(login, representing, nodeIdRequest);
         return resp.getData();
     }
 
     /**
      * Request Permission
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @return ApiResponse&lt;StandardNodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StandardNodeResponse> requestPermissionWithHttpInfo(NodeIdRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = requestPermissionValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<StandardNodeResponse> requestPermissionWithHttpInfo(String login, String representing, NodeIdRequest nodeIdRequest) throws ApiException {
+        com.squareup.okhttp.Call call = requestPermissionValidateBeforeCall(login, representing, nodeIdRequest, null, null);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -3965,14 +3820,14 @@ public class FactsApi {
     /**
      * Request Permission (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param nodeIdRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call requestPermissionAsync(NodeIdRequest body, String login, String representing, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call requestPermissionAsync(String login, String representing, NodeIdRequest nodeIdRequest, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -3993,23 +3848,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = requestPermissionValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = requestPermissionValidateBeforeCall(login, representing, nodeIdRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for resetLogin
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param resetLoginCredentialsRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call resetLoginCall(ResetLoginCredentialsRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call resetLoginCall(String login, String representing, ResetLoginCredentialsRequest resetLoginCredentialsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = resetLoginCredentialsRequest;
 
         // create path and map variables
         String localVarPath = "/resetlogin";
@@ -4032,7 +3887,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4054,15 +3909,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call resetLoginValidateBeforeCall(ResetLoginCredentialsRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling resetLogin(Async)");
-        }
+    private com.squareup.okhttp.Call resetLoginValidateBeforeCall(String login, String representing, ResetLoginCredentialsRequest resetLoginCredentialsRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = resetLoginCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = resetLoginCall(login, representing, resetLoginCredentialsRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4070,28 +3920,28 @@ public class FactsApi {
     /**
      * Changing Login Password
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param resetLoginCredentialsRequest  (optional)
      * @return ResetLoginResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ResetLoginResponse resetLogin(ResetLoginCredentialsRequest body, String login, String representing) throws ApiException {
-        ApiResponse<ResetLoginResponse> resp = resetLoginWithHttpInfo(body, login, representing);
+    public ResetLoginResponse resetLogin(String login, String representing, ResetLoginCredentialsRequest resetLoginCredentialsRequest) throws ApiException {
+        ApiResponse<ResetLoginResponse> resp = resetLoginWithHttpInfo(login, representing, resetLoginCredentialsRequest);
         return resp.getData();
     }
 
     /**
      * Changing Login Password
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param resetLoginCredentialsRequest  (optional)
      * @return ApiResponse&lt;ResetLoginResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<ResetLoginResponse> resetLoginWithHttpInfo(ResetLoginCredentialsRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = resetLoginValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<ResetLoginResponse> resetLoginWithHttpInfo(String login, String representing, ResetLoginCredentialsRequest resetLoginCredentialsRequest) throws ApiException {
+        com.squareup.okhttp.Call call = resetLoginValidateBeforeCall(login, representing, resetLoginCredentialsRequest, null, null);
         Type localVarReturnType = new TypeToken<ResetLoginResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4099,14 +3949,14 @@ public class FactsApi {
     /**
      * Changing Login Password (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param resetLoginCredentialsRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call resetLoginAsync(ResetLoginCredentialsRequest body, String login, String representing, final ApiCallback<ResetLoginResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call resetLoginAsync(String login, String representing, ResetLoginCredentialsRequest resetLoginCredentialsRequest, final ApiCallback<ResetLoginResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4127,23 +3977,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = resetLoginValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = resetLoginValidateBeforeCall(login, representing, resetLoginCredentialsRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<ResetLoginResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for searchAlias
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchAliasRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call searchAliasCall(SearchAliasRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call searchAliasCall(String login, String representing, SearchAliasRequest searchAliasRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = searchAliasRequest;
 
         // create path and map variables
         String localVarPath = "/searchalias";
@@ -4166,7 +4016,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4188,15 +4038,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchAliasValidateBeforeCall(SearchAliasRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling searchAlias(Async)");
-        }
+    private com.squareup.okhttp.Call searchAliasValidateBeforeCall(String login, String representing, SearchAliasRequest searchAliasRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = searchAliasCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchAliasCall(login, representing, searchAliasRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4204,28 +4049,28 @@ public class FactsApi {
     /**
      * Search For Alias
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchAliasRequest  (optional)
      * @return SearchAliasResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SearchAliasResponse searchAlias(SearchAliasRequest body, String login, String representing) throws ApiException {
-        ApiResponse<SearchAliasResponse> resp = searchAliasWithHttpInfo(body, login, representing);
+    public SearchAliasResponse searchAlias(String login, String representing, SearchAliasRequest searchAliasRequest) throws ApiException {
+        ApiResponse<SearchAliasResponse> resp = searchAliasWithHttpInfo(login, representing, searchAliasRequest);
         return resp.getData();
     }
 
     /**
      * Search For Alias
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchAliasRequest  (optional)
      * @return ApiResponse&lt;SearchAliasResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SearchAliasResponse> searchAliasWithHttpInfo(SearchAliasRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = searchAliasValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<SearchAliasResponse> searchAliasWithHttpInfo(String login, String representing, SearchAliasRequest searchAliasRequest) throws ApiException {
+        com.squareup.okhttp.Call call = searchAliasValidateBeforeCall(login, representing, searchAliasRequest, null, null);
         Type localVarReturnType = new TypeToken<SearchAliasResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4233,14 +4078,14 @@ public class FactsApi {
     /**
      * Search For Alias (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchAliasRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchAliasAsync(SearchAliasRequest body, String login, String representing, final ApiCallback<SearchAliasResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchAliasAsync(String login, String representing, SearchAliasRequest searchAliasRequest, final ApiCallback<SearchAliasResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4261,23 +4106,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchAliasValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchAliasValidateBeforeCall(login, representing, searchAliasRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SearchAliasResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for searchEntity
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchEntityRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call searchEntityCall(SearchEntityRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call searchEntityCall(String login, String representing, SearchEntityRequest searchEntityRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = searchEntityRequest;
 
         // create path and map variables
         String localVarPath = "/searchentity";
@@ -4300,7 +4145,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4322,15 +4167,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call searchEntityValidateBeforeCall(SearchEntityRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling searchEntity(Async)");
-        }
+    private com.squareup.okhttp.Call searchEntityValidateBeforeCall(String login, String representing, SearchEntityRequest searchEntityRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = searchEntityCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchEntityCall(login, representing, searchEntityRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4338,28 +4178,28 @@ public class FactsApi {
     /**
      * Search For Entity
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchEntityRequest  (optional)
      * @return EntityListResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public EntityListResponse searchEntity(SearchEntityRequest body, String login, String representing) throws ApiException {
-        ApiResponse<EntityListResponse> resp = searchEntityWithHttpInfo(body, login, representing);
+    public EntityListResponse searchEntity(String login, String representing, SearchEntityRequest searchEntityRequest) throws ApiException {
+        ApiResponse<EntityListResponse> resp = searchEntityWithHttpInfo(login, representing, searchEntityRequest);
         return resp.getData();
     }
 
     /**
      * Search For Entity
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchEntityRequest  (optional)
      * @return ApiResponse&lt;EntityListResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<EntityListResponse> searchEntityWithHttpInfo(SearchEntityRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = searchEntityValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<EntityListResponse> searchEntityWithHttpInfo(String login, String representing, SearchEntityRequest searchEntityRequest) throws ApiException {
+        com.squareup.okhttp.Call call = searchEntityValidateBeforeCall(login, representing, searchEntityRequest, null, null);
         Type localVarReturnType = new TypeToken<EntityListResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4367,14 +4207,14 @@ public class FactsApi {
     /**
      * Search For Entity (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param searchEntityRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call searchEntityAsync(SearchEntityRequest body, String login, String representing, final ApiCallback<EntityListResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call searchEntityAsync(String login, String representing, SearchEntityRequest searchEntityRequest, final ApiCallback<EntityListResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4395,23 +4235,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = searchEntityValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = searchEntityValidateBeforeCall(login, representing, searchEntityRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<EntityListResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for settleAccount
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param settleAccountRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call settleAccountCall(SettleAccountRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call settleAccountCall(String login, String representing, SettleAccountRequest settleAccountRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = settleAccountRequest;
 
         // create path and map variables
         String localVarPath = "/settleaccount";
@@ -4434,7 +4274,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4456,15 +4296,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call settleAccountValidateBeforeCall(SettleAccountRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling settleAccount(Async)");
-        }
+    private com.squareup.okhttp.Call settleAccountValidateBeforeCall(String login, String representing, SettleAccountRequest settleAccountRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = settleAccountCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = settleAccountCall(login, representing, settleAccountRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4472,28 +4307,28 @@ public class FactsApi {
     /**
      * Settle Account
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param settleAccountRequest  (optional)
      * @return SettleAccountResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public SettleAccountResponse settleAccount(SettleAccountRequest body, String login, String representing) throws ApiException {
-        ApiResponse<SettleAccountResponse> resp = settleAccountWithHttpInfo(body, login, representing);
+    public SettleAccountResponse settleAccount(String login, String representing, SettleAccountRequest settleAccountRequest) throws ApiException {
+        ApiResponse<SettleAccountResponse> resp = settleAccountWithHttpInfo(login, representing, settleAccountRequest);
         return resp.getData();
     }
 
     /**
      * Settle Account
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param settleAccountRequest  (optional)
      * @return ApiResponse&lt;SettleAccountResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<SettleAccountResponse> settleAccountWithHttpInfo(SettleAccountRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = settleAccountValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<SettleAccountResponse> settleAccountWithHttpInfo(String login, String representing, SettleAccountRequest settleAccountRequest) throws ApiException {
+        com.squareup.okhttp.Call call = settleAccountValidateBeforeCall(login, representing, settleAccountRequest, null, null);
         Type localVarReturnType = new TypeToken<SettleAccountResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4501,14 +4336,14 @@ public class FactsApi {
     /**
      * Settle Account (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param settleAccountRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call settleAccountAsync(SettleAccountRequest body, String login, String representing, final ApiCallback<SettleAccountResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call settleAccountAsync(String login, String representing, SettleAccountRequest settleAccountRequest, final ApiCallback<SettleAccountResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4529,23 +4364,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = settleAccountValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = settleAccountValidateBeforeCall(login, representing, settleAccountRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<SettleAccountResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for updateApplication
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateApplicationRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateApplicationCall(UpdateApplicationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call updateApplicationCall(String login, String representing, UpdateApplicationRequest updateApplicationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = updateApplicationRequest;
 
         // create path and map variables
         String localVarPath = "/updateapplication";
@@ -4568,7 +4403,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4590,15 +4425,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateApplicationValidateBeforeCall(UpdateApplicationRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling updateApplication(Async)");
-        }
+    private com.squareup.okhttp.Call updateApplicationValidateBeforeCall(String login, String representing, UpdateApplicationRequest updateApplicationRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = updateApplicationCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateApplicationCall(login, representing, updateApplicationRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4606,28 +4436,28 @@ public class FactsApi {
     /**
      * Resetting Application Secret
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateApplicationRequest  (optional)
      * @return UpdateApplicationResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public UpdateApplicationResponse updateApplication(UpdateApplicationRequest body, String login, String representing) throws ApiException {
-        ApiResponse<UpdateApplicationResponse> resp = updateApplicationWithHttpInfo(body, login, representing);
+    public UpdateApplicationResponse updateApplication(String login, String representing, UpdateApplicationRequest updateApplicationRequest) throws ApiException {
+        ApiResponse<UpdateApplicationResponse> resp = updateApplicationWithHttpInfo(login, representing, updateApplicationRequest);
         return resp.getData();
     }
 
     /**
      * Resetting Application Secret
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateApplicationRequest  (optional)
      * @return ApiResponse&lt;UpdateApplicationResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<UpdateApplicationResponse> updateApplicationWithHttpInfo(UpdateApplicationRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = updateApplicationValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<UpdateApplicationResponse> updateApplicationWithHttpInfo(String login, String representing, UpdateApplicationRequest updateApplicationRequest) throws ApiException {
+        com.squareup.okhttp.Call call = updateApplicationValidateBeforeCall(login, representing, updateApplicationRequest, null, null);
         Type localVarReturnType = new TypeToken<UpdateApplicationResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4635,14 +4465,14 @@ public class FactsApi {
     /**
      * Resetting Application Secret (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateApplicationRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateApplicationAsync(UpdateApplicationRequest body, String login, String representing, final ApiCallback<UpdateApplicationResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateApplicationAsync(String login, String representing, UpdateApplicationRequest updateApplicationRequest, final ApiCallback<UpdateApplicationResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4663,23 +4493,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateApplicationValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateApplicationValidateBeforeCall(login, representing, updateApplicationRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<UpdateApplicationResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for updateStatus
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateStatusRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call updateStatusCall(UpdateStatusRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call updateStatusCall(String login, String representing, UpdateStatusRequest updateStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = updateStatusRequest;
 
         // create path and map variables
         String localVarPath = "/updatestatus";
@@ -4702,7 +4532,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4724,15 +4554,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call updateStatusValidateBeforeCall(UpdateStatusRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling updateStatus(Async)");
-        }
+    private com.squareup.okhttp.Call updateStatusValidateBeforeCall(String login, String representing, UpdateStatusRequest updateStatusRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = updateStatusCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateStatusCall(login, representing, updateStatusRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4740,28 +4565,28 @@ public class FactsApi {
     /**
      * Enabling/Disabling Nodes
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateStatusRequest  (optional)
      * @return StandardNodeResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public StandardNodeResponse updateStatus(UpdateStatusRequest body, String login, String representing) throws ApiException {
-        ApiResponse<StandardNodeResponse> resp = updateStatusWithHttpInfo(body, login, representing);
+    public StandardNodeResponse updateStatus(String login, String representing, UpdateStatusRequest updateStatusRequest) throws ApiException {
+        ApiResponse<StandardNodeResponse> resp = updateStatusWithHttpInfo(login, representing, updateStatusRequest);
         return resp.getData();
     }
 
     /**
      * Enabling/Disabling Nodes
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateStatusRequest  (optional)
      * @return ApiResponse&lt;StandardNodeResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<StandardNodeResponse> updateStatusWithHttpInfo(UpdateStatusRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = updateStatusValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<StandardNodeResponse> updateStatusWithHttpInfo(String login, String representing, UpdateStatusRequest updateStatusRequest) throws ApiException {
+        com.squareup.okhttp.Call call = updateStatusValidateBeforeCall(login, representing, updateStatusRequest, null, null);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4769,14 +4594,14 @@ public class FactsApi {
     /**
      * Enabling/Disabling Nodes (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param updateStatusRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call updateStatusAsync(UpdateStatusRequest body, String login, String representing, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call updateStatusAsync(String login, String representing, UpdateStatusRequest updateStatusRequest, final ApiCallback<StandardNodeResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4797,23 +4622,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = updateStatusValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = updateStatusValidateBeforeCall(login, representing, updateStatusRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<StandardNodeResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for watch
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createWatchRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call watchCall(CreateWatchRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call watchCall(String login, String representing, CreateWatchRequest createWatchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = createWatchRequest;
 
         // create path and map variables
         String localVarPath = "/watch";
@@ -4836,7 +4661,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4858,15 +4683,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call watchValidateBeforeCall(CreateWatchRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling watch(Async)");
-        }
+    private com.squareup.okhttp.Call watchValidateBeforeCall(String login, String representing, CreateWatchRequest createWatchRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = watchCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = watchCall(login, representing, createWatchRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -4874,28 +4694,28 @@ public class FactsApi {
     /**
      * Create Watch Trigger
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createWatchRequest  (optional)
      * @return CreateWatchResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public CreateWatchResponse watch(CreateWatchRequest body, String login, String representing) throws ApiException {
-        ApiResponse<CreateWatchResponse> resp = watchWithHttpInfo(body, login, representing);
+    public CreateWatchResponse watch(String login, String representing, CreateWatchRequest createWatchRequest) throws ApiException {
+        ApiResponse<CreateWatchResponse> resp = watchWithHttpInfo(login, representing, createWatchRequest);
         return resp.getData();
     }
 
     /**
      * Create Watch Trigger
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createWatchRequest  (optional)
      * @return ApiResponse&lt;CreateWatchResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<CreateWatchResponse> watchWithHttpInfo(CreateWatchRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = watchValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<CreateWatchResponse> watchWithHttpInfo(String login, String representing, CreateWatchRequest createWatchRequest) throws ApiException {
+        com.squareup.okhttp.Call call = watchValidateBeforeCall(login, representing, createWatchRequest, null, null);
         Type localVarReturnType = new TypeToken<CreateWatchResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -4903,14 +4723,14 @@ public class FactsApi {
     /**
      * Create Watch Trigger (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param createWatchRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call watchAsync(CreateWatchRequest body, String login, String representing, final ApiCallback<CreateWatchResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call watchAsync(String login, String representing, CreateWatchRequest createWatchRequest, final ApiCallback<CreateWatchResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -4931,23 +4751,23 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = watchValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = watchValidateBeforeCall(login, representing, createWatchRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<CreateWatchResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
     /**
      * Build call for write
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param writeRequest  (optional)
      * @param progressListener Progress listener
      * @param progressRequestListener Progress request listener
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
      */
-    public com.squareup.okhttp.Call writeCall(WriteRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = body;
+    public com.squareup.okhttp.Call writeCall(String login, String representing, WriteRequest writeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = writeRequest;
 
         // create path and map variables
         String localVarPath = "/write";
@@ -4970,7 +4790,7 @@ public class FactsApi {
         if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
         final String[] localVarContentTypes = {
-            
+            "application/json"
         };
         final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
         localVarHeaderParams.put("Content-Type", localVarContentType);
@@ -4992,15 +4812,10 @@ public class FactsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call writeValidateBeforeCall(WriteRequest body, String login, String representing, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        // verify the required parameter 'body' is set
-        if (body == null) {
-            throw new ApiException("Missing the required parameter 'body' when calling write(Async)");
-        }
+    private com.squareup.okhttp.Call writeValidateBeforeCall(String login, String representing, WriteRequest writeRequest, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
 
-        com.squareup.okhttp.Call call = writeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = writeCall(login, representing, writeRequest, progressListener, progressRequestListener);
         return call;
 
     }
@@ -5008,28 +4823,28 @@ public class FactsApi {
     /**
      * Writing by Template
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param writeRequest  (optional)
      * @return WriteResponse
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public WriteResponse write(WriteRequest body, String login, String representing) throws ApiException {
-        ApiResponse<WriteResponse> resp = writeWithHttpInfo(body, login, representing);
+    public WriteResponse write(String login, String representing, WriteRequest writeRequest) throws ApiException {
+        ApiResponse<WriteResponse> resp = writeWithHttpInfo(login, representing, writeRequest);
         return resp.getData();
     }
 
     /**
      * Writing by Template
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param writeRequest  (optional)
      * @return ApiResponse&lt;WriteResponse&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<WriteResponse> writeWithHttpInfo(WriteRequest body, String login, String representing) throws ApiException {
-        com.squareup.okhttp.Call call = writeValidateBeforeCall(body, login, representing, null, null);
+    public ApiResponse<WriteResponse> writeWithHttpInfo(String login, String representing, WriteRequest writeRequest) throws ApiException {
+        com.squareup.okhttp.Call call = writeValidateBeforeCall(login, representing, writeRequest, null, null);
         Type localVarReturnType = new TypeToken<WriteResponse>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -5037,14 +4852,14 @@ public class FactsApi {
     /**
      * Writing by Template (asynchronously)
      * 
-     * @param body  (required)
      * @param login  (optional)
      * @param representing  (optional)
+     * @param writeRequest  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call writeAsync(WriteRequest body, String login, String representing, final ApiCallback<WriteResponse> callback) throws ApiException {
+    public com.squareup.okhttp.Call writeAsync(String login, String representing, WriteRequest writeRequest, final ApiCallback<WriteResponse> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -5065,7 +4880,7 @@ public class FactsApi {
             };
         }
 
-        com.squareup.okhttp.Call call = writeValidateBeforeCall(body, login, representing, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = writeValidateBeforeCall(login, representing, writeRequest, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<WriteResponse>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

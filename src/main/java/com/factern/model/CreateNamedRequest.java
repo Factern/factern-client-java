@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateChildRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,54 +21,14 @@ import java.io.IOException;
  * CreateNamedRequest
  */
 
-public class CreateNamedRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("description")
+public class CreateNamedRequest extends CreateChildRequest {
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description = null;
 
-  @SerializedName("name")
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name = null;
-
-  public CreateNamedRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateNamedRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
 
   public CreateNamedRequest description(String description) {
     this.description = description;
@@ -115,15 +76,14 @@ public class CreateNamedRequest {
       return false;
     }
     CreateNamedRequest createNamedRequest = (CreateNamedRequest) o;
-    return Objects.equals(this.includeSummary, createNamedRequest.includeSummary) &&
-        Objects.equals(this.parentId, createNamedRequest.parentId) &&
-        Objects.equals(this.description, createNamedRequest.description) &&
-        Objects.equals(this.name, createNamedRequest.name);
+    return Objects.equals(this.description, createNamedRequest.description) &&
+        Objects.equals(this.name, createNamedRequest.name) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, description, name);
+    return Objects.hash(description, name, super.hashCode());
   }
 
 
@@ -131,9 +91,7 @@ public class CreateNamedRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateNamedRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");

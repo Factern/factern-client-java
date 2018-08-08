@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Account;
 import com.factern.model.Cost;
 import com.factern.model.ExternalDataUsage;
@@ -25,19 +26,24 @@ import java.io.IOException;
  */
 
 public class Summary {
-  @SerializedName("facts")
+  public static final String SERIALIZED_NAME_FACTS = "facts";
+  @SerializedName(SERIALIZED_NAME_FACTS)
   private FactCount facts = null;
 
-  @SerializedName("externalDataUsage")
+  public static final String SERIALIZED_NAME_EXTERNAL_DATA_USAGE = "externalDataUsage";
+  @SerializedName(SERIALIZED_NAME_EXTERNAL_DATA_USAGE)
   private ExternalDataUsage externalDataUsage = null;
 
-  @SerializedName("account")
+  public static final String SERIALIZED_NAME_ACCOUNT = "account";
+  @SerializedName(SERIALIZED_NAME_ACCOUNT)
   private Account account = null;
 
-  @SerializedName("cost")
+  public static final String SERIALIZED_NAME_COST = "cost";
+  @SerializedName(SERIALIZED_NAME_COST)
   private Cost cost = null;
 
-  @SerializedName("searches")
+  public static final String SERIALIZED_NAME_SEARCHES = "searches";
+  @SerializedName(SERIALIZED_NAME_SEARCHES)
   private Searches searches = null;
 
   public Summary facts(FactCount facts) {

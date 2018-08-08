@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.factern.model.TransformElement;
 import com.google.gson.TypeAdapter;
@@ -23,45 +24,30 @@ import java.util.List;
  * ReadRequest
  */
 
-public class ReadRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("defaultStorageId")
+public class ReadRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_DEFAULT_STORAGE_ID = "defaultStorageId";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_STORAGE_ID)
   private String defaultStorageId = null;
 
-  @SerializedName("transform")
+  public static final String SERIALIZED_NAME_TRANSFORM = "transform";
+  @SerializedName(SERIALIZED_NAME_TRANSFORM)
   private List<TransformElement> transform = null;
 
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
-  @SerializedName("callback")
+  public static final String SERIALIZED_NAME_CALLBACK = "callback";
+  @SerializedName(SERIALIZED_NAME_CALLBACK)
   private String callback = null;
 
-  @SerializedName("template")
+  public static final String SERIALIZED_NAME_TEMPLATE = "template";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE)
   private List<Object> template = null;
 
-  @SerializedName("templateId")
+  public static final String SERIALIZED_NAME_TEMPLATE_ID = "templateId";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
   private String templateId = null;
-
-  public ReadRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public ReadRequest defaultStorageId(String defaultStorageId) {
     this.defaultStorageId = defaultStorageId;
@@ -197,18 +183,18 @@ public class ReadRequest {
       return false;
     }
     ReadRequest readRequest = (ReadRequest) o;
-    return Objects.equals(this.includeSummary, readRequest.includeSummary) &&
-        Objects.equals(this.defaultStorageId, readRequest.defaultStorageId) &&
+    return Objects.equals(this.defaultStorageId, readRequest.defaultStorageId) &&
         Objects.equals(this.transform, readRequest.transform) &&
         Objects.equals(this.nodeId, readRequest.nodeId) &&
         Objects.equals(this.callback, readRequest.callback) &&
         Objects.equals(this.template, readRequest.template) &&
-        Objects.equals(this.templateId, readRequest.templateId);
+        Objects.equals(this.templateId, readRequest.templateId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, defaultStorageId, transform, nodeId, callback, template, templateId);
+    return Objects.hash(defaultStorageId, transform, nodeId, callback, template, templateId, super.hashCode());
   }
 
 
@@ -216,8 +202,7 @@ public class ReadRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ReadRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    defaultStorageId: ").append(toIndentedString(defaultStorageId)).append("\n");
     sb.append("    transform: ").append(toIndentedString(transform)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
@@ -23,7 +24,8 @@ import java.math.BigDecimal;
  */
 
 public class WatchEvent extends StandardNode {
-  @SerializedName("source")
+  public static final String SERIALIZED_NAME_SOURCE = "source";
+  @SerializedName(SERIALIZED_NAME_SOURCE)
   private StandardNode source = null;
 
   public WatchEvent source(StandardNode source) {

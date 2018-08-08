@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,36 +21,18 @@ import java.io.IOException;
  * CreateMirrorRequest
  */
 
-public class CreateMirrorRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("destinationNodeId")
+public class CreateMirrorRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_DESTINATION_NODE_ID = "destinationNodeId";
+  @SerializedName(SERIALIZED_NAME_DESTINATION_NODE_ID)
   private String destinationNodeId = null;
 
-  @SerializedName("sourceNodeId")
+  public static final String SERIALIZED_NAME_SOURCE_NODE_ID = "sourceNodeId";
+  @SerializedName(SERIALIZED_NAME_SOURCE_NODE_ID)
   private String sourceNodeId = null;
 
-  @SerializedName("templateId")
+  public static final String SERIALIZED_NAME_TEMPLATE_ID = "templateId";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
   private String templateId = null;
-
-  public CreateMirrorRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public CreateMirrorRequest destinationNodeId(String destinationNodeId) {
     this.destinationNodeId = destinationNodeId;
@@ -115,15 +98,15 @@ public class CreateMirrorRequest {
       return false;
     }
     CreateMirrorRequest createMirrorRequest = (CreateMirrorRequest) o;
-    return Objects.equals(this.includeSummary, createMirrorRequest.includeSummary) &&
-        Objects.equals(this.destinationNodeId, createMirrorRequest.destinationNodeId) &&
+    return Objects.equals(this.destinationNodeId, createMirrorRequest.destinationNodeId) &&
         Objects.equals(this.sourceNodeId, createMirrorRequest.sourceNodeId) &&
-        Objects.equals(this.templateId, createMirrorRequest.templateId);
+        Objects.equals(this.templateId, createMirrorRequest.templateId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, destinationNodeId, sourceNodeId, templateId);
+    return Objects.hash(destinationNodeId, sourceNodeId, templateId, super.hashCode());
   }
 
 
@@ -131,8 +114,7 @@ public class CreateMirrorRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateMirrorRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    destinationNodeId: ").append(toIndentedString(destinationNodeId)).append("\n");
     sb.append("    sourceNodeId: ").append(toIndentedString(sourceNodeId)).append("\n");
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");

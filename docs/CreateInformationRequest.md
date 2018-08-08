@@ -1,14 +1,23 @@
 
+
 # CreateInformationRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**fieldId** | **String** |  | 
-**data** | **String** |  | 
-**storageId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+fieldId | String | required
+data | String | required
+storageId | String | optional
+parentId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [CreateInformationRequest](CreateInformationRequest.md)
+    * [CreateChildRequest](CreateChildRequest.md)
+        * [BaseRequest](BaseRequest.md)

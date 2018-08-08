@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,36 +21,18 @@ import java.io.IOException;
  * AddStatementRequest
  */
 
-public class AddStatementRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("targetNodeId")
+public class AddStatementRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_TARGET_NODE_ID = "targetNodeId";
+  @SerializedName(SERIALIZED_NAME_TARGET_NODE_ID)
   private String targetNodeId = null;
 
-  @SerializedName("actionQualifierId")
+  public static final String SERIALIZED_NAME_ACTION_QUALIFIER_ID = "actionQualifierId";
+  @SerializedName(SERIALIZED_NAME_ACTION_QUALIFIER_ID)
   private String actionQualifierId = null;
 
-  @SerializedName("actionId")
+  public static final String SERIALIZED_NAME_ACTION_ID = "actionId";
+  @SerializedName(SERIALIZED_NAME_ACTION_ID)
   private String actionId = null;
-
-  public AddStatementRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public AddStatementRequest targetNodeId(String targetNodeId) {
     this.targetNodeId = targetNodeId;
@@ -115,15 +98,15 @@ public class AddStatementRequest {
       return false;
     }
     AddStatementRequest addStatementRequest = (AddStatementRequest) o;
-    return Objects.equals(this.includeSummary, addStatementRequest.includeSummary) &&
-        Objects.equals(this.targetNodeId, addStatementRequest.targetNodeId) &&
+    return Objects.equals(this.targetNodeId, addStatementRequest.targetNodeId) &&
         Objects.equals(this.actionQualifierId, addStatementRequest.actionQualifierId) &&
-        Objects.equals(this.actionId, addStatementRequest.actionId);
+        Objects.equals(this.actionId, addStatementRequest.actionId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, targetNodeId, actionQualifierId, actionId);
+    return Objects.hash(targetNodeId, actionQualifierId, actionId, super.hashCode());
   }
 
 
@@ -131,8 +114,7 @@ public class AddStatementRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddStatementRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    targetNodeId: ").append(toIndentedString(targetNodeId)).append("\n");
     sb.append("    actionQualifierId: ").append(toIndentedString(actionQualifierId)).append("\n");
     sb.append("    actionId: ").append(toIndentedString(actionId)).append("\n");

@@ -1,14 +1,22 @@
 
+
 # CreateAliasRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**targetNodeId** | **String** |  | 
-**local** | **Boolean** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+targetNodeId | String | required
+local | Boolean | optional
+description | String | optional
+name | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [CreateAliasRequest](CreateAliasRequest.md)
+    * [BaseRequest](BaseRequest.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,32 +21,13 @@ import java.io.IOException;
  */
 
 public class DomainNode {
-  @SerializedName("nodeId")
-  private String nodeId = null;
-
-  @SerializedName("description")
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description = null;
 
-  @SerializedName("name")
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name = null;
-
-  public DomainNode nodeId(String nodeId) {
-    this.nodeId = nodeId;
-    return this;
-  }
-
-   /**
-   * Get nodeId
-   * @return nodeId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getNodeId() {
-    return nodeId;
-  }
-
-  public void setNodeId(String nodeId) {
-    this.nodeId = nodeId;
-  }
 
   public DomainNode description(String description) {
     this.description = description;
@@ -93,14 +75,13 @@ public class DomainNode {
       return false;
     }
     DomainNode domainNode = (DomainNode) o;
-    return Objects.equals(this.nodeId, domainNode.nodeId) &&
-        Objects.equals(this.description, domainNode.description) &&
+    return Objects.equals(this.description, domainNode.description) &&
         Objects.equals(this.name, domainNode.name);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nodeId, description, name);
+    return Objects.hash(description, name);
   }
 
 
@@ -109,7 +90,6 @@ public class DomainNode {
     StringBuilder sb = new StringBuilder();
     sb.append("class DomainNode {\n");
     
-    sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");

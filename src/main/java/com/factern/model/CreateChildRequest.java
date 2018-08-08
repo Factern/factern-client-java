@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,30 +21,10 @@ import java.io.IOException;
  * CreateChildRequest
  */
 
-public class CreateChildRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
+public class CreateChildRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_PARENT_ID = "parentId";
+  @SerializedName(SERIALIZED_NAME_PARENT_ID)
   private String parentId = null;
-
-  public CreateChildRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public CreateChildRequest parentId(String parentId) {
     this.parentId = parentId;
@@ -73,13 +54,13 @@ public class CreateChildRequest {
       return false;
     }
     CreateChildRequest createChildRequest = (CreateChildRequest) o;
-    return Objects.equals(this.includeSummary, createChildRequest.includeSummary) &&
-        Objects.equals(this.parentId, createChildRequest.parentId);
+    return Objects.equals(this.parentId, createChildRequest.parentId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId);
+    return Objects.hash(parentId, super.hashCode());
   }
 
 
@@ -87,8 +68,7 @@ public class CreateChildRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateChildRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
     sb.append("}");
     return sb.toString();

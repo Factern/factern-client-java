@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.factern.model.TransformElement;
 import com.google.gson.TypeAdapter;
@@ -23,51 +24,38 @@ import java.util.List;
  * WriteRequest
  */
 
-public class WriteRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("sourceNodeId")
+public class WriteRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_SOURCE_NODE_ID = "sourceNodeId";
+  @SerializedName(SERIALIZED_NAME_SOURCE_NODE_ID)
   private String sourceNodeId = null;
 
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
-  @SerializedName("transform")
+  public static final String SERIALIZED_NAME_TRANSFORM = "transform";
+  @SerializedName(SERIALIZED_NAME_TRANSFORM)
   private List<TransformElement> transform = null;
 
-  @SerializedName("defaultStorageId")
+  public static final String SERIALIZED_NAME_DEFAULT_STORAGE_ID = "defaultStorageId";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_STORAGE_ID)
   private String defaultStorageId = null;
 
-  @SerializedName("values")
+  public static final String SERIALIZED_NAME_VALUES = "values";
+  @SerializedName(SERIALIZED_NAME_VALUES)
   private List<Object> values = null;
 
-  @SerializedName("template")
+  public static final String SERIALIZED_NAME_TEMPLATE = "template";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE)
   private List<Object> template = null;
 
-  @SerializedName("templateId")
+  public static final String SERIALIZED_NAME_TEMPLATE_ID = "templateId";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
   private String templateId = null;
 
-  @SerializedName("document")
+  public static final String SERIALIZED_NAME_DOCUMENT = "document";
+  @SerializedName(SERIALIZED_NAME_DOCUMENT)
   private List<Object> document = null;
-
-  public WriteRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public WriteRequest sourceNodeId(String sourceNodeId) {
     this.sourceNodeId = sourceNodeId;
@@ -255,20 +243,20 @@ public class WriteRequest {
       return false;
     }
     WriteRequest writeRequest = (WriteRequest) o;
-    return Objects.equals(this.includeSummary, writeRequest.includeSummary) &&
-        Objects.equals(this.sourceNodeId, writeRequest.sourceNodeId) &&
+    return Objects.equals(this.sourceNodeId, writeRequest.sourceNodeId) &&
         Objects.equals(this.nodeId, writeRequest.nodeId) &&
         Objects.equals(this.transform, writeRequest.transform) &&
         Objects.equals(this.defaultStorageId, writeRequest.defaultStorageId) &&
         Objects.equals(this.values, writeRequest.values) &&
         Objects.equals(this.template, writeRequest.template) &&
         Objects.equals(this.templateId, writeRequest.templateId) &&
-        Objects.equals(this.document, writeRequest.document);
+        Objects.equals(this.document, writeRequest.document) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, sourceNodeId, nodeId, transform, defaultStorageId, values, template, templateId, document);
+    return Objects.hash(sourceNodeId, nodeId, transform, defaultStorageId, values, template, templateId, document, super.hashCode());
   }
 
 
@@ -276,8 +264,7 @@ public class WriteRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class WriteRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    sourceNodeId: ").append(toIndentedString(sourceNodeId)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    transform: ").append(toIndentedString(transform)).append("\n");

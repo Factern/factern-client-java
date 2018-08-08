@@ -1,12 +1,20 @@
 
+
 # CreatePermissionRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**policy** | [**PermissionPolicyDocument**](PermissionPolicyDocument.md) |  | 
-**targetNodeId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+policy | [PermissionPolicyDocument](PermissionPolicyDocument.md) | required
+targetNodeId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [CreatePermissionRequest](CreatePermissionRequest.md)
+    * [BaseRequest](BaseRequest.md)

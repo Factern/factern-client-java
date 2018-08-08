@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateChildRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,57 +21,18 @@ import java.io.IOException;
  * CreateInformationRequest
  */
 
-public class CreateInformationRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("fieldId")
+public class CreateInformationRequest extends CreateChildRequest {
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
 
-  @SerializedName("data")
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
   private String data = null;
 
-  @SerializedName("storageId")
+  public static final String SERIALIZED_NAME_STORAGE_ID = "storageId";
+  @SerializedName(SERIALIZED_NAME_STORAGE_ID)
   private String storageId = null;
-
-  public CreateInformationRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateInformationRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
 
   public CreateInformationRequest fieldId(String fieldId) {
     this.fieldId = fieldId;
@@ -136,16 +98,15 @@ public class CreateInformationRequest {
       return false;
     }
     CreateInformationRequest createInformationRequest = (CreateInformationRequest) o;
-    return Objects.equals(this.includeSummary, createInformationRequest.includeSummary) &&
-        Objects.equals(this.parentId, createInformationRequest.parentId) &&
-        Objects.equals(this.fieldId, createInformationRequest.fieldId) &&
+    return Objects.equals(this.fieldId, createInformationRequest.fieldId) &&
         Objects.equals(this.data, createInformationRequest.data) &&
-        Objects.equals(this.storageId, createInformationRequest.storageId);
+        Objects.equals(this.storageId, createInformationRequest.storageId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, fieldId, data, storageId);
+    return Objects.hash(fieldId, data, storageId, super.hashCode());
   }
 
 
@@ -153,9 +114,7 @@ public class CreateInformationRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateInformationRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    fieldId: ").append(toIndentedString(fieldId)).append("\n");
     sb.append("    data: ").append(toIndentedString(data)).append("\n");
     sb.append("    storageId: ").append(toIndentedString(storageId)).append("\n");

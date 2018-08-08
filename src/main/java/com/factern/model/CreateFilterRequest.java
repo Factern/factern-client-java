@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateNamedRequest;
 import com.factern.model.FilterStatement;
 import com.google.gson.TypeAdapter;
@@ -23,93 +24,10 @@ import java.util.List;
  * CreateFilterRequest
  */
 
-public class CreateFilterRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  @SerializedName("name")
-  private String name = null;
-
-  @SerializedName("statements")
+public class CreateFilterRequest extends CreateNamedRequest {
+  public static final String SERIALIZED_NAME_STATEMENTS = "statements";
+  @SerializedName(SERIALIZED_NAME_STATEMENTS)
   private List<FilterStatement> statements = new ArrayList<FilterStatement>();
-
-  public CreateFilterRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateFilterRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
-
-  public CreateFilterRequest description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public CreateFilterRequest name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   public CreateFilterRequest statements(List<FilterStatement> statements) {
     this.statements = statements;
@@ -144,16 +62,13 @@ public class CreateFilterRequest {
       return false;
     }
     CreateFilterRequest createFilterRequest = (CreateFilterRequest) o;
-    return Objects.equals(this.includeSummary, createFilterRequest.includeSummary) &&
-        Objects.equals(this.parentId, createFilterRequest.parentId) &&
-        Objects.equals(this.description, createFilterRequest.description) &&
-        Objects.equals(this.name, createFilterRequest.name) &&
-        Objects.equals(this.statements, createFilterRequest.statements);
+    return Objects.equals(this.statements, createFilterRequest.statements) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, description, name, statements);
+    return Objects.hash(statements, super.hashCode());
   }
 
 
@@ -161,11 +76,7 @@ public class CreateFilterRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateFilterRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    statements: ").append(toIndentedString(statements)).append("\n");
     sb.append("}");
     return sb.toString();

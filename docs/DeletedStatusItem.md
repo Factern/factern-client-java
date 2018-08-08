@@ -1,11 +1,18 @@
 
+
 # DeletedStatusItem
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**status** | **Integer** |  | 
-**deletedItem** | [**DeletedItem**](DeletedItem.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+status | Integer | required
+deletedItem | [DeletedItem](DeletedItem.md) | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [DeletedStatusItem](DeletedStatusItem.md)

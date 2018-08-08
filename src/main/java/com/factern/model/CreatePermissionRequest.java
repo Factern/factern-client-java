@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.factern.model.PermissionPolicyDocument;
 import com.google.gson.TypeAdapter;
@@ -21,33 +22,14 @@ import java.io.IOException;
  * CreatePermissionRequest
  */
 
-public class CreatePermissionRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("policy")
+public class CreatePermissionRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_POLICY = "policy";
+  @SerializedName(SERIALIZED_NAME_POLICY)
   private PermissionPolicyDocument policy = null;
 
-  @SerializedName("targetNodeId")
+  public static final String SERIALIZED_NAME_TARGET_NODE_ID = "targetNodeId";
+  @SerializedName(SERIALIZED_NAME_TARGET_NODE_ID)
   private String targetNodeId = null;
-
-  public CreatePermissionRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public CreatePermissionRequest policy(PermissionPolicyDocument policy) {
     this.policy = policy;
@@ -95,14 +77,14 @@ public class CreatePermissionRequest {
       return false;
     }
     CreatePermissionRequest createPermissionRequest = (CreatePermissionRequest) o;
-    return Objects.equals(this.includeSummary, createPermissionRequest.includeSummary) &&
-        Objects.equals(this.policy, createPermissionRequest.policy) &&
-        Objects.equals(this.targetNodeId, createPermissionRequest.targetNodeId);
+    return Objects.equals(this.policy, createPermissionRequest.policy) &&
+        Objects.equals(this.targetNodeId, createPermissionRequest.targetNodeId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, policy, targetNodeId);
+    return Objects.hash(policy, targetNodeId, super.hashCode());
   }
 
 
@@ -110,8 +92,7 @@ public class CreatePermissionRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreatePermissionRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    policy: ").append(toIndentedString(policy)).append("\n");
     sb.append("    targetNodeId: ").append(toIndentedString(targetNodeId)).append("\n");
     sb.append("}");

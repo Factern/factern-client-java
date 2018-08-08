@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.NodeIdRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,13 +21,7 @@ import java.io.IOException;
  * UpdateStatusRequest
  */
 
-public class UpdateStatusRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("nodeId")
-  private String nodeId = null;
-
+public class UpdateStatusRequest extends NodeIdRequest {
   /**
    * Gets or Sets status
    */
@@ -74,44 +69,9 @@ public class UpdateStatusRequest {
     }
   }
 
-  @SerializedName("status")
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
   private StatusEnum status = null;
-
-  public UpdateStatusRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public UpdateStatusRequest nodeId(String nodeId) {
-    this.nodeId = nodeId;
-    return this;
-  }
-
-   /**
-   * Get nodeId
-   * @return nodeId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getNodeId() {
-    return nodeId;
-  }
-
-  public void setNodeId(String nodeId) {
-    this.nodeId = nodeId;
-  }
 
   public UpdateStatusRequest status(StatusEnum status) {
     this.status = status;
@@ -141,14 +101,13 @@ public class UpdateStatusRequest {
       return false;
     }
     UpdateStatusRequest updateStatusRequest = (UpdateStatusRequest) o;
-    return Objects.equals(this.includeSummary, updateStatusRequest.includeSummary) &&
-        Objects.equals(this.nodeId, updateStatusRequest.nodeId) &&
-        Objects.equals(this.status, updateStatusRequest.status);
+    return Objects.equals(this.status, updateStatusRequest.status) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, nodeId, status);
+    return Objects.hash(status, super.hashCode());
   }
 
 
@@ -156,9 +115,7 @@ public class UpdateStatusRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class UpdateStatusRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();

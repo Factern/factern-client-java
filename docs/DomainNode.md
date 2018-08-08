@@ -1,12 +1,18 @@
 
+
 # DomainNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**nodeId** | **String** |  | 
-**description** | **String** |  |  [optional]
-**name** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+description | String | optional
+name | String | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [DomainNode](DomainNode.md)

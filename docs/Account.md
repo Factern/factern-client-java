@@ -1,10 +1,17 @@
 
+
 # Account
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**balance** | [**BigDecimal**](BigDecimal.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+balance | [BigDecimal](BigDecimal.md) | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [Account](Account.md)

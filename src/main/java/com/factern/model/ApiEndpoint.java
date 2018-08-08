@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.HttpHeader;
 import com.factern.model.TransformElement;
 import com.google.gson.TypeAdapter;
@@ -24,16 +25,20 @@ import java.util.List;
  */
 
 public class ApiEndpoint {
-  @SerializedName("body")
+  public static final String SERIALIZED_NAME_BODY = "body";
+  @SerializedName(SERIALIZED_NAME_BODY)
   private String body = null;
 
-  @SerializedName("url")
+  public static final String SERIALIZED_NAME_URL = "url";
+  @SerializedName(SERIALIZED_NAME_URL)
   private String url = null;
 
-  @SerializedName("responseTransform")
+  public static final String SERIALIZED_NAME_RESPONSE_TRANSFORM = "responseTransform";
+  @SerializedName(SERIALIZED_NAME_RESPONSE_TRANSFORM)
   private List<TransformElement> responseTransform = null;
 
-  @SerializedName("headers")
+  public static final String SERIALIZED_NAME_HEADERS = "headers";
+  @SerializedName(SERIALIZED_NAME_HEADERS)
   private List<HttpHeader> headers = null;
 
   /**
@@ -83,7 +88,8 @@ public class ApiEndpoint {
     }
   }
 
-  @SerializedName("type")
+  public static final String SERIALIZED_NAME_TYPE = "type";
+  @SerializedName(SERIALIZED_NAME_TYPE)
   private TypeEnum type = null;
 
   /**
@@ -135,7 +141,8 @@ public class ApiEndpoint {
     }
   }
 
-  @SerializedName("method")
+  public static final String SERIALIZED_NAME_METHOD = "method";
+  @SerializedName(SERIALIZED_NAME_METHOD)
   private MethodEnum method = null;
 
   public ApiEndpoint body(String body) {

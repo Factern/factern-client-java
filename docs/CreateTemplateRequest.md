@@ -1,15 +1,25 @@
 
+
 # CreateTemplateRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**defaultStorageId** | **String** |  |  [optional]
-**memberIds** | **List&lt;String&gt;** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+defaultStorageId | String | optional
+memberIds | List&lt;String&gt; | required
+description | String | optional
+name | String | optional
+parentId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [CreateTemplateRequest](CreateTemplateRequest.md)
+    * [CreateNamedRequest](CreateNamedRequest.md)
+        * [CreateChildRequest](CreateChildRequest.md)
+            * [BaseRequest](BaseRequest.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,30 +21,10 @@ import java.io.IOException;
  * NodeIdRequest
  */
 
-public class NodeIdRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("nodeId")
+public class NodeIdRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
-
-  public NodeIdRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public NodeIdRequest nodeId(String nodeId) {
     this.nodeId = nodeId;
@@ -73,13 +54,13 @@ public class NodeIdRequest {
       return false;
     }
     NodeIdRequest nodeIdRequest = (NodeIdRequest) o;
-    return Objects.equals(this.includeSummary, nodeIdRequest.includeSummary) &&
-        Objects.equals(this.nodeId, nodeIdRequest.nodeId);
+    return Objects.equals(this.nodeId, nodeIdRequest.nodeId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, nodeId);
+    return Objects.hash(nodeId, super.hashCode());
   }
 
 
@@ -87,8 +68,7 @@ public class NodeIdRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class NodeIdRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("}");
     return sb.toString();

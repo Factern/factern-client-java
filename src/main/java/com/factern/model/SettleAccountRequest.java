@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.factern.model.TokenPayment;
 import com.google.gson.TypeAdapter;
@@ -21,30 +22,10 @@ import java.io.IOException;
  * SettleAccountRequest
  */
 
-public class SettleAccountRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("tokenPayment")
+public class SettleAccountRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_TOKEN_PAYMENT = "tokenPayment";
+  @SerializedName(SERIALIZED_NAME_TOKEN_PAYMENT)
   private TokenPayment tokenPayment = null;
-
-  public SettleAccountRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public SettleAccountRequest tokenPayment(TokenPayment tokenPayment) {
     this.tokenPayment = tokenPayment;
@@ -74,13 +55,13 @@ public class SettleAccountRequest {
       return false;
     }
     SettleAccountRequest settleAccountRequest = (SettleAccountRequest) o;
-    return Objects.equals(this.includeSummary, settleAccountRequest.includeSummary) &&
-        Objects.equals(this.tokenPayment, settleAccountRequest.tokenPayment);
+    return Objects.equals(this.tokenPayment, settleAccountRequest.tokenPayment) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, tokenPayment);
+    return Objects.hash(tokenPayment, super.hashCode());
   }
 
 
@@ -88,8 +69,7 @@ public class SettleAccountRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class SettleAccountRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    tokenPayment: ").append(toIndentedString(tokenPayment)).append("\n");
     sb.append("}");
     return sb.toString();

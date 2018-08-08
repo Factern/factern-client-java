@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +21,8 @@ import java.io.IOException;
  */
 
 public class BaseRequest {
-  @SerializedName("includeSummary")
+  public static final String SERIALIZED_NAME_INCLUDE_SUMMARY = "includeSummary";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_SUMMARY)
   private Boolean includeSummary = null;
 
   public BaseRequest includeSummary(Boolean includeSummary) {
@@ -33,7 +35,7 @@ public class BaseRequest {
    * @return includeSummary
   **/
   @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
+  public Boolean getIncludeSummary() {
     return includeSummary;
   }
 

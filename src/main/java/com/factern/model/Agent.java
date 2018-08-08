@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,13 +21,16 @@ import java.io.IOException;
  */
 
 public class Agent {
-  @SerializedName("application")
+  public static final String SERIALIZED_NAME_APPLICATION = "application";
+  @SerializedName(SERIALIZED_NAME_APPLICATION)
   private String application = null;
 
-  @SerializedName("login")
+  public static final String SERIALIZED_NAME_LOGIN = "login";
+  @SerializedName(SERIALIZED_NAME_LOGIN)
   private String login = null;
 
-  @SerializedName("representing")
+  public static final String SERIALIZED_NAME_REPRESENTING = "representing";
+  @SerializedName(SERIALIZED_NAME_REPRESENTING)
   private String representing = null;
 
   public Agent application(String application) {

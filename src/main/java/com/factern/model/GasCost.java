@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,10 +22,12 @@ import java.math.BigDecimal;
  */
 
 public class GasCost {
-  @SerializedName("consumed")
+  public static final String SERIALIZED_NAME_CONSUMED = "consumed";
+  @SerializedName(SERIALIZED_NAME_CONSUMED)
   private BigDecimal consumed = null;
 
-  @SerializedName("price")
+  public static final String SERIALIZED_NAME_PRICE = "price";
+  @SerializedName(SERIALIZED_NAME_PRICE)
   private BigDecimal price = null;
 
   public GasCost consumed(BigDecimal consumed) {

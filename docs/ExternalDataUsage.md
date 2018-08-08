@@ -1,11 +1,18 @@
 
+
 # ExternalDataUsage
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**bytesRead** | [**BigDecimal**](BigDecimal.md) |  | 
-**bytesWritten** | [**BigDecimal**](BigDecimal.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+bytesRead | [BigDecimal](BigDecimal.md) | required
+bytesWritten | [BigDecimal](BigDecimal.md) | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [ExternalDataUsage](ExternalDataUsage.md)

@@ -1,18 +1,16 @@
 
+
 # PermissionAction
 
-## Enum
+## Properties
 
-
-* `READ` (value: `"Read"`)
-
-* `ACT` (value: `"Act"`)
-
-* `APPLICATION` (value: `"Application"`)
-
-* `CREATE` (value: `"Create"`)
-
-* `DESCRIBE` (value: `"Describe"`)
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance hierarchy
+
+
+* [PermissionAction](PermissionAction.md)

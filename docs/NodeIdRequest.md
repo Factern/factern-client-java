@@ -1,11 +1,19 @@
 
+
 # NodeIdRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**nodeId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+nodeId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [NodeIdRequest](NodeIdRequest.md)
+    * [BaseRequest](BaseRequest.md)

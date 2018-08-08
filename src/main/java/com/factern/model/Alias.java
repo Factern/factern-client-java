@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
@@ -23,13 +24,16 @@ import java.math.BigDecimal;
  */
 
 public class Alias extends StandardNode {
-  @SerializedName("local")
+  public static final String SERIALIZED_NAME_LOCAL = "local";
+  @SerializedName(SERIALIZED_NAME_LOCAL)
   private Boolean local = null;
 
-  @SerializedName("description")
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description = null;
 
-  @SerializedName("name")
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name = null;
 
   public Alias local(Boolean local) {
@@ -42,7 +46,7 @@ public class Alias extends StandardNode {
    * @return local
   **/
   @ApiModelProperty(value = "")
-  public Boolean isLocal() {
+  public Boolean getLocal() {
     return local;
   }
 

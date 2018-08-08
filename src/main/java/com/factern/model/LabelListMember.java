@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
@@ -23,7 +24,8 @@ import java.math.BigDecimal;
  */
 
 public class LabelListMember extends StandardNode {
-  @SerializedName("labelListId")
+  public static final String SERIALIZED_NAME_LABEL_LIST_ID = "labelListId";
+  @SerializedName(SERIALIZED_NAME_LABEL_LIST_ID)
   private String labelListId = null;
 
   public LabelListMember labelListId(String labelListId) {

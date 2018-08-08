@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
@@ -23,47 +24,33 @@ import java.math.BigDecimal;
  */
 
 public class BaseResponse {
-  @SerializedName("deleted")
-  private Boolean deleted = null;
-
-  @SerializedName("timestamp")
+  public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
+  @SerializedName(SERIALIZED_NAME_TIMESTAMP)
   private BigDecimal timestamp = null;
 
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
-  @SerializedName("agent")
+  public static final String SERIALIZED_NAME_AGENT = "agent";
+  @SerializedName(SERIALIZED_NAME_AGENT)
   private Agent agent = null;
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
-  @SerializedName("batchId")
+  public static final String SERIALIZED_NAME_BATCH_ID = "batchId";
+  @SerializedName(SERIALIZED_NAME_BATCH_ID)
   private String batchId = null;
 
-  @SerializedName("factType")
+  public static final String SERIALIZED_NAME_FACT_TYPE = "factType";
+  @SerializedName(SERIALIZED_NAME_FACT_TYPE)
   private String factType = null;
 
-  @SerializedName("parentId")
+  public static final String SERIALIZED_NAME_PARENT_ID = "parentId";
+  @SerializedName(SERIALIZED_NAME_PARENT_ID)
   private String parentId = null;
-
-  public BaseResponse deleted(Boolean deleted) {
-    this.deleted = deleted;
-    return this;
-  }
-
-   /**
-   * Get deleted
-   * @return deleted
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isDeleted() {
-    return deleted;
-  }
-
-  public void setDeleted(Boolean deleted) {
-    this.deleted = deleted;
-  }
 
   public BaseResponse timestamp(BigDecimal timestamp) {
     this.timestamp = timestamp;
@@ -201,8 +188,7 @@ public class BaseResponse {
       return false;
     }
     BaseResponse baseResponse = (BaseResponse) o;
-    return Objects.equals(this.deleted, baseResponse.deleted) &&
-        Objects.equals(this.timestamp, baseResponse.timestamp) &&
+    return Objects.equals(this.timestamp, baseResponse.timestamp) &&
         Objects.equals(this.nodeId, baseResponse.nodeId) &&
         Objects.equals(this.agent, baseResponse.agent) &&
         Objects.equals(this.summary, baseResponse.summary) &&
@@ -213,7 +199,7 @@ public class BaseResponse {
 
   @Override
   public int hashCode() {
-    return Objects.hash(deleted, timestamp, nodeId, agent, summary, batchId, factType, parentId);
+    return Objects.hash(timestamp, nodeId, agent, summary, batchId, factType, parentId);
   }
 
 
@@ -222,7 +208,6 @@ public class BaseResponse {
     StringBuilder sb = new StringBuilder();
     sb.append("class BaseResponse {\n");
     
-    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    agent: ").append(toIndentedString(agent)).append("\n");

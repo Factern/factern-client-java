@@ -1,12 +1,16 @@
 
+
 # PermissionEffect
 
-## Enum
+## Properties
+
+Name | Type | Required
+-------- | -------- | --------
 
 
-* `ALLOW` (value: `"Allow"`)
-
-* `DENY` (value: `"Deny"`)
 
 
+## Inheritance hierarchy
 
+
+* [PermissionEffect](PermissionEffect.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.NodeListing;
 import com.factern.model.StandardNode;
 import com.factern.model.Summary;
@@ -25,16 +26,20 @@ import java.util.List;
  */
 
 public class DescribeResponse {
-  @SerializedName("node")
+  public static final String SERIALIZED_NAME_NODE = "node";
+  @SerializedName(SERIALIZED_NAME_NODE)
   private StandardNode node = null;
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
-  @SerializedName("children")
+  public static final String SERIALIZED_NAME_CHILDREN = "children";
+  @SerializedName(SERIALIZED_NAME_CHILDREN)
   private NodeListing children = null;
 
-  @SerializedName("memberIds")
+  public static final String SERIALIZED_NAME_MEMBER_IDS = "memberIds";
+  @SerializedName(SERIALIZED_NAME_MEMBER_IDS)
   private List<Object> memberIds = null;
 
   public DescribeResponse node(StandardNode node) {

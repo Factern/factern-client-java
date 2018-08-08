@@ -1,10 +1,17 @@
 
+
 # SettleAccountResponse
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**settlementId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+settlementId | String | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [SettleAccountResponse](SettleAccountResponse.md)

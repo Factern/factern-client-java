@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateNamedRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -22,96 +23,14 @@ import java.util.List;
  * CreateScopeRequest
  */
 
-public class CreateScopeRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  @SerializedName("name")
-  private String name = null;
-
-  @SerializedName("filterIds")
+public class CreateScopeRequest extends CreateNamedRequest {
+  public static final String SERIALIZED_NAME_FILTER_IDS = "filterIds";
+  @SerializedName(SERIALIZED_NAME_FILTER_IDS)
   private List<String> filterIds = new ArrayList<String>();
 
-  @SerializedName("templateIds")
+  public static final String SERIALIZED_NAME_TEMPLATE_IDS = "templateIds";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_IDS)
   private List<String> templateIds = new ArrayList<String>();
-
-  public CreateScopeRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateScopeRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
-
-  public CreateScopeRequest description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public CreateScopeRequest name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   public CreateScopeRequest filterIds(List<String> filterIds) {
     this.filterIds = filterIds;
@@ -169,17 +88,14 @@ public class CreateScopeRequest {
       return false;
     }
     CreateScopeRequest createScopeRequest = (CreateScopeRequest) o;
-    return Objects.equals(this.includeSummary, createScopeRequest.includeSummary) &&
-        Objects.equals(this.parentId, createScopeRequest.parentId) &&
-        Objects.equals(this.description, createScopeRequest.description) &&
-        Objects.equals(this.name, createScopeRequest.name) &&
-        Objects.equals(this.filterIds, createScopeRequest.filterIds) &&
-        Objects.equals(this.templateIds, createScopeRequest.templateIds);
+    return Objects.equals(this.filterIds, createScopeRequest.filterIds) &&
+        Objects.equals(this.templateIds, createScopeRequest.templateIds) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, description, name, filterIds, templateIds);
+    return Objects.hash(filterIds, templateIds, super.hashCode());
   }
 
 
@@ -187,11 +103,7 @@ public class CreateScopeRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateScopeRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    filterIds: ").append(toIndentedString(filterIds)).append("\n");
     sb.append("    templateIds: ").append(toIndentedString(templateIds)).append("\n");
     sb.append("}");

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -22,13 +23,16 @@ import java.util.List;
  */
 
 public class ScopeNode {
-  @SerializedName("description")
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description = null;
 
-  @SerializedName("name")
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name = null;
 
-  @SerializedName("memberIds")
+  public static final String SERIALIZED_NAME_MEMBER_IDS = "memberIds";
+  @SerializedName(SERIALIZED_NAME_MEMBER_IDS)
   private List<String> memberIds = new ArrayList<String>();
 
   public ScopeNode description(String description) {

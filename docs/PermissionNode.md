@@ -1,12 +1,19 @@
 
+
 # PermissionNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**policy** | [**PermissionPolicyDocument**](PermissionPolicyDocument.md) |  |  [optional]
-**targetNodeId** | **String** |  |  [optional]
-**permissionInterfaceId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+policy | [PermissionPolicyDocument](PermissionPolicyDocument.md) | optional
+targetNodeId | String | optional
+permissionInterfaceId | String | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [PermissionNode](PermissionNode.md)

@@ -1,9 +1,16 @@
 
+
 # FilterNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance hierarchy
+
+
+* [FilterNode](FilterNode.md)

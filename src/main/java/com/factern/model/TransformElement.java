@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -73,10 +74,12 @@ public class TransformElement {
     }
   }
 
-  @SerializedName("operation")
+  public static final String SERIALIZED_NAME_OPERATION = "operation";
+  @SerializedName(SERIALIZED_NAME_OPERATION)
   private OperationEnum operation = null;
 
-  @SerializedName("spec")
+  public static final String SERIALIZED_NAME_SPEC = "spec";
+  @SerializedName(SERIALIZED_NAME_SPEC)
   private Object spec = null;
 
   public TransformElement operation(OperationEnum operation) {

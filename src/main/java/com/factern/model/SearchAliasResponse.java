@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,10 +22,12 @@ import java.io.IOException;
  */
 
 public class SearchAliasResponse {
-  @SerializedName("exists")
+  public static final String SERIALIZED_NAME_EXISTS = "exists";
+  @SerializedName(SERIALIZED_NAME_EXISTS)
   private Boolean exists = null;
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
   public SearchAliasResponse exists(Boolean exists) {
@@ -37,7 +40,7 @@ public class SearchAliasResponse {
    * @return exists
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boolean isExists() {
+  public Boolean getExists() {
     return exists;
   }
 

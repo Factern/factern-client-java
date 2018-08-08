@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.PermissionAction;
 import com.factern.model.PermissionEffect;
 import com.google.gson.TypeAdapter;
@@ -24,22 +25,28 @@ import java.util.List;
  */
 
 public class PermissionPolicyDocument {
-  @SerializedName("granteeId")
+  public static final String SERIALIZED_NAME_GRANTEE_ID = "granteeId";
+  @SerializedName(SERIALIZED_NAME_GRANTEE_ID)
   private String granteeId = null;
 
-  @SerializedName("effect")
+  public static final String SERIALIZED_NAME_EFFECT = "effect";
+  @SerializedName(SERIALIZED_NAME_EFFECT)
   private PermissionEffect effect = null;
 
-  @SerializedName("actions")
+  public static final String SERIALIZED_NAME_ACTIONS = "actions";
+  @SerializedName(SERIALIZED_NAME_ACTIONS)
   private List<PermissionAction> actions = new ArrayList<PermissionAction>();
 
-  @SerializedName("scopeId")
+  public static final String SERIALIZED_NAME_SCOPE_ID = "scopeId";
+  @SerializedName(SERIALIZED_NAME_SCOPE_ID)
   private String scopeId = null;
 
-  @SerializedName("requestInterfaceId")
+  public static final String SERIALIZED_NAME_REQUEST_INTERFACE_ID = "requestInterfaceId";
+  @SerializedName(SERIALIZED_NAME_REQUEST_INTERFACE_ID)
   private String requestInterfaceId = null;
 
-  @SerializedName("applicationId")
+  public static final String SERIALIZED_NAME_APPLICATION_ID = "applicationId";
+  @SerializedName(SERIALIZED_NAME_APPLICATION_ID)
   private String applicationId = null;
 
   public PermissionPolicyDocument granteeId(String granteeId) {

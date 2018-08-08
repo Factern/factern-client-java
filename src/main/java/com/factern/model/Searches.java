@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,16 +22,20 @@ import java.math.BigDecimal;
  */
 
 public class Searches {
-  @SerializedName("searches")
+  public static final String SERIALIZED_NAME_SEARCHES = "searches";
+  @SerializedName(SERIALIZED_NAME_SEARCHES)
   private BigDecimal searches = null;
 
-  @SerializedName("reindexingCalls")
+  public static final String SERIALIZED_NAME_REINDEXING_CALLS = "reindexingCalls";
+  @SerializedName(SERIALIZED_NAME_REINDEXING_CALLS)
   private BigDecimal reindexingCalls = null;
 
-  @SerializedName("hits")
+  public static final String SERIALIZED_NAME_HITS = "hits";
+  @SerializedName(SERIALIZED_NAME_HITS)
   private BigDecimal hits = null;
 
-  @SerializedName("reindexedNodes")
+  public static final String SERIALIZED_NAME_REINDEXED_NODES = "reindexedNodes";
+  @SerializedName(SERIALIZED_NAME_REINDEXED_NODES)
   private BigDecimal reindexedNodes = null;
 
   public Searches searches(BigDecimal searches) {

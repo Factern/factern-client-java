@@ -1,12 +1,19 @@
 
+
 # ScopeNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**description** | **String** |  |  [optional]
-**name** | **String** |  | 
-**memberIds** | **List&lt;String&gt;** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+description | String | optional
+name | String | required
+memberIds | List&lt;String&gt; | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [ScopeNode](ScopeNode.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateChildRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,51 +21,10 @@ import java.io.IOException;
  * CreateMemberRequest
  */
 
-public class CreateMemberRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("memberId")
+public class CreateMemberRequest extends CreateChildRequest {
+  public static final String SERIALIZED_NAME_MEMBER_ID = "memberId";
+  @SerializedName(SERIALIZED_NAME_MEMBER_ID)
   private String memberId = null;
-
-  public CreateMemberRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateMemberRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
 
   public CreateMemberRequest memberId(String memberId) {
     this.memberId = memberId;
@@ -94,14 +54,13 @@ public class CreateMemberRequest {
       return false;
     }
     CreateMemberRequest createMemberRequest = (CreateMemberRequest) o;
-    return Objects.equals(this.includeSummary, createMemberRequest.includeSummary) &&
-        Objects.equals(this.parentId, createMemberRequest.parentId) &&
-        Objects.equals(this.memberId, createMemberRequest.memberId);
+    return Objects.equals(this.memberId, createMemberRequest.memberId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, memberId);
+    return Objects.hash(memberId, super.hashCode());
   }
 
 
@@ -109,9 +68,7 @@ public class CreateMemberRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateMemberRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    memberId: ").append(toIndentedString(memberId)).append("\n");
     sb.append("}");
     return sb.toString();

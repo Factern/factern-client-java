@@ -1,11 +1,18 @@
 
+
 # InformationNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fieldId** | **String** |  | 
-**storageId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+fieldId | String | required
+storageId | String | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [InformationNode](InformationNode.md)

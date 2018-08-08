@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.ReadStatusItem;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
@@ -24,10 +25,12 @@ import java.util.List;
  */
 
 public class ReadResponse {
-  @SerializedName("items")
+  public static final String SERIALIZED_NAME_ITEMS = "items";
+  @SerializedName(SERIALIZED_NAME_ITEMS)
   private List<ReadStatusItem> items = null;
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
   public ReadResponse items(List<ReadStatusItem> items) {

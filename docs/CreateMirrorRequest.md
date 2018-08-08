@@ -1,13 +1,21 @@
 
+
 # CreateMirrorRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**destinationNodeId** | **String** |  | 
-**sourceNodeId** | **String** |  | 
-**templateId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+destinationNodeId | String | required
+sourceNodeId | String | required
+templateId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [CreateMirrorRequest](CreateMirrorRequest.md)
+    * [BaseRequest](BaseRequest.md)

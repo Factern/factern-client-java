@@ -1,11 +1,18 @@
 
+
 # SearchAliasResponse
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**exists** | **Boolean** |  | 
-**summary** | [**Summary**](Summary.md) |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+exists | Boolean | required
+summary | [Summary](Summary.md) | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [SearchAliasResponse](SearchAliasResponse.md)

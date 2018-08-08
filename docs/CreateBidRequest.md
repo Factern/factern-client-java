@@ -1,11 +1,19 @@
 
+
 # CreateBidRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**priceId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+priceId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [CreateBidRequest](CreateBidRequest.md)
+    * [BaseRequest](BaseRequest.md)

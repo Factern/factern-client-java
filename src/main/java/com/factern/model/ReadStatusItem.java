@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.ReadItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -21,10 +22,12 @@ import java.io.IOException;
  */
 
 public class ReadStatusItem {
-  @SerializedName("status")
+  public static final String SERIALIZED_NAME_STATUS = "status";
+  @SerializedName(SERIALIZED_NAME_STATUS)
   private Integer status = null;
 
-  @SerializedName("readItem")
+  public static final String SERIALIZED_NAME_READ_ITEM = "readItem";
+  @SerializedName(SERIALIZED_NAME_READ_ITEM)
   private ReadItem readItem = null;
 
   public ReadStatusItem status(Integer status) {

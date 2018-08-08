@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +21,8 @@ import java.io.IOException;
  */
 
 public class SettleAccountResponse {
-  @SerializedName("settlementId")
+  public static final String SERIALIZED_NAME_SETTLEMENT_ID = "settlementId";
+  @SerializedName(SERIALIZED_NAME_SETTLEMENT_ID)
   private String settlementId = null;
 
   public SettleAccountResponse settlementId(String settlementId) {

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateNamedRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -22,96 +23,14 @@ import java.util.List;
  * CreateTemplateRequest
  */
 
-public class CreateTemplateRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  @SerializedName("name")
-  private String name = null;
-
-  @SerializedName("defaultStorageId")
+public class CreateTemplateRequest extends CreateNamedRequest {
+  public static final String SERIALIZED_NAME_DEFAULT_STORAGE_ID = "defaultStorageId";
+  @SerializedName(SERIALIZED_NAME_DEFAULT_STORAGE_ID)
   private String defaultStorageId = null;
 
-  @SerializedName("memberIds")
+  public static final String SERIALIZED_NAME_MEMBER_IDS = "memberIds";
+  @SerializedName(SERIALIZED_NAME_MEMBER_IDS)
   private List<String> memberIds = new ArrayList<String>();
-
-  public CreateTemplateRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateTemplateRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
-
-  public CreateTemplateRequest description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public CreateTemplateRequest name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   public CreateTemplateRequest defaultStorageId(String defaultStorageId) {
     this.defaultStorageId = defaultStorageId;
@@ -164,17 +83,14 @@ public class CreateTemplateRequest {
       return false;
     }
     CreateTemplateRequest createTemplateRequest = (CreateTemplateRequest) o;
-    return Objects.equals(this.includeSummary, createTemplateRequest.includeSummary) &&
-        Objects.equals(this.parentId, createTemplateRequest.parentId) &&
-        Objects.equals(this.description, createTemplateRequest.description) &&
-        Objects.equals(this.name, createTemplateRequest.name) &&
-        Objects.equals(this.defaultStorageId, createTemplateRequest.defaultStorageId) &&
-        Objects.equals(this.memberIds, createTemplateRequest.memberIds);
+    return Objects.equals(this.defaultStorageId, createTemplateRequest.defaultStorageId) &&
+        Objects.equals(this.memberIds, createTemplateRequest.memberIds) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, description, name, defaultStorageId, memberIds);
+    return Objects.hash(defaultStorageId, memberIds, super.hashCode());
   }
 
 
@@ -182,11 +98,7 @@ public class CreateTemplateRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateTemplateRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    defaultStorageId: ").append(toIndentedString(defaultStorageId)).append("\n");
     sb.append("    memberIds: ").append(toIndentedString(memberIds)).append("\n");
     sb.append("}");

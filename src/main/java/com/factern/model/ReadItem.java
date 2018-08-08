@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.ReadStatusItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -23,16 +24,20 @@ import java.util.List;
  */
 
 public class ReadItem {
-  @SerializedName("fieldId")
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
 
-  @SerializedName("data")
+  public static final String SERIALIZED_NAME_DATA = "data";
+  @SerializedName(SERIALIZED_NAME_DATA)
   private String data = null;
 
-  @SerializedName("children")
+  public static final String SERIALIZED_NAME_CHILDREN = "children";
+  @SerializedName(SERIALIZED_NAME_CHILDREN)
   private List<ReadStatusItem> children = null;
 
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
   public ReadItem fieldId(String fieldId) {

@@ -1,11 +1,19 @@
 
+
 # ReadInformationRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**nodeId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+nodeId | String | required
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [ReadInformationRequest](ReadInformationRequest.md)
+    * [BaseRequest](BaseRequest.md)

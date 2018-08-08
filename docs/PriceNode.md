@@ -1,9 +1,16 @@
 
+
 # PriceNode
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
+
+Name | Type | Required
+-------- | -------- | --------
 
 
 
+
+## Inheritance hierarchy
+
+
+* [PriceNode](PriceNode.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -22,36 +23,18 @@ import java.util.List;
  * DeleteRequest
  */
 
-public class DeleteRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("nodeId")
+public class DeleteRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
-  @SerializedName("template")
+  public static final String SERIALIZED_NAME_TEMPLATE = "template";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE)
   private List<Object> template = null;
 
-  @SerializedName("templateId")
+  public static final String SERIALIZED_NAME_TEMPLATE_ID = "templateId";
+  @SerializedName(SERIALIZED_NAME_TEMPLATE_ID)
   private String templateId = null;
-
-  public DeleteRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public DeleteRequest nodeId(String nodeId) {
     this.nodeId = nodeId;
@@ -125,15 +108,15 @@ public class DeleteRequest {
       return false;
     }
     DeleteRequest deleteRequest = (DeleteRequest) o;
-    return Objects.equals(this.includeSummary, deleteRequest.includeSummary) &&
-        Objects.equals(this.nodeId, deleteRequest.nodeId) &&
+    return Objects.equals(this.nodeId, deleteRequest.nodeId) &&
         Objects.equals(this.template, deleteRequest.template) &&
-        Objects.equals(this.templateId, deleteRequest.templateId);
+        Objects.equals(this.templateId, deleteRequest.templateId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, nodeId, template, templateId);
+    return Objects.hash(nodeId, template, templateId, super.hashCode());
   }
 
 
@@ -141,8 +124,7 @@ public class DeleteRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class DeleteRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("    templateId: ").append(toIndentedString(templateId)).append("\n");

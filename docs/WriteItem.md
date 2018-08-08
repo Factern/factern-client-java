@@ -1,12 +1,19 @@
 
+
 # WriteItem
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fieldId** | **String** |  | 
-**children** | [**List&lt;WriteItem&gt;**](WriteItem.md) |  |  [optional]
-**nodeId** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+fieldId | String | required
+children | [List&lt;WriteItem&gt;](WriteItem.md) | optional
+nodeId | String | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [WriteItem](WriteItem.md)

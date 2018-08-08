@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -83,10 +84,12 @@ public class FilterStatement {
     }
   }
 
-  @SerializedName("field")
+  public static final String SERIALIZED_NAME_FIELD = "field";
+  @SerializedName(SERIALIZED_NAME_FIELD)
   private FieldEnum field = null;
 
-  @SerializedName("arguments")
+  public static final String SERIALIZED_NAME_ARGUMENTS = "arguments";
+  @SerializedName(SERIALIZED_NAME_ARGUMENTS)
   private List<String> arguments = new ArrayList<String>();
 
   public FilterStatement field(FieldEnum field) {

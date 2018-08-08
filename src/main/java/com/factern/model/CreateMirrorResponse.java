@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.BaseResponse;
 import com.factern.model.Summary;
@@ -23,177 +24,10 @@ import java.math.BigDecimal;
  * CreateMirrorResponse
  */
 
-public class CreateMirrorResponse {
-  @SerializedName("deleted")
-  private Boolean deleted = null;
-
-  @SerializedName("timestamp")
-  private BigDecimal timestamp = null;
-
-  @SerializedName("nodeId")
-  private String nodeId = null;
-
-  @SerializedName("agent")
-  private Agent agent = null;
-
-  @SerializedName("summary")
-  private Summary summary = null;
-
-  @SerializedName("batchId")
-  private String batchId = null;
-
-  @SerializedName("factType")
-  private String factType = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("enabled")
+public class CreateMirrorResponse extends BaseResponse {
+  public static final String SERIALIZED_NAME_ENABLED = "enabled";
+  @SerializedName(SERIALIZED_NAME_ENABLED)
   private Boolean enabled = null;
-
-  public CreateMirrorResponse deleted(Boolean deleted) {
-    this.deleted = deleted;
-    return this;
-  }
-
-   /**
-   * Get deleted
-   * @return deleted
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isDeleted() {
-    return deleted;
-  }
-
-  public void setDeleted(Boolean deleted) {
-    this.deleted = deleted;
-  }
-
-  public CreateMirrorResponse timestamp(BigDecimal timestamp) {
-    this.timestamp = timestamp;
-    return this;
-  }
-
-   /**
-   * Get timestamp
-   * @return timestamp
-  **/
-  @ApiModelProperty(value = "")
-  public BigDecimal getTimestamp() {
-    return timestamp;
-  }
-
-  public void setTimestamp(BigDecimal timestamp) {
-    this.timestamp = timestamp;
-  }
-
-  public CreateMirrorResponse nodeId(String nodeId) {
-    this.nodeId = nodeId;
-    return this;
-  }
-
-   /**
-   * Get nodeId
-   * @return nodeId
-  **/
-  @ApiModelProperty(value = "")
-  public String getNodeId() {
-    return nodeId;
-  }
-
-  public void setNodeId(String nodeId) {
-    this.nodeId = nodeId;
-  }
-
-  public CreateMirrorResponse agent(Agent agent) {
-    this.agent = agent;
-    return this;
-  }
-
-   /**
-   * Get agent
-   * @return agent
-  **/
-  @ApiModelProperty(value = "")
-  public Agent getAgent() {
-    return agent;
-  }
-
-  public void setAgent(Agent agent) {
-    this.agent = agent;
-  }
-
-  public CreateMirrorResponse summary(Summary summary) {
-    this.summary = summary;
-    return this;
-  }
-
-   /**
-   * Get summary
-   * @return summary
-  **/
-  @ApiModelProperty(value = "")
-  public Summary getSummary() {
-    return summary;
-  }
-
-  public void setSummary(Summary summary) {
-    this.summary = summary;
-  }
-
-  public CreateMirrorResponse batchId(String batchId) {
-    this.batchId = batchId;
-    return this;
-  }
-
-   /**
-   * Get batchId
-   * @return batchId
-  **/
-  @ApiModelProperty(value = "")
-  public String getBatchId() {
-    return batchId;
-  }
-
-  public void setBatchId(String batchId) {
-    this.batchId = batchId;
-  }
-
-  public CreateMirrorResponse factType(String factType) {
-    this.factType = factType;
-    return this;
-  }
-
-   /**
-   * Get factType
-   * @return factType
-  **/
-  @ApiModelProperty(value = "")
-  public String getFactType() {
-    return factType;
-  }
-
-  public void setFactType(String factType) {
-    this.factType = factType;
-  }
-
-  public CreateMirrorResponse parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
 
   public CreateMirrorResponse enabled(Boolean enabled) {
     this.enabled = enabled;
@@ -205,7 +39,7 @@ public class CreateMirrorResponse {
    * @return enabled
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boolean isEnabled() {
+  public Boolean getEnabled() {
     return enabled;
   }
 
@@ -223,20 +57,13 @@ public class CreateMirrorResponse {
       return false;
     }
     CreateMirrorResponse createMirrorResponse = (CreateMirrorResponse) o;
-    return Objects.equals(this.deleted, createMirrorResponse.deleted) &&
-        Objects.equals(this.timestamp, createMirrorResponse.timestamp) &&
-        Objects.equals(this.nodeId, createMirrorResponse.nodeId) &&
-        Objects.equals(this.agent, createMirrorResponse.agent) &&
-        Objects.equals(this.summary, createMirrorResponse.summary) &&
-        Objects.equals(this.batchId, createMirrorResponse.batchId) &&
-        Objects.equals(this.factType, createMirrorResponse.factType) &&
-        Objects.equals(this.parentId, createMirrorResponse.parentId) &&
-        Objects.equals(this.enabled, createMirrorResponse.enabled);
+    return Objects.equals(this.enabled, createMirrorResponse.enabled) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(deleted, timestamp, nodeId, agent, summary, batchId, factType, parentId, enabled);
+    return Objects.hash(enabled, super.hashCode());
   }
 
 
@@ -244,15 +71,7 @@ public class CreateMirrorResponse {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateMirrorResponse {\n");
-    
-    sb.append("    deleted: ").append(toIndentedString(deleted)).append("\n");
-    sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-    sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
-    sb.append("    agent: ").append(toIndentedString(agent)).append("\n");
-    sb.append("    summary: ").append(toIndentedString(summary)).append("\n");
-    sb.append("    batchId: ").append(toIndentedString(batchId)).append("\n");
-    sb.append("    factType: ").append(toIndentedString(factType)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    enabled: ").append(toIndentedString(enabled)).append("\n");
     sb.append("}");
     return sb.toString();

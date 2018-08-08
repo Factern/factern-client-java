@@ -77,7 +77,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("Swagger-Codegen/1.0.SNAPSHOT/java");
+        setUserAgent("OpenAPI-Generator/1.0.SNAPSHOT/java");
 
         // Setup authentications (key: authentication name, value: authentication).
         authentications = new HashMap<String, Authentication>();
@@ -886,7 +886,7 @@ public class ApiClient {
      * @param <T> Type
      * @param response Response
      * @param returnType Return type
-     * @throws ApiException If the response has a unsuccessful status code or
+     * @throws ApiException If the response has an unsuccessful status code or
      *   fail to deserialize the response body
      * @return Type
      */

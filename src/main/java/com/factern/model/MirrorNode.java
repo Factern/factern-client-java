@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,7 +21,8 @@ import java.io.IOException;
  */
 
 public class MirrorNode {
-  @SerializedName("enabled")
+  public static final String SERIALIZED_NAME_ENABLED = "enabled";
+  @SerializedName(SERIALIZED_NAME_ENABLED)
   private Boolean enabled = null;
 
   public MirrorNode enabled(Boolean enabled) {
@@ -33,7 +35,7 @@ public class MirrorNode {
    * @return enabled
   **/
   @ApiModelProperty(required = true, value = "")
-  public Boolean isEnabled() {
+  public Boolean getEnabled() {
     return enabled;
   }
 

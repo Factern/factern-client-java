@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.WriteItem;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -23,13 +24,16 @@ import java.util.List;
  */
 
 public class WriteItem {
-  @SerializedName("fieldId")
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
 
-  @SerializedName("children")
+  public static final String SERIALIZED_NAME_CHILDREN = "children";
+  @SerializedName(SERIALIZED_NAME_CHILDREN)
   private List<WriteItem> children = null;
 
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
   public WriteItem fieldId(String fieldId) {

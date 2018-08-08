@@ -1,11 +1,18 @@
 
+
 # FieldStoreValues
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | **String** |  | 
-**storageId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+data | String | required
+storageId | String | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [FieldStoreValues](FieldStoreValues.md)

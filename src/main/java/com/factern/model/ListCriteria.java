@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,16 +22,20 @@ import java.math.BigDecimal;
  */
 
 public class ListCriteria {
-  @SerializedName("includeDeleted")
+  public static final String SERIALIZED_NAME_INCLUDE_DELETED = "includeDeleted";
+  @SerializedName(SERIALIZED_NAME_INCLUDE_DELETED)
   private Boolean includeDeleted = null;
 
-  @SerializedName("labelListName")
+  public static final String SERIALIZED_NAME_LABEL_LIST_NAME = "labelListName";
+  @SerializedName(SERIALIZED_NAME_LABEL_LIST_NAME)
   private String labelListName = null;
 
-  @SerializedName("maxResults")
+  public static final String SERIALIZED_NAME_MAX_RESULTS = "maxResults";
+  @SerializedName(SERIALIZED_NAME_MAX_RESULTS)
   private BigDecimal maxResults = null;
 
-  @SerializedName("typeName")
+  public static final String SERIALIZED_NAME_TYPE_NAME = "typeName";
+  @SerializedName(SERIALIZED_NAME_TYPE_NAME)
   private String typeName = null;
 
   /**
@@ -104,22 +109,28 @@ public class ListCriteria {
     }
   }
 
-  @SerializedName("factType")
+  public static final String SERIALIZED_NAME_FACT_TYPE = "factType";
+  @SerializedName(SERIALIZED_NAME_FACT_TYPE)
   private FactTypeEnum factType = null;
 
-  @SerializedName("actionId")
+  public static final String SERIALIZED_NAME_ACTION_ID = "actionId";
+  @SerializedName(SERIALIZED_NAME_ACTION_ID)
   private String actionId = null;
 
-  @SerializedName("labelListId")
+  public static final String SERIALIZED_NAME_LABEL_LIST_ID = "labelListId";
+  @SerializedName(SERIALIZED_NAME_LABEL_LIST_ID)
   private String labelListId = null;
 
-  @SerializedName("startingFromTimestamp")
+  public static final String SERIALIZED_NAME_STARTING_FROM_TIMESTAMP = "startingFromTimestamp";
+  @SerializedName(SERIALIZED_NAME_STARTING_FROM_TIMESTAMP)
   private BigDecimal startingFromTimestamp = null;
 
-  @SerializedName("nextToken")
+  public static final String SERIALIZED_NAME_NEXT_TOKEN = "nextToken";
+  @SerializedName(SERIALIZED_NAME_NEXT_TOKEN)
   private String nextToken = null;
 
-  @SerializedName("fieldId")
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
 
   public ListCriteria includeDeleted(Boolean includeDeleted) {
@@ -132,7 +143,7 @@ public class ListCriteria {
    * @return includeDeleted
   **/
   @ApiModelProperty(value = "")
-  public Boolean isIncludeDeleted() {
+  public Boolean getIncludeDeleted() {
     return includeDeleted;
   }
 

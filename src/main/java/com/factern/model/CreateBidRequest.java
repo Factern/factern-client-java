@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,30 +21,10 @@ import java.io.IOException;
  * CreateBidRequest
  */
 
-public class CreateBidRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("priceId")
+public class CreateBidRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_PRICE_ID = "priceId";
+  @SerializedName(SERIALIZED_NAME_PRICE_ID)
   private String priceId = null;
-
-  public CreateBidRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public CreateBidRequest priceId(String priceId) {
     this.priceId = priceId;
@@ -73,13 +54,13 @@ public class CreateBidRequest {
       return false;
     }
     CreateBidRequest createBidRequest = (CreateBidRequest) o;
-    return Objects.equals(this.includeSummary, createBidRequest.includeSummary) &&
-        Objects.equals(this.priceId, createBidRequest.priceId);
+    return Objects.equals(this.priceId, createBidRequest.priceId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, priceId);
+    return Objects.hash(priceId, super.hashCode());
   }
 
 
@@ -87,8 +68,7 @@ public class CreateBidRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateBidRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    priceId: ").append(toIndentedString(priceId)).append("\n");
     sb.append("}");
     return sb.toString();

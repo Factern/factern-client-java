@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.StandardNode;
 import com.google.gson.TypeAdapter;
@@ -23,32 +24,13 @@ import java.math.BigDecimal;
  */
 
 public class Domain extends StandardNode {
-  @SerializedName("nodeId")
-  private String nodeId = null;
-
-  @SerializedName("description")
+  public static final String SERIALIZED_NAME_DESCRIPTION = "description";
+  @SerializedName(SERIALIZED_NAME_DESCRIPTION)
   private String description = null;
 
-  @SerializedName("name")
+  public static final String SERIALIZED_NAME_NAME = "name";
+  @SerializedName(SERIALIZED_NAME_NAME)
   private String name = null;
-
-  public Domain nodeId(String nodeId) {
-    this.nodeId = nodeId;
-    return this;
-  }
-
-   /**
-   * Get nodeId
-   * @return nodeId
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public String getNodeId() {
-    return nodeId;
-  }
-
-  public void setNodeId(String nodeId) {
-    this.nodeId = nodeId;
-  }
 
   public Domain description(String description) {
     this.description = description;
@@ -96,15 +78,14 @@ public class Domain extends StandardNode {
       return false;
     }
     Domain domain = (Domain) o;
-    return Objects.equals(this.nodeId, domain.nodeId) &&
-        Objects.equals(this.description, domain.description) &&
+    return Objects.equals(this.description, domain.description) &&
         Objects.equals(this.name, domain.name) &&
         super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(nodeId, description, name, super.hashCode());
+    return Objects.hash(description, name, super.hashCode());
   }
 
 
@@ -113,7 +94,6 @@ public class Domain extends StandardNode {
     StringBuilder sb = new StringBuilder();
     sb.append("class Domain {\n");
     sb.append("    ").append(toIndentedString(super.toString())).append("\n");
-    sb.append("    nodeId: ").append(toIndentedString(nodeId)).append("\n");
     sb.append("    description: ").append(toIndentedString(description)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
     sb.append("}");

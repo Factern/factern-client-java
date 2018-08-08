@@ -1,23 +1,31 @@
 
+
 # ListCriteria
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeDeleted** | **Boolean** |  |  [optional]
-**labelListName** | **String** |  |  [optional]
-**maxResults** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**typeName** | **String** |  |  [optional]
-**factType** | [**FactTypeEnum**](#FactTypeEnum) |  |  [optional]
-**actionId** | **String** |  |  [optional]
-**labelListId** | **String** |  |  [optional]
-**startingFromTimestamp** | [**BigDecimal**](BigDecimal.md) |  |  [optional]
-**nextToken** | **String** |  |  [optional]
-**fieldId** | **String** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+includeDeleted | Boolean | optional
+labelListName | String | optional
+maxResults | [BigDecimal](BigDecimal.md) | optional
+typeName | String | optional
+factType | [FactTypeEnum](#FactTypeEnum) | optional
+actionId | String | optional
+labelListId | String | optional
+startingFromTimestamp | [BigDecimal](BigDecimal.md) | optional
+nextToken | String | optional
+fieldId | String | optional
+
+
+
+
+## Enums
 
 
 <a name="FactTypeEnum"></a>
-## Enum: FactTypeEnum
+### FactTypeEnum
+
 Name | Value
 ---- | -----
 ENTITY | &quot;Entity&quot;
@@ -37,3 +45,10 @@ SCOPE | &quot;Scope&quot;
 
 
 
+
+
+
+## Inheritance hierarchy
+
+
+* [ListCriteria](ListCriteria.md)

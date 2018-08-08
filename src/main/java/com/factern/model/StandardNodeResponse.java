@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
@@ -24,30 +25,41 @@ import java.math.BigDecimal;
 
 
 public class StandardNodeResponse {
-  @SerializedName("deleted")
+  public static final String SERIALIZED_NAME_DELETED = "deleted";
+  @SerializedName(SERIALIZED_NAME_DELETED)
   private Boolean deleted = null;
 
-  @SerializedName("timestamp")
+  public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
+  @SerializedName(SERIALIZED_NAME_TIMESTAMP)
   private BigDecimal timestamp = null;
 
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
-  @SerializedName("agent")
+  public static final String SERIALIZED_NAME_AGENT = "agent";
+  @SerializedName(SERIALIZED_NAME_AGENT)
   private Agent agent = null;
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
-  @SerializedName("batchId")
+  public static final String SERIALIZED_NAME_BATCH_ID = "batchId";
+  @SerializedName(SERIALIZED_NAME_BATCH_ID)
   private String batchId = null;
 
-  @SerializedName("factType")
+  public static final String SERIALIZED_NAME_FACT_TYPE = "factType";
+  @SerializedName(SERIALIZED_NAME_FACT_TYPE)
   private String factType = null;
 
-  @SerializedName("parentId")
+  public static final String SERIALIZED_NAME_PARENT_ID = "parentId";
+  @SerializedName(SERIALIZED_NAME_PARENT_ID)
   private String parentId = null;
 
+  public StandardNodeResponse() {
+    this.factType = this.getClass().getSimpleName();
+  }
   public StandardNodeResponse deleted(Boolean deleted) {
     this.deleted = deleted;
     return this;
@@ -58,7 +70,7 @@ public class StandardNodeResponse {
    * @return deleted
   **/
   @ApiModelProperty(value = "")
-  public Boolean isDeleted() {
+  public Boolean getDeleted() {
     return deleted;
   }
 

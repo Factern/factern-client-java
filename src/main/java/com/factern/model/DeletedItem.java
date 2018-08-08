@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.DeletedItem;
 import com.factern.model.DeletedStatusItem;
 import com.google.gson.TypeAdapter;
@@ -24,19 +25,24 @@ import java.util.List;
  */
 
 public class DeletedItem {
-  @SerializedName("nodeId")
+  public static final String SERIALIZED_NAME_NODE_ID = "nodeId";
+  @SerializedName(SERIALIZED_NAME_NODE_ID)
   private String nodeId = null;
 
-  @SerializedName("nodes")
+  public static final String SERIALIZED_NAME_NODES = "nodes";
+  @SerializedName(SERIALIZED_NAME_NODES)
   private List<DeletedItem> nodes = null;
 
-  @SerializedName("fieldId")
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
 
-  @SerializedName("children")
+  public static final String SERIALIZED_NAME_CHILDREN = "children";
+  @SerializedName(SERIALIZED_NAME_CHILDREN)
   private List<DeletedStatusItem> children = null;
 
-  @SerializedName("deletedNodeId")
+  public static final String SERIALIZED_NAME_DELETED_NODE_ID = "deletedNodeId";
+  @SerializedName(SERIALIZED_NAME_DELETED_NODE_ID)
   private String deletedNodeId = null;
 
   public DeletedItem nodeId(String nodeId) {

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.CreateNamedRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,93 +21,10 @@ import java.io.IOException;
  * CreateEntityRequest
  */
 
-public class CreateEntityRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("parentId")
-  private String parentId = null;
-
-  @SerializedName("description")
-  private String description = null;
-
-  @SerializedName("name")
-  private String name = null;
-
-  @SerializedName("domainId")
+public class CreateEntityRequest extends CreateNamedRequest {
+  public static final String SERIALIZED_NAME_DOMAIN_ID = "domainId";
+  @SerializedName(SERIALIZED_NAME_DOMAIN_ID)
   private String domainId = null;
-
-  public CreateEntityRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
-
-  public CreateEntityRequest parentId(String parentId) {
-    this.parentId = parentId;
-    return this;
-  }
-
-   /**
-   * Get parentId
-   * @return parentId
-  **/
-  @ApiModelProperty(value = "")
-  public String getParentId() {
-    return parentId;
-  }
-
-  public void setParentId(String parentId) {
-    this.parentId = parentId;
-  }
-
-  public CreateEntityRequest description(String description) {
-    this.description = description;
-    return this;
-  }
-
-   /**
-   * Get description
-   * @return description
-  **/
-  @ApiModelProperty(value = "")
-  public String getDescription() {
-    return description;
-  }
-
-  public void setDescription(String description) {
-    this.description = description;
-  }
-
-  public CreateEntityRequest name(String name) {
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Get name
-   * @return name
-  **/
-  @ApiModelProperty(value = "")
-  public String getName() {
-    return name;
-  }
-
-  public void setName(String name) {
-    this.name = name;
-  }
 
   public CreateEntityRequest domainId(String domainId) {
     this.domainId = domainId;
@@ -136,16 +54,13 @@ public class CreateEntityRequest {
       return false;
     }
     CreateEntityRequest createEntityRequest = (CreateEntityRequest) o;
-    return Objects.equals(this.includeSummary, createEntityRequest.includeSummary) &&
-        Objects.equals(this.parentId, createEntityRequest.parentId) &&
-        Objects.equals(this.description, createEntityRequest.description) &&
-        Objects.equals(this.name, createEntityRequest.name) &&
-        Objects.equals(this.domainId, createEntityRequest.domainId);
+    return Objects.equals(this.domainId, createEntityRequest.domainId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, parentId, description, name, domainId);
+    return Objects.hash(domainId, super.hashCode());
   }
 
 
@@ -153,11 +68,7 @@ public class CreateEntityRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateEntityRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
-    sb.append("    parentId: ").append(toIndentedString(parentId)).append("\n");
-    sb.append("    description: ").append(toIndentedString(description)).append("\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    domainId: ").append(toIndentedString(domainId)).append("\n");
     sb.append("}");
     return sb.toString();

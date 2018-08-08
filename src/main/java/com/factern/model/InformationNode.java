@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -20,10 +21,12 @@ import java.io.IOException;
  */
 
 public class InformationNode {
-  @SerializedName("fieldId")
+  public static final String SERIALIZED_NAME_FIELD_ID = "fieldId";
+  @SerializedName(SERIALIZED_NAME_FIELD_ID)
   private String fieldId = null;
 
-  @SerializedName("storageId")
+  public static final String SERIALIZED_NAME_STORAGE_ID = "storageId";
+  @SerializedName(SERIALIZED_NAME_STORAGE_ID)
   private String storageId = null;
 
   public InformationNode fieldId(String fieldId) {

@@ -1,15 +1,23 @@
 
+
 # TransformElement
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**operation** | [**OperationEnum**](#OperationEnum) |  |  [optional]
-**spec** | **Object** |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+operation | [OperationEnum](#OperationEnum) | optional
+spec | Object | optional
+
+
+
+
+## Enums
 
 
 <a name="OperationEnum"></a>
-## Enum: OperationEnum
+### OperationEnum
+
 Name | Value
 ---- | -----
 SHIFT | &quot;shift&quot;
@@ -20,3 +28,10 @@ CARDINALITY | &quot;cardinality&quot;
 
 
 
+
+
+
+## Inheritance hierarchy
+
+
+* [TransformElement](TransformElement.md)

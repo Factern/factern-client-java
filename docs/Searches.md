@@ -1,13 +1,20 @@
 
+
 # Searches
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**searches** | [**BigDecimal**](BigDecimal.md) |  | 
-**reindexingCalls** | [**BigDecimal**](BigDecimal.md) |  | 
-**hits** | [**BigDecimal**](BigDecimal.md) |  | 
-**reindexedNodes** | [**BigDecimal**](BigDecimal.md) |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+searches | [BigDecimal](BigDecimal.md) | required
+reindexingCalls | [BigDecimal](BigDecimal.md) | required
+hits | [BigDecimal](BigDecimal.md) | required
+reindexedNodes | [BigDecimal](BigDecimal.md) | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [Searches](Searches.md)

@@ -1,11 +1,18 @@
 
+
 # ReadInformationResponse
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**data** | **String** |  |  [optional]
-**summary** | [**Summary**](Summary.md) |  |  [optional]
+
+Name | Type | Required
+-------- | -------- | --------
+data | String | optional
+summary | [Summary](Summary.md) | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [ReadInformationResponse](ReadInformationResponse.md)

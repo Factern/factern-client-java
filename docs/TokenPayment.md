@@ -1,12 +1,19 @@
 
+
 # TokenPayment
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**publickey** | **String** |  | 
-**value** | **String** |  | 
-**signature** | **String** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+publickey | String | required
+value | String | required
+signature | String | required
 
 
 
+
+## Inheritance hierarchy
+
+
+* [TokenPayment](TokenPayment.md)

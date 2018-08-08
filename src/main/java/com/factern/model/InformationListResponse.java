@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Information;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
@@ -24,10 +25,12 @@ import java.util.List;
  */
 
 public class InformationListResponse {
-  @SerializedName("nodes")
+  public static final String SERIALIZED_NAME_NODES = "nodes";
+  @SerializedName(SERIALIZED_NAME_NODES)
   private List<Information> nodes = new ArrayList<Information>();
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
   public InformationListResponse nodes(List<Information> nodes) {

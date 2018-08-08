@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
@@ -21,10 +22,12 @@ import java.math.BigDecimal;
  */
 
 public class FactCount {
-  @SerializedName("read")
+  public static final String SERIALIZED_NAME_READ = "read";
+  @SerializedName(SERIALIZED_NAME_READ)
   private BigDecimal read = null;
 
-  @SerializedName("written")
+  public static final String SERIALIZED_NAME_WRITTEN = "written";
+  @SerializedName(SERIALIZED_NAME_WRITTEN)
   private BigDecimal written = null;
 
   public FactCount read(BigDecimal read) {

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Entity;
 import com.factern.model.Summary;
 import com.google.gson.TypeAdapter;
@@ -25,16 +26,20 @@ import java.util.List;
  */
 
 public class EntityListResponse {
-  @SerializedName("nodes")
+  public static final String SERIALIZED_NAME_NODES = "nodes";
+  @SerializedName(SERIALIZED_NAME_NODES)
   private List<Entity> nodes = new ArrayList<Entity>();
 
-  @SerializedName("nextToken")
+  public static final String SERIALIZED_NAME_NEXT_TOKEN = "nextToken";
+  @SerializedName(SERIALIZED_NAME_NEXT_TOKEN)
   private String nextToken = null;
 
-  @SerializedName("totalResults")
+  public static final String SERIALIZED_NAME_TOTAL_RESULTS = "totalResults";
+  @SerializedName(SERIALIZED_NAME_TOTAL_RESULTS)
   private BigDecimal totalResults = null;
 
-  @SerializedName("summary")
+  public static final String SERIALIZED_NAME_SUMMARY = "summary";
+  @SerializedName(SERIALIZED_NAME_SUMMARY)
   private Summary summary = null;
 
   public EntityListResponse nodes(List<Entity> nodes) {

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.Agent;
 import com.factern.model.PermissionPolicyDocument;
 import com.factern.model.StandardNode;
@@ -24,13 +25,16 @@ import java.math.BigDecimal;
  */
 
 public class Permission extends StandardNode {
-  @SerializedName("policy")
+  public static final String SERIALIZED_NAME_POLICY = "policy";
+  @SerializedName(SERIALIZED_NAME_POLICY)
   private PermissionPolicyDocument policy = null;
 
-  @SerializedName("targetNodeId")
+  public static final String SERIALIZED_NAME_TARGET_NODE_ID = "targetNodeId";
+  @SerializedName(SERIALIZED_NAME_TARGET_NODE_ID)
   private String targetNodeId = null;
 
-  @SerializedName("permissionInterfaceId")
+  public static final String SERIALIZED_NAME_PERMISSION_INTERFACE_ID = "permissionInterfaceId";
+  @SerializedName(SERIALIZED_NAME_PERMISSION_INTERFACE_ID)
   private String permissionInterfaceId = null;
 
   public Permission policy(PermissionPolicyDocument policy) {

@@ -1,16 +1,26 @@
 
+
 # CreateFieldRequest
 
 ## Properties
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**includeSummary** | **Boolean** |  |  [optional]
-**parentId** | **String** |  |  [optional]
-**description** | **String** |  |  [optional]
-**name** | **String** |  |  [optional]
-**uniqueByParent** | **Boolean** |  | 
-**searchable** | **Boolean** |  | 
-**branch** | **Boolean** |  | 
+
+Name | Type | Required
+-------- | -------- | --------
+uniqueByParent | Boolean | optional
+searchable | Boolean | optional
+branch | Boolean | optional
+description | String | optional
+name | String | optional
+parentId | String | optional
+includeSummary | Boolean | optional
 
 
 
+
+## Inheritance hierarchy
+
+
+* [CreateFieldRequest](CreateFieldRequest.md)
+    * [CreateNamedRequest](CreateNamedRequest.md)
+        * [CreateChildRequest](CreateChildRequest.md)
+            * [BaseRequest](BaseRequest.md)

@@ -6,6 +6,7 @@
 package com.factern.model;
 
 import java.util.Objects;
+import java.util.Arrays;
 import com.factern.model.BaseRequest;
 import com.google.gson.TypeAdapter;
 import com.google.gson.annotations.JsonAdapter;
@@ -20,33 +21,14 @@ import java.io.IOException;
  * AddLabelRequest
  */
 
-public class AddLabelRequest {
-  @SerializedName("includeSummary")
-  private Boolean includeSummary = null;
-
-  @SerializedName("targetNodeId")
+public class AddLabelRequest extends BaseRequest {
+  public static final String SERIALIZED_NAME_TARGET_NODE_ID = "targetNodeId";
+  @SerializedName(SERIALIZED_NAME_TARGET_NODE_ID)
   private String targetNodeId = null;
 
-  @SerializedName("labelId")
+  public static final String SERIALIZED_NAME_LABEL_ID = "labelId";
+  @SerializedName(SERIALIZED_NAME_LABEL_ID)
   private String labelId = null;
-
-  public AddLabelRequest includeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-    return this;
-  }
-
-   /**
-   * Get includeSummary
-   * @return includeSummary
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isIncludeSummary() {
-    return includeSummary;
-  }
-
-  public void setIncludeSummary(Boolean includeSummary) {
-    this.includeSummary = includeSummary;
-  }
 
   public AddLabelRequest targetNodeId(String targetNodeId) {
     this.targetNodeId = targetNodeId;
@@ -94,14 +76,14 @@ public class AddLabelRequest {
       return false;
     }
     AddLabelRequest addLabelRequest = (AddLabelRequest) o;
-    return Objects.equals(this.includeSummary, addLabelRequest.includeSummary) &&
-        Objects.equals(this.targetNodeId, addLabelRequest.targetNodeId) &&
-        Objects.equals(this.labelId, addLabelRequest.labelId);
+    return Objects.equals(this.targetNodeId, addLabelRequest.targetNodeId) &&
+        Objects.equals(this.labelId, addLabelRequest.labelId) &&
+        super.equals(o);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(includeSummary, targetNodeId, labelId);
+    return Objects.hash(targetNodeId, labelId, super.hashCode());
   }
 
 
@@ -109,8 +91,7 @@ public class AddLabelRequest {
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class AddLabelRequest {\n");
-    
-    sb.append("    includeSummary: ").append(toIndentedString(includeSummary)).append("\n");
+    sb.append("    ").append(toIndentedString(super.toString())).append("\n");
     sb.append("    targetNodeId: ").append(toIndentedString(targetNodeId)).append("\n");
     sb.append("    labelId: ").append(toIndentedString(labelId)).append("\n");
     sb.append("}");
